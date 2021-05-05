@@ -2817,7 +2817,17 @@ if (_layerRoot) then {
 	_this setVariable ["#hideLocally",false];
 	_this setvariable ["BIS_fnc_initModules_disableAutoActivation",true];
 };
-
+private _item565 = objNull;
+if (_layerRoot) then {
+	_item565 = (group (missionNamespace getvariable ["BIS_functions_mainscope",objnull])) createUnit ["Logic",[15192.3,17304.3,0],[],0,"CAN_COLLIDE"];
+	_this = _item565;
+	_logics pushback _this;
+	_logicIDs pushback 565;
+	_this setPosWorld [15192.3,17304.3,17.9239];
+	_this setVectorDirAndUp [[0,0.999999,-0.00133721],[-0.00133721,0.00133721,0.999998]];
+	spawnPos = _this;
+	_this setVehicleVarName "spawnPos";
+};
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 // Layers
