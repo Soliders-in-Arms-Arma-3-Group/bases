@@ -5,10 +5,10 @@
 params [["_layerWhiteList",[],[[]]],["_layerBlacklist",[],[[]]],["_posCenter",[0,0,0],[[]]],["_dir",0,[0]],["_idBlacklist",[],[[]]]];
 private _allWhitelisted = _layerWhiteList isEqualTo [];
 private _layerRoot = (_allWhitelisted || {true in _layerWhiteList}) && {!(true in _layerBlackList)};
+private _layer12 = (_allWhitelisted || {"canteen #1" in _layerWhiteList}) && {!("canteen #1" in _layerBlackList)};
 private _layer501 = (_allWhitelisted || {"sia zgm essentials" in _layerWhiteList}) && {!("sia zgm essentials" in _layerBlackList)};
 private _layer130 = (_allWhitelisted || {"medical laboratory [blu]" in _layerWhiteList}) && {!("medical laboratory [blu]" in _layerBlackList)};
 private _layer69 = (_allWhitelisted || {"checkpoint [blu]" in _layerWhiteList}) && {!("checkpoint [blu]" in _layerBlackList)};
-private _layer12 = (_allWhitelisted || {"canteen #1" in _layerWhiteList}) && {!("canteen #1" in _layerBlackList)};
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -95,146 +95,316 @@ if (_layerRoot) then {
 private _objects = [];
 private _objectIDs = [];
 
-private _item0 = objNull;
-if (_layerRoot) then {
-	_item0 = createVehicle ["Land_HelipadSquare_F",[15136.2,17287.5,0],[],0,"CAN_COLLIDE"];
-	_this = _item0;
+private _item70 = objNull;
+if (_layer69) then {
+	_item70 = createSimpleObject ["RoadCone_F",[15300.1,17533.2,16.6155]];
+	_this = _item70;
 	_objects pushback _this;
-	_objectIDs pushback 0;
-	_this setPosWorld [15136.2,17287.5,17.7729];
-	_this setVectorDirAndUp [[-0.712611,0.7014,0.0149417],[-0.00265204,-0.0239909,0.999709]];
+	_objectIDs pushback 70;
+	_this setPosWorld [15300.1,17533.2,16.8834];
+	_this setVectorDirAndUp [[0.661324,0.749875,0.0183957],[-0.0293202,0.00133664,0.999569]];
+	0 remoteExec ['setFeatureType', _this];
+	[_this, 1] call ace_cargo_fnc_setSize;;
+};
+
+private _item71 = objNull;
+if (_layer69) then {
+	_item71 = createSimpleObject ["RoadCone_F",[15304.8,17539.6,16.5871]];
+	_this = _item71;
+	_objects pushback _this;
+	_objectIDs pushback 71;
+	_this setPosWorld [15304.8,17539.6,16.8551];
+	_this setVectorDirAndUp [[0.0624047,-0.998047,0.00289629],[-0.00399675,0.00265202,0.999988]];
+	0 remoteExec ['setFeatureType', _this];
+	[_this, 1] call ace_cargo_fnc_setSize;;
+};
+
+private _item72 = objNull;
+if (_layer69) then {
+	_item72 = createSimpleObject ["RoadCone_F",[15297.3,17530.2,16.5946]];
+	_this = _item72;
+	_objects pushback _this;
+	_objectIDs pushback 72;
+	_this setPosWorld [15297.3,17530.2,16.8626];
+	_this setVectorDirAndUp [[-0.998019,-0.0624157,-0.00790185],[-0.0080009,0.00133717,0.999967]];
+	0 remoteExec ['setFeatureType', _this];
+	[_this, 1] call ace_cargo_fnc_setSize;;
+};
+
+private _item73 = objNull;
+if (_layer69) then {
+	_item73 = createSimpleObject ["RoadCone_F",[15293.7,17527,16.6024]];
+	_this = _item73;
+	_objects pushback _this;
+	_objectIDs pushback 73;
+	_this setPosWorld [15293.7,17527,16.8703];
+	_this setVectorDirAndUp [[0.980169,-0.197839,0.0113012],[-0.00533768,0.0306509,0.999516]];
+	0 remoteExec ['setFeatureType', _this];
+	[_this, 1] call ace_cargo_fnc_setSize;;
+};
+
+private _item74 = objNull;
+if (_layer69) then {
+	_item74 = createSimpleObject ["RoadCone_F",[15302.9,17536.4,16.6004]];
+	_this = _item74;
+	_objects pushback _this;
+	_objectIDs pushback 74;
+	_this setPosWorld [15302.9,17536.4,16.8684];
+	_this setVectorDirAndUp [[0.749855,-0.661588,0.00440576],[0,0.00665923,0.999978]];
+	0 remoteExec ['setFeatureType', _this];
+	[_this, 1] call ace_cargo_fnc_setSize;;
+};
+
+private _item75 = objNull;
+if (_layer69) then {
+	_item75 = createSimpleObject ["RoadCone_F",[15304,17541.4,16.5789]];
+	_this = _item75;
+	_objects pushback _this;
+	_objectIDs pushback 75;
+	_this setPosWorld [15304,17541.4,16.8469];
+	_this setVectorDirAndUp [[0.661603,0.749854,0.000655636],[-0.00399675,0.00265202,0.999988]];
+	0 remoteExec ['setFeatureType', _this];
+	[_this, 1] call ace_cargo_fnc_setSize;;
+};
+
+private _item76 = objNull;
+if (_layer69) then {
+	_item76 = createSimpleObject ["RoadCone_F",[15311.9,17533.4,16.6923]];
+	_this = _item76;
+	_objects pushback _this;
+	_objectIDs pushback 76;
+	_this setPosWorld [15311.9,17533.4,16.96];
+	_this setVectorDirAndUp [[0.0624052,-0.996962,0.0466075],[-0.00133721,0.0466149,0.998912]];
+	0 remoteExec ['setFeatureType', _this];
+	[_this, 1] call ace_cargo_fnc_setSize;;
+};
+
+private _item77 = objNull;
+if (_layer69) then {
+	_item77 = createSimpleObject ["RoadCone_F",[15303.9,17524.6,16.7874]];
+	_this = _item77;
+	_objects pushback _this;
+	_objectIDs pushback 77;
+	_this setPosWorld [15303.9,17524.6,17.0552];
+	_this setVectorDirAndUp [[0.749532,-0.661077,0.0343294],[-0.0293202,0.0186548,0.999396]];
+	0 remoteExec ['setFeatureType', _this];
+	[_this, 1] call ace_cargo_fnc_setSize;;
+};
+
+private _item78 = objNull;
+if (_layer69) then {
+	_item78 = createSimpleObject ["RoadCone_F",[15300.2,17521.5,16.8083]];
+	_this = _item78;
+	_objects pushback _this;
+	_objectIDs pushback 78;
+	_this setPosWorld [15300.2,17521.5,17.0761];
+	_this setVectorDirAndUp [[-0.749743,0.660892,-0.0332665],[-0.0173282,0.0306468,0.99938]];
+	0 remoteExec ['setFeatureType', _this];
+	[_this, 1] call ace_cargo_fnc_setSize;;
+};
+
+private _item79 = objNull;
+if (_layer69) then {
+	_item79 = createSimpleObject ["RoadCone_F",[15308.9,17530.2,16.7809]];
+	_this = _item79;
+	_objects pushback _this;
+	_objectIDs pushback 79;
+	_this setPosWorld [15308.9,17530.2,17.0487];
+	_this setVectorDirAndUp [[0.0623958,-0.997549,0.0316725],[-0.0173282,0.0306468,0.99938]];
+	0 remoteExec ['setFeatureType', _this];
+	[_this, 1] call ace_cargo_fnc_setSize;;
+};
+
+private _item80 = objNull;
+if (_layer69) then {
+	_item80 = createSimpleObject ["RoadCone_F",[15314.2,17536.2,16.6152]];
+	_this = _item80;
+	_objects pushback _this;
+	_objectIDs pushback 80;
+	_this setPosWorld [15314.2,17536.2,16.8832];
+	_this setVectorDirAndUp [[-0.833125,-0.55308,0.00221054],[0,0.00399675,0.999992]];
+	0 remoteExec ['setFeatureType', _this];
+	[_this, 1] call ace_cargo_fnc_setSize;;
+};
+
+private _item81 = objNull;
+if (_layer69) then {
+	_item81 = createSimpleObject ["RoadCone_F",[15306.6,17527.6,16.8123]];
+	_this = _item81;
+	_objects pushback _this;
+	_objectIDs pushback 81;
+	_this setPosWorld [15306.6,17527.6,17.0801];
+	_this setVectorDirAndUp [[0.0623784,-0.998048,0.00316434],[-0.0293202,0.00133664,0.999569]];
+	0 remoteExec ['setFeatureType', _this];
+	[_this, 1] call ace_cargo_fnc_setSize;;
+};
+
+private _item82 = objNull;
+if (_layer69) then {
+	_item82 = createVehicle ["Land_CncBarrier_stripes_F",[15298.5,17541.9,1.90735e-006],[],0,"CAN_COLLIDE"];
+	_this = _item82;
+	_objects pushback _this;
+	_objectIDs pushback 82;
+	_this setPosWorld [15298.5,17541.9,16.9355];
+	_this setVectorDirAndUp [[-0.0362552,0.999318,-0.00700201],[-0.0093285,0.00666789,0.999934]];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+};
+
+private _item83 = objNull;
+if (_layer69) then {
+	_item83 = createVehicle ["Land_CncBarrier_stripes_F",[15293.3,17541.8,1.90735e-006],[],0,"CAN_COLLIDE"];
+	_this = _item83;
+	_objects pushback _this;
+	_objectIDs pushback 83;
+	_this setPosWorld [15293.3,17541.8,16.8884];
+	_this setVectorDirAndUp [[-0.076361,0.997053,-0.00736105],[-0.0093285,0.00666789,0.999934]];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+};
+
+private _item84 = objNull;
+if (_layer69) then {
+	_item84 = createVehicle ["Land_CncBarrier_stripes_F",[15302.2,17541.8,0],[],0,"CAN_COLLIDE"];
+	_this = _item84;
+	_objects pushback _this;
+	_objectIDs pushback 84;
+	_this setPosWorld [15302.2,17541.8,16.9564];
+	_this setVectorDirAndUp [[-0.0362598,0.999339,-0.00279608],[-0.00399679,0.00265288,0.999988]];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+};
+
+private _item131 = objNull;
+if (_layer130) then {
+	_item131 = createVehicle ["Land_Cargo20_white_F",[15288.2,17388.5,0.00304794],[],0,"CAN_COLLIDE"];
+	_this = _item131;
+	_objects pushback _this;
+	_objectIDs pushback 131;
+	_this setPosWorld [15288.2,17388.5,19.2094];
+	_this setVectorDirAndUp [[-0.691094,-0.722755,0.00374957],[0.00265199,0.00265203,0.999993]];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+	[_this, 50] call ace_cargo_fnc_setSize;;
+};
+
+private _item132 = objNull;
+if (_layer130) then {
+	_item132 = createVehicle ["Land_Cargo20_white_F",[15285.7,17385.9,0.00304794],[],0,"CAN_COLLIDE"];
+	_this = _item132;
+	_objects pushback _this;
+	_objectIDs pushback 132;
+	_this setPosWorld [15285.7,17385.9,19.2231];
+	_this setVectorDirAndUp [[-0.691094,-0.722755,0.00374957],[0.00265199,0.00265203,0.999993]];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+	[_this, 50] call ace_cargo_fnc_setSize;;
+};
+
+private _item133 = objNull;
+if (_layer130) then {
+	_item133 = createVehicle ["Land_HBarrier_5_F",[15282.2,17388.2,1.90735e-006],[],0,"CAN_COLLIDE"];
+	_this = _item133;
+	_objects pushback _this;
+	_objectIDs pushback 133;
+	_this setPosWorld [15282.2,17388.2,18.6394];
+	_this setVectorDirAndUp [[-0.72276,0.691099,8.39335e-005],[0.00265199,0.00265203,0.999993]];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+};
+
+private _item134 = objNull;
+if (_layer130) then {
+	_item134 = createVehicle ["Land_HBarrier_5_F",[15286,17392.2,0.00354576],[],0,"CAN_COLLIDE"];
+	_this = _item134;
+	_objects pushback _this;
+	_objectIDs pushback 134;
+	_this setPosWorld [15286,17392.2,18.6213];
+	_this setVectorDirAndUp [[-0.722757,0.691103,0.000126477],[0.00399666,0.00399671,0.999984]];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+};
+
+private _item135 = objNull;
+if (_layer130) then {
+	_item135 = createVehicle ["Land_LampShabby_F",[15303.5,17392.6,0],[],0,"CAN_COLLIDE"];
+	_this = _item135;
+	_objects pushback _this;
+	_objectIDs pushback 135;
+	_this setPosWorld [15303.5,17392.6,21.4985];
+	_this setVectorDirAndUp [[0.722762,-0.691097,0],[0,0,1]];
 	0 remoteExec ['setFeatureType', _this];
 };
 
-private _item1 = objNull;
-if (_layerRoot) then {
-	_item1 = createVehicle ["Land_HelipadSquare_F",[15158.7,17266.1,7.62939e-006],[],0,"CAN_COLLIDE"];
-	_this = _item1;
+private _item136 = objNull;
+if (_layer130) then {
+	_item136 = createVehicle ["Land_HBarrier_5_F",[15322.3,17404.1,1.90735e-006],[],0,"CAN_COLLIDE"];
+	_this = _item136;
 	_objects pushback _this;
-	_objectIDs pushback 1;
-	_this setPosWorld [15158.7,17266.1,17.9085];
-	_this setVectorDirAndUp [[-0.720575,0.693377,-0.000895754],[0,0.00129187,0.999999]];
+	_objectIDs pushback 136;
+	_this setPosWorld [15322.3,17404.1,17.9601];
+	_this setVectorDirAndUp [[-0.691008,-0.722651,0.0168328],[0.0159975,0.00799242,0.99984]];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+};
+
+private _item137 = objNull;
+if (_layer130) then {
+	_item137 = createVehicle ["Land_HBarrier_5_F",[15316.3,17409.8,0],[],0,"CAN_COLLIDE"];
+	_this = _item137;
+	_objects pushback _this;
+	_objectIDs pushback 137;
+	_this setPosWorld [15316.3,17409.8,18.012];
+	_this setVectorDirAndUp [[-0.691008,-0.722651,0.0168328],[0.0159975,0.00799242,0.99984]];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+};
+
+private _item138 = objNull;
+if (_layer130) then {
+	_item138 = createVehicle ["Land_HBarrier_5_F",[15310.6,17415.4,0],[],0,"CAN_COLLIDE"];
+	_this = _item138;
+	_objects pushback _this;
+	_objectIDs pushback 138;
+	_this setPosWorld [15310.6,17415.4,18.0781];
+	_this setVectorDirAndUp [[-0.690959,-0.722723,0.0157512],[0.0199947,0.00267389,0.999797]];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+};
+
+private _item139 = objNull;
+if (_layer130) then {
+	_item139 = createVehicle ["Land_HelipadRescue_F",[15282.9,17409.7,1.90735e-006],[],0,"CAN_COLLIDE"];
+	_this = _item139;
+	_objects pushback _this;
+	_objectIDs pushback 139;
+	_this setPosWorld [15282.9,17409.7,17.8317];
+	_this setVectorDirAndUp [[-0.71644,0.697648,0.00108011],[0.00800059,0.00666796,0.999946]];
 	0 remoteExec ['setFeatureType', _this];
 };
 
-private _item2 = objNull;
-if (_layerRoot) then {
-	_item2 = createVehicle ["PortableHelipadLight_01_blue_F",[15136.1,17295.5,-9.53674e-006],[],0,"CAN_COLLIDE"];
-	_this = _item2;
+private _item503 = objNull;
+if (_layer501) then {
+	_item503 = createVehicle ["Gunrack1",[15194.7,17290.6,0.0400009],[],0,"CAN_COLLIDE"];
+	_this = _item503;
 	_objects pushback _this;
-	_objectIDs pushback 2;
-	_this setPosWorld [15136.1,17295.5,17.9634];
-	_this setVectorDirAndUp [[0,0.999996,0.00265199],[-0.00133721,-0.00265199,0.999996]];
+	_objectIDs pushback 503;
+	_this setPosWorld [15194.7,17290.6,18.4844];
+	_this setVectorDirAndUp [[-0.724689,-0.689076,-0.000935967],[-0.00129154,0,0.999999]];
 	0 remoteExec ['setFeatureType', _this];
-	_this enableDynamicSimulation true;
+	_this enableSimulation false;
 };
 
-private _item3 = objNull;
-if (_layerRoot) then {
-	_item3 = createVehicle ["PortableHelipadLight_01_blue_F",[15144.1,17287.6,-7.62939e-006],[],0,"CAN_COLLIDE"];
-	_this = _item3;
+private _item504 = objNull;
+if (_layer501) then {
+	_item504 = createVehicle ["Gunrack1",[15192.4,17288.1,0.0400906],[],0,"CAN_COLLIDE"];
+	_this = _item504;
 	_objects pushback _this;
-	_objectIDs pushback 3;
-	_this setPosWorld [15144.1,17287.6,17.9172];
-	_this setVectorDirAndUp [[0,0.999956,0.00932853],[-0.0093285,-0.00932813,0.999913]];
+	_objectIDs pushback 504;
+	_this setPosWorld [15192.4,17288.1,18.4814];
+	_this setVectorDirAndUp [[-0.724689,-0.689076,-0.000936205],[-0.00129187,0,0.999999]];
 	0 remoteExec ['setFeatureType', _this];
-	_this enableDynamicSimulation true;
-};
-
-private _item4 = objNull;
-if (_layerRoot) then {
-	_item4 = createVehicle ["PortableHelipadLight_01_blue_F",[15136.2,17279.6,4.19617e-005],[],0,"CAN_COLLIDE"];
-	_this = _item4;
-	_objects pushback _this;
-	_objectIDs pushback 4;
-	_this setPosWorld [15136.2,17279.6,17.9279];
-	_this setVectorDirAndUp [[0,0.999304,-0.0373063],[0.0306514,0.0372888,0.998834]];
-	0 remoteExec ['setFeatureType', _this];
-	_this enableDynamicSimulation true;
-};
-
-private _item5 = objNull;
-if (_layerRoot) then {
-	_item5 = createVehicle ["PortableHelipadLight_01_blue_F",[15128.2,17287.4,-9.53674e-006],[],0,"CAN_COLLIDE"];
-	_this = _item5;
-	_objects pushback _this;
-	_objectIDs pushback 5;
-	_this setPosWorld [15128.2,17287.4,17.9174];
-	_this setVectorDirAndUp [[0,0.999956,-0.0093285],[0.00532655,0.00932837,0.999942]];
-	0 remoteExec ['setFeatureType', _this];
-	_this enableDynamicSimulation true;
-};
-
-private _item6 = objNull;
-if (_layerRoot) then {
-	_item6 = createVehicle ["PortableHelipadLight_01_green_F",[15136.4,17287.3,-1.52588e-005],[],0,"CAN_COLLIDE"];
-	_this = _item6;
-	_objects pushback _this;
-	_objectIDs pushback 6;
-	_this setPosWorld [15136.4,17287.3,17.8785];
-	_this setVectorDirAndUp [[0,0.999712,0.023991],[-0.00265204,-0.0239909,0.999709]];
-	0 remoteExec ['setFeatureType', _this];
-	_this enableDynamicSimulation true;
-};
-
-private _item7 = objNull;
-if (_layerRoot) then {
-	_item7 = createVehicle ["PortableHelipadLight_01_yellow_F",[15166.6,17266.3,0],[],0,"CAN_COLLIDE"];
-	_this = _item7;
-	_objects pushback _this;
-	_objectIDs pushback 7;
-	_this setPosWorld [15166.6,17266.3,18.0207];
-	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
-	0 remoteExec ['setFeatureType', _this];
-	_this enableDynamicSimulation true;
-};
-
-private _item8 = objNull;
-if (_layerRoot) then {
-	_item8 = createVehicle ["PortableHelipadLight_01_yellow_F",[15158.5,17274.1,0],[],0,"CAN_COLLIDE"];
-	_this = _item8;
-	_objects pushback _this;
-	_objectIDs pushback 8;
-	_this setPosWorld [15158.5,17274.1,18.0099];
-	_this setVectorDirAndUp [[0,0.999999,-0.00133721],[-0.00133721,0.00133721,0.999998]];
-	0 remoteExec ['setFeatureType', _this];
-	_this enableDynamicSimulation true;
-};
-
-private _item9 = objNull;
-if (_layerRoot) then {
-	_item9 = createVehicle ["PortableHelipadLight_01_yellow_F",[15150.6,17266,0],[],0,"CAN_COLLIDE"];
-	_this = _item9;
-	_objects pushback _this;
-	_objectIDs pushback 9;
-	_this setPosWorld [15150.6,17266,18.0181];
-	_this setVectorDirAndUp [[0,0.999996,-0.00265204],[0,0.00265204,0.999996]];
-	0 remoteExec ['setFeatureType', _this];
-	_this enableDynamicSimulation true;
-};
-
-private _item10 = objNull;
-if (_layerRoot) then {
-	_item10 = createVehicle ["PortableHelipadLight_01_yellow_F",[15158.9,17258.2,0],[],0,"CAN_COLLIDE"];
-	_this = _item10;
-	_objects pushback _this;
-	_objectIDs pushback 10;
-	_this setPosWorld [15158.9,17258.2,18.0207];
-	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
-	0 remoteExec ['setFeatureType', _this];
-	_this enableDynamicSimulation true;
-};
-
-private _item11 = objNull;
-if (_layerRoot) then {
-	_item11 = createVehicle ["PortableHelipadLight_01_green_F",[15159,17265.8,0],[],0,"CAN_COLLIDE"];
-	_this = _item11;
-	_objects pushback _this;
-	_objectIDs pushback 11;
-	_this setPosWorld [15159,17265.8,18.0196];
-	_this setVectorDirAndUp [[0.819687,-0.572811,0.000739998],[0,0.00129187,0.999999]];
-	0 remoteExec ['setFeatureType', _this];
-	_this enableDynamicSimulation true;
+	_this enableSimulation false;
 };
 
 private _item13 = objNull;
@@ -859,184 +1029,146 @@ if (_layer12) then {
 	_this enableSimulation false;
 };
 
-private _item70 = objNull;
-if (_layer69) then {
-	_item70 = createSimpleObject ["RoadCone_F",[15300.1,17533.2,16.6155]];
-	_this = _item70;
+private _item0 = objNull;
+if (_layerRoot) then {
+	_item0 = createVehicle ["Land_HelipadSquare_F",[15136.2,17287.5,0],[],0,"CAN_COLLIDE"];
+	_this = _item0;
 	_objects pushback _this;
-	_objectIDs pushback 70;
-	_this setPosWorld [15300.1,17533.2,16.8834];
-	_this setVectorDirAndUp [[0.661324,0.749875,0.0183957],[-0.0293202,0.00133664,0.999569]];
+	_objectIDs pushback 0;
+	_this setPosWorld [15136.2,17287.5,17.7729];
+	_this setVectorDirAndUp [[-0.712611,0.7014,0.0149417],[-0.00265204,-0.0239909,0.999709]];
 	0 remoteExec ['setFeatureType', _this];
-	[_this, 1] call ace_cargo_fnc_setSize;;
 };
 
-private _item71 = objNull;
-if (_layer69) then {
-	_item71 = createSimpleObject ["RoadCone_F",[15304.8,17539.6,16.5871]];
-	_this = _item71;
+private _item1 = objNull;
+if (_layerRoot) then {
+	_item1 = createVehicle ["Land_HelipadSquare_F",[15158.7,17266.1,7.62939e-006],[],0,"CAN_COLLIDE"];
+	_this = _item1;
 	_objects pushback _this;
-	_objectIDs pushback 71;
-	_this setPosWorld [15304.8,17539.6,16.8551];
-	_this setVectorDirAndUp [[0.0624047,-0.998047,0.00289629],[-0.00399675,0.00265202,0.999988]];
+	_objectIDs pushback 1;
+	_this setPosWorld [15158.7,17266.1,17.9085];
+	_this setVectorDirAndUp [[-0.720575,0.693377,-0.000895754],[0,0.00129187,0.999999]];
 	0 remoteExec ['setFeatureType', _this];
-	[_this, 1] call ace_cargo_fnc_setSize;;
 };
 
-private _item72 = objNull;
-if (_layer69) then {
-	_item72 = createSimpleObject ["RoadCone_F",[15297.3,17530.2,16.5946]];
-	_this = _item72;
+private _item2 = objNull;
+if (_layerRoot) then {
+	_item2 = createVehicle ["PortableHelipadLight_01_blue_F",[15136.1,17295.5,-9.53674e-006],[],0,"CAN_COLLIDE"];
+	_this = _item2;
 	_objects pushback _this;
-	_objectIDs pushback 72;
-	_this setPosWorld [15297.3,17530.2,16.8626];
-	_this setVectorDirAndUp [[-0.998019,-0.0624157,-0.00790185],[-0.0080009,0.00133717,0.999967]];
+	_objectIDs pushback 2;
+	_this setPosWorld [15136.1,17295.5,17.9634];
+	_this setVectorDirAndUp [[0,0.999996,0.00265199],[-0.00133721,-0.00265199,0.999996]];
 	0 remoteExec ['setFeatureType', _this];
-	[_this, 1] call ace_cargo_fnc_setSize;;
+	_this enableDynamicSimulation true;
 };
 
-private _item73 = objNull;
-if (_layer69) then {
-	_item73 = createSimpleObject ["RoadCone_F",[15293.7,17527,16.6024]];
-	_this = _item73;
+private _item3 = objNull;
+if (_layerRoot) then {
+	_item3 = createVehicle ["PortableHelipadLight_01_blue_F",[15144.1,17287.6,-7.62939e-006],[],0,"CAN_COLLIDE"];
+	_this = _item3;
 	_objects pushback _this;
-	_objectIDs pushback 73;
-	_this setPosWorld [15293.7,17527,16.8703];
-	_this setVectorDirAndUp [[0.980169,-0.197839,0.0113012],[-0.00533768,0.0306509,0.999516]];
+	_objectIDs pushback 3;
+	_this setPosWorld [15144.1,17287.6,17.9172];
+	_this setVectorDirAndUp [[0,0.999956,0.00932853],[-0.0093285,-0.00932813,0.999913]];
 	0 remoteExec ['setFeatureType', _this];
-	[_this, 1] call ace_cargo_fnc_setSize;;
+	_this enableDynamicSimulation true;
 };
 
-private _item74 = objNull;
-if (_layer69) then {
-	_item74 = createSimpleObject ["RoadCone_F",[15302.9,17536.4,16.6004]];
-	_this = _item74;
+private _item4 = objNull;
+if (_layerRoot) then {
+	_item4 = createVehicle ["PortableHelipadLight_01_blue_F",[15136.2,17279.6,4.19617e-005],[],0,"CAN_COLLIDE"];
+	_this = _item4;
 	_objects pushback _this;
-	_objectIDs pushback 74;
-	_this setPosWorld [15302.9,17536.4,16.8684];
-	_this setVectorDirAndUp [[0.749855,-0.661588,0.00440576],[0,0.00665923,0.999978]];
+	_objectIDs pushback 4;
+	_this setPosWorld [15136.2,17279.6,17.9279];
+	_this setVectorDirAndUp [[0,0.999304,-0.0373063],[0.0306514,0.0372888,0.998834]];
 	0 remoteExec ['setFeatureType', _this];
-	[_this, 1] call ace_cargo_fnc_setSize;;
+	_this enableDynamicSimulation true;
 };
 
-private _item75 = objNull;
-if (_layer69) then {
-	_item75 = createSimpleObject ["RoadCone_F",[15304,17541.4,16.5789]];
-	_this = _item75;
+private _item5 = objNull;
+if (_layerRoot) then {
+	_item5 = createVehicle ["PortableHelipadLight_01_blue_F",[15128.2,17287.4,-9.53674e-006],[],0,"CAN_COLLIDE"];
+	_this = _item5;
 	_objects pushback _this;
-	_objectIDs pushback 75;
-	_this setPosWorld [15304,17541.4,16.8469];
-	_this setVectorDirAndUp [[0.661603,0.749854,0.000655636],[-0.00399675,0.00265202,0.999988]];
+	_objectIDs pushback 5;
+	_this setPosWorld [15128.2,17287.4,17.9174];
+	_this setVectorDirAndUp [[0,0.999956,-0.0093285],[0.00532655,0.00932837,0.999942]];
 	0 remoteExec ['setFeatureType', _this];
-	[_this, 1] call ace_cargo_fnc_setSize;;
+	_this enableDynamicSimulation true;
 };
 
-private _item76 = objNull;
-if (_layer69) then {
-	_item76 = createSimpleObject ["RoadCone_F",[15311.9,17533.4,16.6923]];
-	_this = _item76;
+private _item6 = objNull;
+if (_layerRoot) then {
+	_item6 = createVehicle ["PortableHelipadLight_01_green_F",[15136.4,17287.3,-1.52588e-005],[],0,"CAN_COLLIDE"];
+	_this = _item6;
 	_objects pushback _this;
-	_objectIDs pushback 76;
-	_this setPosWorld [15311.9,17533.4,16.96];
-	_this setVectorDirAndUp [[0.0624052,-0.996962,0.0466075],[-0.00133721,0.0466149,0.998912]];
+	_objectIDs pushback 6;
+	_this setPosWorld [15136.4,17287.3,17.8785];
+	_this setVectorDirAndUp [[0,0.999712,0.023991],[-0.00265204,-0.0239909,0.999709]];
 	0 remoteExec ['setFeatureType', _this];
-	[_this, 1] call ace_cargo_fnc_setSize;;
+	_this enableDynamicSimulation true;
 };
 
-private _item77 = objNull;
-if (_layer69) then {
-	_item77 = createSimpleObject ["RoadCone_F",[15303.9,17524.6,16.7874]];
-	_this = _item77;
+private _item7 = objNull;
+if (_layerRoot) then {
+	_item7 = createVehicle ["PortableHelipadLight_01_yellow_F",[15166.6,17266.3,0],[],0,"CAN_COLLIDE"];
+	_this = _item7;
 	_objects pushback _this;
-	_objectIDs pushback 77;
-	_this setPosWorld [15303.9,17524.6,17.0552];
-	_this setVectorDirAndUp [[0.749532,-0.661077,0.0343294],[-0.0293202,0.0186548,0.999396]];
+	_objectIDs pushback 7;
+	_this setPosWorld [15166.6,17266.3,18.0207];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
 	0 remoteExec ['setFeatureType', _this];
-	[_this, 1] call ace_cargo_fnc_setSize;;
+	_this enableDynamicSimulation true;
 };
 
-private _item78 = objNull;
-if (_layer69) then {
-	_item78 = createSimpleObject ["RoadCone_F",[15300.2,17521.5,16.8083]];
-	_this = _item78;
+private _item8 = objNull;
+if (_layerRoot) then {
+	_item8 = createVehicle ["PortableHelipadLight_01_yellow_F",[15158.5,17274.1,0],[],0,"CAN_COLLIDE"];
+	_this = _item8;
 	_objects pushback _this;
-	_objectIDs pushback 78;
-	_this setPosWorld [15300.2,17521.5,17.0761];
-	_this setVectorDirAndUp [[-0.749743,0.660892,-0.0332665],[-0.0173282,0.0306468,0.99938]];
+	_objectIDs pushback 8;
+	_this setPosWorld [15158.5,17274.1,18.0099];
+	_this setVectorDirAndUp [[0,0.999999,-0.00133721],[-0.00133721,0.00133721,0.999998]];
 	0 remoteExec ['setFeatureType', _this];
-	[_this, 1] call ace_cargo_fnc_setSize;;
+	_this enableDynamicSimulation true;
 };
 
-private _item79 = objNull;
-if (_layer69) then {
-	_item79 = createSimpleObject ["RoadCone_F",[15308.9,17530.2,16.7809]];
-	_this = _item79;
+private _item9 = objNull;
+if (_layerRoot) then {
+	_item9 = createVehicle ["PortableHelipadLight_01_yellow_F",[15150.6,17266,0],[],0,"CAN_COLLIDE"];
+	_this = _item9;
 	_objects pushback _this;
-	_objectIDs pushback 79;
-	_this setPosWorld [15308.9,17530.2,17.0487];
-	_this setVectorDirAndUp [[0.0623958,-0.997549,0.0316725],[-0.0173282,0.0306468,0.99938]];
+	_objectIDs pushback 9;
+	_this setPosWorld [15150.6,17266,18.0181];
+	_this setVectorDirAndUp [[0,0.999996,-0.00265204],[0,0.00265204,0.999996]];
 	0 remoteExec ['setFeatureType', _this];
-	[_this, 1] call ace_cargo_fnc_setSize;;
+	_this enableDynamicSimulation true;
 };
 
-private _item80 = objNull;
-if (_layer69) then {
-	_item80 = createSimpleObject ["RoadCone_F",[15314.2,17536.2,16.6152]];
-	_this = _item80;
+private _item10 = objNull;
+if (_layerRoot) then {
+	_item10 = createVehicle ["PortableHelipadLight_01_yellow_F",[15158.9,17258.2,0],[],0,"CAN_COLLIDE"];
+	_this = _item10;
 	_objects pushback _this;
-	_objectIDs pushback 80;
-	_this setPosWorld [15314.2,17536.2,16.8832];
-	_this setVectorDirAndUp [[-0.833125,-0.55308,0.00221054],[0,0.00399675,0.999992]];
+	_objectIDs pushback 10;
+	_this setPosWorld [15158.9,17258.2,18.0207];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
 	0 remoteExec ['setFeatureType', _this];
-	[_this, 1] call ace_cargo_fnc_setSize;;
+	_this enableDynamicSimulation true;
 };
 
-private _item81 = objNull;
-if (_layer69) then {
-	_item81 = createSimpleObject ["RoadCone_F",[15306.6,17527.6,16.8123]];
-	_this = _item81;
+private _item11 = objNull;
+if (_layerRoot) then {
+	_item11 = createVehicle ["PortableHelipadLight_01_green_F",[15159,17265.8,0],[],0,"CAN_COLLIDE"];
+	_this = _item11;
 	_objects pushback _this;
-	_objectIDs pushback 81;
-	_this setPosWorld [15306.6,17527.6,17.0801];
-	_this setVectorDirAndUp [[0.0623784,-0.998048,0.00316434],[-0.0293202,0.00133664,0.999569]];
+	_objectIDs pushback 11;
+	_this setPosWorld [15159,17265.8,18.0196];
+	_this setVectorDirAndUp [[0.819687,-0.572811,0.000739998],[0,0.00129187,0.999999]];
 	0 remoteExec ['setFeatureType', _this];
-	[_this, 1] call ace_cargo_fnc_setSize;;
-};
-
-private _item82 = objNull;
-if (_layer69) then {
-	_item82 = createVehicle ["Land_CncBarrier_stripes_F",[15298.5,17541.9,1.90735e-006],[],0,"CAN_COLLIDE"];
-	_this = _item82;
-	_objects pushback _this;
-	_objectIDs pushback 82;
-	_this setPosWorld [15298.5,17541.9,16.9355];
-	_this setVectorDirAndUp [[-0.0362552,0.999318,-0.00700201],[-0.0093285,0.00666789,0.999934]];
-	0 remoteExec ['setFeatureType', _this];
-	_this enableSimulation false;
-};
-
-private _item83 = objNull;
-if (_layer69) then {
-	_item83 = createVehicle ["Land_CncBarrier_stripes_F",[15293.3,17541.8,1.90735e-006],[],0,"CAN_COLLIDE"];
-	_this = _item83;
-	_objects pushback _this;
-	_objectIDs pushback 83;
-	_this setPosWorld [15293.3,17541.8,16.8884];
-	_this setVectorDirAndUp [[-0.076361,0.997053,-0.00736105],[-0.0093285,0.00666789,0.999934]];
-	0 remoteExec ['setFeatureType', _this];
-	_this enableSimulation false;
-};
-
-private _item84 = objNull;
-if (_layer69) then {
-	_item84 = createVehicle ["Land_CncBarrier_stripes_F",[15302.2,17541.8,0],[],0,"CAN_COLLIDE"];
-	_this = _item84;
-	_objects pushback _this;
-	_objectIDs pushback 84;
-	_this setPosWorld [15302.2,17541.8,16.9564];
-	_this setVectorDirAndUp [[-0.0362598,0.999339,-0.00279608],[-0.00399679,0.00265288,0.999988]];
-	0 remoteExec ['setFeatureType', _this];
-	_this enableSimulation false;
+	_this enableDynamicSimulation true;
 };
 
 private _item85 = objNull;
@@ -1430,7 +1562,7 @@ if (_layerRoot) then {
 	_objects pushback _this;
 	_objectIDs pushback 110;
 	_this setPosWorld [15163,17263.1,19.3941];
-	_this setVectorDirAndUp [[0.876987,-0.480514,0.000620605],[0,0.00129154,0.999999]];
+	_this setVectorDirAndUp [[-0.240837,-0.970566,0],[0,0,1]];
 	0 remoteExec ['setFeatureType', _this];
 	_this setname "Adam Murphy";;
 	_this setface "WhiteHead_19";;
@@ -1455,7 +1587,7 @@ if (_layerRoot) then {
 	_objects pushback _this;
 	_objectIDs pushback 111;
 	_this setPosWorld [15163.5,17264,19.3934];
-	_this setVectorDirAndUp [[0.876987,-0.480514,0.000620605],[0,0.00129154,0.999999]];
+	_this setVectorDirAndUp [[0.737285,0.675582,0],[0,0,1]];
 	0 remoteExec ['setFeatureType', _this];
 	_this setname "Oliver Abbey";;
 	_this setface "AfricanHead_02";;
@@ -1480,7 +1612,7 @@ if (_layerRoot) then {
 	_objects pushback _this;
 	_objectIDs pushback 112;
 	_this setPosWorld [15162.6,17264.7,19.6514];
-	_this setVectorDirAndUp [[0.876987,-0.480514,0.000620605],[0,0.00129154,0.999999]];
+	_this setVectorDirAndUp [[0.405127,0.914261,0],[0,0,1]];
 	0 remoteExec ['setFeatureType', _this];
 	_this setname "Chad Clarke";;
 	_this setface "Barklem";;
@@ -1505,7 +1637,7 @@ if (_layerRoot) then {
 	_objects pushback _this;
 	_objectIDs pushback 113;
 	_this setPosWorld [15161.9,17263.3,19.6345];
-	_this setVectorDirAndUp [[0.876987,-0.480514,0.000620605],[0,0.00129154,0.999999]];
+	_this setVectorDirAndUp [[-0.515018,-0.857179,0],[0,0,1]];
 	0 remoteExec ['setFeatureType', _this];
 	_this setname "Samuel Young";;
 	_this setface "WhiteHead_02";;
@@ -1521,6 +1653,23 @@ if (_layerRoot) then {
 	_this setVariable ['ACE_isEOD', false, true];
 	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
 	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
+};
+
+private _item191 = objNull;
+if (_layerRoot) then {
+	_item191 = createVehicle ["RHS_UH60M_d",[15159.2,17265.7,0.0779991],[],0,"CAN_COLLIDE"];
+	_this = _item191;
+	_objects pushback _this;
+	_objectIDs pushback 191;
+	_this setPosWorld [15159.2,17265.7,20.7029];
+	_this setVectorDirAndUp [[0.876987,-0.480514,0.000620605],[0,0.00129154,0.999999]];
+	_this setPylonLoadout [1,"rhsusf_M130_CMFlare_Chaff_Magazine_x2"];
+	0 remoteExec ['setFeatureType', _this];
+	[_this,"[[[[""rhs_weap_m4_carryhandle"",""FirstAidKit"",""Medikit""],[2,10,2]],[[""rhs_mag_30Rnd_556x45_M855A1_Stanag"",""rhs_mag_m67"",""rhs_mag_m18_green"",""rhs_mag_m18_red"",""rhs_mag_an_m8hc""],[12,4,2,2,4]],[[],[]],[[""B_Parachute""],[4]]],false]"] call bis_fnc_initAmmoBox;;
+	_this setVehicleReportOwnPosition true;
+	parseSimpleArray "[[""hithull"",""hitengine1"",""hitengine2"",""hitengine"",""hittail"",""hitvrotor"",""hithrotor"",""hitwinch"",""hitglass7"",""hithydraulics"",""hittransmission"",""hithstabilizerl1"",""hithstabilizerr1"",""hitpylon1"",""hitpylon2"",""hitpylon3"",""hitpylon4"",""hitfuel"",""hitavionics"",""hitmissiles"",""hitglass1"",""hitglass2"",""hitglass3"",""hitglass4"",""hitglass5"",""hitglass6"",""hitglass8"",""hitglass9"",""hitglass10"",""hitglass11"",""hitglass12"",""hitglass13"",""hitglass14"",""hitrglass"",""hitlglass"",""hitengine3"",""hitlight"",""hitgear"",""hitvstabilizer1"",""hitpitottube"",""hitstaticport"",""hitstarter1"",""hitstarter2"",""hitstarter3"",""#p svetlo"",""#l svetlo"",""#cabin_light"",""#cargo_light_1"",""#cargo_light_2""],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]" params ['_hitpoints', '_damage']; {_this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints;
+	[_this, 8] call ace_cargo_fnc_setSpace;;
+	[_this] call ace_fastroping_fnc_equipFRIES;
 };
 
 private _item114 = objNull;
@@ -1714,114 +1863,6 @@ if (_layerRoot) then {
 	[_this,"[[[[],[]],[[],[]],[[""FirstAidKit""],[4]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
 	parseSimpleArray "[[""hitengine"",""hitfuel"",""hitlfwheel"",""hitlf2wheel"",""hitrfwheel"",""hitrf2wheel"",""hitrglass"",""hitlglass"",""hitglass1"",""hitglass2"",""hitglass3"",""hitglass4"",""hitglass5"",""hitglass6"",""hitbody"",""hitlbwheel"",""hitlmwheel"",""hitrbwheel"",""hitrmwheel"",""hithull"",""#light_l"",""#light_r""],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]" params ['_hitpoints', '_damage']; {_this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints;
 	_this setVariable ['s',1];;
-};
-
-private _item131 = objNull;
-if (_layer130) then {
-	_item131 = createVehicle ["Land_Cargo20_white_F",[15288.2,17388.5,0.00304794],[],0,"CAN_COLLIDE"];
-	_this = _item131;
-	_objects pushback _this;
-	_objectIDs pushback 131;
-	_this setPosWorld [15288.2,17388.5,19.2094];
-	_this setVectorDirAndUp [[-0.691094,-0.722755,0.00374957],[0.00265199,0.00265203,0.999993]];
-	0 remoteExec ['setFeatureType', _this];
-	_this enableSimulation false;
-	[_this, 50] call ace_cargo_fnc_setSize;;
-};
-
-private _item132 = objNull;
-if (_layer130) then {
-	_item132 = createVehicle ["Land_Cargo20_white_F",[15285.7,17385.9,0.00304794],[],0,"CAN_COLLIDE"];
-	_this = _item132;
-	_objects pushback _this;
-	_objectIDs pushback 132;
-	_this setPosWorld [15285.7,17385.9,19.2231];
-	_this setVectorDirAndUp [[-0.691094,-0.722755,0.00374957],[0.00265199,0.00265203,0.999993]];
-	0 remoteExec ['setFeatureType', _this];
-	_this enableSimulation false;
-	[_this, 50] call ace_cargo_fnc_setSize;;
-};
-
-private _item133 = objNull;
-if (_layer130) then {
-	_item133 = createVehicle ["Land_HBarrier_5_F",[15282.2,17388.2,1.90735e-006],[],0,"CAN_COLLIDE"];
-	_this = _item133;
-	_objects pushback _this;
-	_objectIDs pushback 133;
-	_this setPosWorld [15282.2,17388.2,18.6394];
-	_this setVectorDirAndUp [[-0.72276,0.691099,8.39335e-005],[0.00265199,0.00265203,0.999993]];
-	0 remoteExec ['setFeatureType', _this];
-	_this enableSimulation false;
-};
-
-private _item134 = objNull;
-if (_layer130) then {
-	_item134 = createVehicle ["Land_HBarrier_5_F",[15286,17392.2,0.00354576],[],0,"CAN_COLLIDE"];
-	_this = _item134;
-	_objects pushback _this;
-	_objectIDs pushback 134;
-	_this setPosWorld [15286,17392.2,18.6213];
-	_this setVectorDirAndUp [[-0.722757,0.691103,0.000126477],[0.00399666,0.00399671,0.999984]];
-	0 remoteExec ['setFeatureType', _this];
-	_this enableSimulation false;
-};
-
-private _item135 = objNull;
-if (_layer130) then {
-	_item135 = createVehicle ["Land_LampShabby_F",[15303.5,17392.6,0],[],0,"CAN_COLLIDE"];
-	_this = _item135;
-	_objects pushback _this;
-	_objectIDs pushback 135;
-	_this setPosWorld [15303.5,17392.6,21.4985];
-	_this setVectorDirAndUp [[0.722762,-0.691097,0],[0,0,1]];
-	0 remoteExec ['setFeatureType', _this];
-};
-
-private _item136 = objNull;
-if (_layer130) then {
-	_item136 = createVehicle ["Land_HBarrier_5_F",[15322.3,17404.1,1.90735e-006],[],0,"CAN_COLLIDE"];
-	_this = _item136;
-	_objects pushback _this;
-	_objectIDs pushback 136;
-	_this setPosWorld [15322.3,17404.1,17.9601];
-	_this setVectorDirAndUp [[-0.691008,-0.722651,0.0168328],[0.0159975,0.00799242,0.99984]];
-	0 remoteExec ['setFeatureType', _this];
-	_this enableSimulation false;
-};
-
-private _item137 = objNull;
-if (_layer130) then {
-	_item137 = createVehicle ["Land_HBarrier_5_F",[15316.3,17409.8,0],[],0,"CAN_COLLIDE"];
-	_this = _item137;
-	_objects pushback _this;
-	_objectIDs pushback 137;
-	_this setPosWorld [15316.3,17409.8,18.012];
-	_this setVectorDirAndUp [[-0.691008,-0.722651,0.0168328],[0.0159975,0.00799242,0.99984]];
-	0 remoteExec ['setFeatureType', _this];
-	_this enableSimulation false;
-};
-
-private _item138 = objNull;
-if (_layer130) then {
-	_item138 = createVehicle ["Land_HBarrier_5_F",[15310.6,17415.4,0],[],0,"CAN_COLLIDE"];
-	_this = _item138;
-	_objects pushback _this;
-	_objectIDs pushback 138;
-	_this setPosWorld [15310.6,17415.4,18.0781];
-	_this setVectorDirAndUp [[-0.690959,-0.722723,0.0157512],[0.0199947,0.00267389,0.999797]];
-	0 remoteExec ['setFeatureType', _this];
-	_this enableSimulation false;
-};
-
-private _item139 = objNull;
-if (_layer130) then {
-	_item139 = createVehicle ["Land_HelipadRescue_F",[15282.9,17409.7,1.90735e-006],[],0,"CAN_COLLIDE"];
-	_this = _item139;
-	_objects pushback _this;
-	_objectIDs pushback 139;
-	_this setPosWorld [15282.9,17409.7,17.8317];
-	_this setVectorDirAndUp [[-0.71644,0.697648,0.00108011],[0.00800059,0.00666796,0.999946]];
-	0 remoteExec ['setFeatureType', _this];
 };
 
 private _item141 = objNull;
@@ -2370,23 +2411,6 @@ if (_layerRoot) then {
 	0 remoteExec ['setFeatureType', _this];
 };
 
-private _item191 = objNull;
-if (_layerRoot) then {
-	_item191 = createVehicle ["RHS_UH60M_d",[15159.2,17265.7,0.0779991],[],0,"CAN_COLLIDE"];
-	_this = _item191;
-	_objects pushback _this;
-	_objectIDs pushback 191;
-	_this setPosWorld [15159.2,17265.7,20.7029];
-	_this setVectorDirAndUp [[0.876987,-0.480514,0.000620605],[0,0.00129154,0.999999]];
-	_this setPylonLoadout [1,"rhsusf_M130_CMFlare_Chaff_Magazine_x2"];
-	0 remoteExec ['setFeatureType', _this];
-	[_this,"[[[[""rhs_weap_m4_carryhandle"",""FirstAidKit"",""Medikit""],[2,10,2]],[[""rhs_mag_30Rnd_556x45_M855A1_Stanag"",""rhs_mag_m67"",""rhs_mag_m18_green"",""rhs_mag_m18_red"",""rhs_mag_an_m8hc""],[12,4,2,2,4]],[[],[]],[[""B_Parachute""],[4]]],false]"] call bis_fnc_initAmmoBox;;
-	_this setVehicleReportOwnPosition true;
-	parseSimpleArray "[[""hithull"",""hitengine1"",""hitengine2"",""hitengine"",""hittail"",""hitvrotor"",""hithrotor"",""hitwinch"",""hitglass7"",""hithydraulics"",""hittransmission"",""hithstabilizerl1"",""hithstabilizerr1"",""hitpylon1"",""hitpylon2"",""hitpylon3"",""hitpylon4"",""hitfuel"",""hitavionics"",""hitmissiles"",""hitglass1"",""hitglass2"",""hitglass3"",""hitglass4"",""hitglass5"",""hitglass6"",""hitglass8"",""hitglass9"",""hitglass10"",""hitglass11"",""hitglass12"",""hitglass13"",""hitglass14"",""hitrglass"",""hitlglass"",""hitengine3"",""hitlight"",""hitgear"",""hitvstabilizer1"",""hitpitottube"",""hitstaticport"",""hitstarter1"",""hitstarter2"",""hitstarter3"",""#p svetlo"",""#l svetlo"",""#cabin_light"",""#cargo_light_1"",""#cargo_light_2""],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]" params ['_hitpoints', '_damage']; {_this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints;
-	[_this, 8] call ace_cargo_fnc_setSpace;;
-	[_this] call ace_fastroping_fnc_equipFRIES;
-};
-
 private _item192 = objNull;
 if (_layerRoot) then {
 	_item192 = createVehicle ["rhsusf_m1240a1_m240_usarmy_d",[15168.3,17306.1,-7.43866e-005],[],0,"CAN_COLLIDE"];
@@ -2588,28 +2612,27 @@ if (_layerRoot) then {
 	[_this, 4] call ace_cargo_fnc_setSpace;;
 };
 
-private _item503 = objNull;
-if (_layer501) then {
-	_item503 = createVehicle ["Gunrack1",[15194.7,17290.6,0.0400009],[],0,"CAN_COLLIDE"];
-	_this = _item503;
+private _item505 = objNull;
+if (_layerRoot) then {
+	_item505 = createVehicle ["Land_CampingChair_V2_white_F",[15219,17330.9,0.568277],[],0,"CAN_COLLIDE"];
+	_this = _item505;
 	_objects pushback _this;
-	_objectIDs pushback 503;
-	_this setPosWorld [15194.7,17290.6,18.4844];
-	_this setVectorDirAndUp [[-0.724689,-0.689076,-0.000935967],[-0.00129154,0,0.999999]];
+	_objectIDs pushback 505;
+	_this setPosWorld [15219,17330.9,19.0587];
+	_this setVectorDirAndUp [[-0.838641,-0.544684,0.00057911],[0.000690534,0,1]];
 	0 remoteExec ['setFeatureType', _this];
-	_this enableSimulation false;
 };
 
-private _item504 = objNull;
-if (_layer501) then {
-	_item504 = createVehicle ["Gunrack1",[15192.4,17288.1,0.0400906],[],0,"CAN_COLLIDE"];
-	_this = _item504;
+private _item485 = objNull;
+if (_layerRoot) then {
+	_item485 = createVehicle ["ProtectionZone_Invisible_F",[15199.5,17316.2,0],[],0,"CAN_COLLIDE"];
+	_this = _item485;
 	_objects pushback _this;
-	_objectIDs pushback 504;
-	_this setPosWorld [15192.4,17288.1,18.4814];
-	_this setVectorDirAndUp [[-0.724689,-0.689076,-0.000936205],[-0.00129187,0,0.999999]];
+	_objectIDs pushback 485;
+	_this setPosWorld [15199.5,17316.2,22.6763];
+	_this setVectorDirAndUp [[0.709201,-0.705003,0.00189178],[-0.00399675,-0.0013372,0.999991]];
 	0 remoteExec ['setFeatureType', _this];
-	_this enableSimulation false;
+	_this allowdamage false;;
 };
 
 private _item99 = objNull;
@@ -2639,29 +2662,6 @@ if (_layerRoot) then {
 	_this setVariable ['ACE_isEOD', false, true];
 	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
 	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
-};
-
-private _item485 = objNull;
-if (_layerRoot) then {
-	_item485 = createVehicle ["ProtectionZone_Invisible_F",[15199.5,17316.2,0],[],0,"CAN_COLLIDE"];
-	_this = _item485;
-	_objects pushback _this;
-	_objectIDs pushback 485;
-	_this setPosWorld [15199.5,17316.2,22.6763];
-	_this setVectorDirAndUp [[0.709201,-0.705003,0.00189178],[-0.00399675,-0.0013372,0.999991]];
-	0 remoteExec ['setFeatureType', _this];
-	_this allowdamage false;;
-};
-
-private _item505 = objNull;
-if (_layerRoot) then {
-	_item505 = createVehicle ["Land_CampingChair_V2_white_F",[15219,17330.9,0.568277],[],0,"CAN_COLLIDE"];
-	_this = _item505;
-	_objects pushback _this;
-	_objectIDs pushback 505;
-	_this setPosWorld [15219,17330.9,19.0587];
-	_this setVectorDirAndUp [[-0.838641,-0.544684,0.00057911],[0.000690534,0,1]];
-	0 remoteExec ['setFeatureType', _this];
 };
 
 private _item506 = objNull;
@@ -2804,100 +2804,6 @@ if (_layerRoot) then {
 	_this setvariable ["BIS_fnc_initModules_disableAutoActivation",true];
 };
 
-private _item182 = objNull;
-if (_layerRoot) then {
-	_item182 = (group (missionNamespace getvariable ["BIS_functions_mainscope",objnull])) createUnit ["ModuleCurator_F",[0,0,186.054],[],0,"CAN_COLLIDE"];
-	_this = _item182;
-	_logics pushback _this;
-	_logicIDs pushback 182;
-	_this setPosWorld [0,0,0.0841986];
-	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
-	_this setVariable ['Owner',"gm",true];;
-	_this setVariable ['Name',"Game Master",true];;
-	_this setVariable ['Addons',3,true];;
-	_this setVariable ['Forced',0,true];;
-	_this setvariable ["BIS_fnc_initModules_disableAutoActivation",true];
-};
-
-private _item183 = objNull;
-if (_layerRoot) then {
-	_item183 = (group (missionNamespace getvariable ["BIS_functions_mainscope",objnull])) createUnit ["ModuleCurator_F",[0,0,186.054],[],0,"CAN_COLLIDE"];
-	_this = _item183;
-	_logics pushback _this;
-	_logicIDs pushback 183;
-	_this setPosWorld [0,0,0.0841986];
-	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
-	_this setVariable ['Owner',"gmod",true];;
-	_this setVariable ['Name',"Game Moderator",true];;
-	_this setVariable ['Addons',3,true];;
-	_this setVariable ['Forced',0,true];;
-	_this setvariable ["BIS_fnc_initModules_disableAutoActivation",true];
-};
-
-private _item184 = objNull;
-if (_layerRoot) then {
-	_item184 = (group (missionNamespace getvariable ["BIS_functions_mainscope",objnull])) createUnit ["ModuleCuratorAddEditableObjects",[0,0,186.054],[],0,"CAN_COLLIDE"];
-	_this = _item184;
-	_logics pushback _this;
-	_logicIDs pushback 184;
-	_this setPosWorld [0,0,0.0841986];
-	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
-	_this setVariable ['Curator',"",true];;
-	_this setVariable ['AddCrew',true,true];;
-	_this setvariable ["BIS_fnc_initModules_disableAutoActivation",true];
-};
-
-private _item185 = objNull;
-if (_layerRoot) then {
-	_item185 = (group (missionNamespace getvariable ["BIS_functions_mainscope",objnull])) createUnit ["ModuleEditTerrainObject_F",[15214.9,17329,0],[],0,"CAN_COLLIDE"];
-	_this = _item185;
-	_logics pushback _this;
-	_logicIDs pushback 185;
-	_this setPosWorld [15214.9,17329,17.9731];
-	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
-	_this setVariable ["objectArea",[1,1,0,false,-1]];
-	_this setVariable ["#name",""];
-	_this setVariable ["#initServer",""];
-	_this setVariable ["#init",""];
-	_this setVariable ["#filter",7];
-	_this setVariable ["#state",0];
-	_this setVariable ["#allowDamage",true];
-	_this setVariable ["#doorStates",[21824,0,0]];
-	_this setvariable ["BIS_fnc_initModules_disableAutoActivation",true];
-};
-
-private _item186 = objNull;
-if (_layerRoot) then {
-	_item186 = (group (missionNamespace getvariable ["BIS_functions_mainscope",objnull])) createUnit ["ModuleEditTerrainObject_F",[15288.7,17472.8,0],[],0,"CAN_COLLIDE"];
-	_this = _item186;
-	_logics pushback _this;
-	_logicIDs pushback 186;
-	_this setPosWorld [15288.7,17472.8,17.6031];
-	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
-	_this setVariable ["objectArea",[1,1,0,false,-1]];
-	_this setVariable ["#name",""];
-	_this setVariable ["#initServer",""];
-	_this setVariable ["#init",""];
-	_this setVariable ["#filter",7];
-	_this setVariable ["#state",0];
-	_this setVariable ["#allowDamage",true];
-	_this setVariable ["#doorStates",[21845,0,0]];
-	_this setvariable ["BIS_fnc_initModules_disableAutoActivation",true];
-};
-
-private _item188 = objNull;
-if (_layerRoot) then {
-	_item188 = (group (missionNamespace getvariable ["BIS_functions_mainscope",objnull])) createUnit ["ModuleCuratorAddEditableObjects",[0,0,186.054],[],0,"CAN_COLLIDE"];
-	_this = _item188;
-	_logics pushback _this;
-	_logicIDs pushback 188;
-	_this setPosWorld [0,0,0.0841986];
-	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
-	_this setVariable ['Curator',"",true];;
-	_this setVariable ['AddCrew',true,true];;
-	_this setvariable ["BIS_fnc_initModules_disableAutoActivation",true];
-};
-
 private _item196 = objNull;
 if (_layerRoot) then {
 	_item196 = (group (missionNamespace getvariable ["BIS_functions_mainscope",objnull])) createUnit ["ModuleHideTerrainObjects_F",[15188.7,17366.2,5.44572],[],0,"CAN_COLLIDE"];
@@ -2915,10 +2821,10 @@ if (_layerRoot) then {
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 // Layers
+if (_layer12) then {missionNamespace setVariable ["temp_Canteen #1",[[_item13,_item14,_item15,_item16,_item17,_item18,_item19,_item20,_item21,_item22,_item23,_item24,_item25,_item26,_item27,_item28,_item29,_item30,_item31,_item32,_item33,_item34,_item35,_item36,_item37,_item38,_item39,_item40,_item41,_item42,_item43,_item44,_item45,_item46,_item47,_item48,_item49,_item50,_item51,_item52,_item53,_item54,_item55,_item56,_item57,_item58,_item59,_item60,_item61,_item62,_item63,_item64,_item65,_item66,_item67,_item68],[]]];};
 if (_layer501) then {missionNamespace setVariable ["temp_SIA ZGM Essentials",[[_item503,_item504],[]]];};
 if (_layer130) then {missionNamespace setVariable ["temp_Medical Laboratory [BLU]",[[_item131,_item132,_item133,_item134,_item135,_item136,_item137,_item138,_item139],[]]];};
 if (_layer69) then {missionNamespace setVariable ["temp_Checkpoint [BLU]",[[_item70,_item71,_item72,_item73,_item74,_item75,_item76,_item77,_item78,_item79,_item80,_item81,_item82,_item83,_item84],[]]];};
-if (_layer12) then {missionNamespace setVariable ["temp_Canteen #1",[[_item13,_item14,_item15,_item16,_item17,_item18,_item19,_item20,_item21,_item22,_item23,_item24,_item25,_item26,_item27,_item28,_item29,_item30,_item31,_item32,_item33,_item34,_item35,_item36,_item37,_item38,_item39,_item40,_item41,_item42,_item43,_item44,_item45,_item46,_item47,_item48,_item49,_item50,_item51,_item52,_item53,_item54,_item55,_item56,_item57,_item58,_item59,_item60,_item61,_item62,_item63,_item64,_item65,_item66,_item67,_item68],[]]];};
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -2935,13 +2841,19 @@ if (!isNull _item113 && !isNull _item191) then {_item113 moveInTurret [_item191,
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 // Connections
-if (!isNull _item182 && !isNull _item184) then {_item182 synchronizeObjectsAdd [_item184]; _item184 synchronizeObjectsAdd [_item182];};
-if (!isNull _item183 && !isNull _item188) then {_item183 synchronizeObjectsAdd [_item188]; _item188 synchronizeObjectsAdd [_item183];};
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 // Inits (executed only once all entities exist; isNil used to ensure non-scheduled environment)
 isNil {
+	if !(isnull _item503) then {
+		this = _item503;
+		call{arsenals pushBack this};
+	};
+	if !(isnull _item504) then {
+		this = _item504;
+		call{arsenals pushBack this};
+	};
 	if !(isnull _item117) then {
 		this = _item117;
 		call{_repair = this; 
@@ -2962,14 +2874,6 @@ isNil {
 ] call BIS_fnc_holdActionAdd; 
 };
 	};
-	if !(isnull _item503) then {
-		this = _item503;
-		call{arsenals pushBack this};
-	};
-	if !(isnull _item504) then {
-		this = _item504;
-		call{arsenals pushBack this};
-	};
 };
 
 
@@ -2978,12 +2882,6 @@ isNil {
 if !(isNull _item68) then {_item68 setvariable ["BIS_fnc_initModules_activate",true];};
 if !(isNull _item89) then {_item89 setvariable ["BIS_fnc_initModules_activate",true];};
 if !(isNull _item140) then {_item140 setvariable ["BIS_fnc_initModules_activate",true];};
-if !(isNull _item182) then {_item182 setvariable ["BIS_fnc_initModules_activate",true];};
-if !(isNull _item183) then {_item183 setvariable ["BIS_fnc_initModules_activate",true];};
-if !(isNull _item184) then {_item184 setvariable ["BIS_fnc_initModules_activate",true];};
-if !(isNull _item185) then {_item185 setvariable ["BIS_fnc_initModules_activate",true];};
-if !(isNull _item186) then {_item186 setvariable ["BIS_fnc_initModules_activate",true];};
-if !(isNull _item188) then {_item188 setvariable ["BIS_fnc_initModules_activate",true];};
 if !(isNull _item196) then {_item196 setvariable ["BIS_fnc_initModules_activate",true];};
 
 
