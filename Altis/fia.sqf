@@ -30,6 +30,14 @@ if (_layer845) then {
 	_groupIDs pushback 846;
 };
 
+private _item1005 = grpNull;
+if (_layerRoot) then {
+	_item1005 = createGroup west;
+	_this = _item1005;
+	_groups pushback _this;
+	_groupIDs pushback 1005;
+};
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 // Objects
@@ -55,7 +63,7 @@ if (_layer845) then {
 	_objects pushback _this;
 	_objectIDs pushback 849;
 	_this setPosWorld [5404.52,17919.7,76.9183];
-	_this setVectorDirAndUp [[0.969036,-0.246801,0.00758849],[0.00133688,0.0359765,0.999352]];
+	_this setVectorDirAndUp [[0.969036,-0.246801,0.00758264],[0.00134403,0.0359809,0.999352]];
 	_this setSkill 0.6;
 	0 remoteExec ['setFeatureType', _this];
 	_this allowdamage false;;
@@ -275,12 +283,12 @@ if (_layer845) then {
 
 private _item877 = objNull;
 if (_layer845) then {
-	_item877 = _item846 createUnit ["B_G_Soldier_F",[5378.4,17906.8,0.194702],[],0,"CAN_COLLIDE"];
+	_item877 = _item846 createUnit ["B_G_Soldier_F",[5378.4,17906.8,0.195],[],0,"CAN_COLLIDE"];
 	_this = _item877;
 	_objects pushback _this;
 	_objectIDs pushback 877;
-	_this setPosWorld [5378.4,17906.8,77.0656];
-	_this setVectorDirAndUp [[0.0765788,-0.99656,-0.0316842],[-0.00265204,-0.031981,0.999485]];
+	_this setPosWorld [5378.4,17906.8,77.0659];
+	_this setVectorDirAndUp [[0.0765795,-0.99656,-0.0316898],[-0.0026529,-0.0319867,0.999485]];
 	_this setSkill 0.6;
 	0 remoteExec ['setFeatureType', _this];
 	_this allowdamage false;;
@@ -303,12 +311,12 @@ if (_layer845) then {
 
 private _item879 = objNull;
 if (_layer845) then {
-	_item879 = _item846 createUnit ["B_G_Soldier_F",[5375.91,17909,-0.0105057],[],0,"CAN_COLLIDE"];
+	_item879 = _item846 createUnit ["B_G_Soldier_F",[5375.91,17909,-0.0110016],[],0,"CAN_COLLIDE"];
 	_this = _item879;
 	_objects pushback _this;
 	_objectIDs pushback 879;
-	_this setPosWorld [5375.91,17909,76.914];
-	_this setVectorDirAndUp [[0.101248,-0.994861,0],[0,0,1]];
+	_this setPosWorld [5375.91,17909,76.9135];
+	_this setVectorDirAndUp [[0.101247,-0.994861,0],[0,0,1]];
 	_this setUnitLoadout [["arifle_TRG21_F","","","",["30Rnd_556x45_Stanag",30],[],""],[],[],["U_BG_Guerilla2_2",[["FirstAidKit",1],["30Rnd_556x45_Stanag",2,30],["Chemlight_blue",1,1]]],["V_Pocketed_coyote_F",[["30Rnd_556x45_Stanag",3,30],["HandGrenade",1,1],["MiniGrenade",1,1],["SmokeShell",1,1],["SmokeShellGreen",1,1],["Chemlight_blue",1,1]]],[],"H_Shemag_olive","",[],["ItemMap","","ItemRadio","ItemCompass","ItemWatch",""]];
 	_this setSkill 0.6;
 	0 remoteExec ['setFeatureType', _this];
@@ -474,11 +482,11 @@ if (_layer845) then {
 
 private _item899 = objNull;
 if (_layer845) then {
-	_item899 = _item846 createUnit ["B_G_Soldier_lite_F",[5380.19,17905.2,0],[],0,"CAN_COLLIDE"];
+	_item899 = _item846 createUnit ["B_G_Soldier_lite_F",[5380.19,17904.9,0],[],0,"CAN_COLLIDE"];
 	_this = _item899;
 	_objects pushback _this;
 	_objectIDs pushback 899;
-	_this setPosWorld [5380.19,17905.2,76.8243];
+	_this setPosWorld [5380.19,17905,76.816];
 	_this setVectorDirAndUp [[-0.303068,0.952507,0.0296755],[-0.00265204,-0.0319829,0.999485]];
 	_this setUnitLoadout [["arifle_TRG20_F","","","",["30Rnd_556x45_Stanag",30],[],""],[],[],["U_BG_Guerilla2_1",[["FirstAidKit",1],["30Rnd_556x45_Stanag",2,30],["Chemlight_blue",1,1]]],["V_BandollierB_blk",[["30Rnd_556x45_Stanag",1,30],["MiniGrenade",1,1],["SmokeShell",1,1],["SmokeShellGreen",1,1],["Chemlight_blue",1,1]]],[],"H_Cap_oli","",[],["ItemMap","","ItemRadio","ItemCompass","ItemWatch",""]];
 	_this setSkill 0.6;
@@ -536,7 +544,7 @@ if (_layer845) then {
 	_objects pushback _this;
 	_objectIDs pushback 917;
 	_this setPosWorld [5384.36,17902.3,76.7373];
-	_this setVectorDirAndUp [[-0.119846,0.992792,0],[0,0,1]];
+	_this setVectorDirAndUp [[-0.119842,0.992793,0],[0,0,1]];
 	_this setUnitLoadout [["arifle_TRG20_F","","","",["30Rnd_556x45_Stanag",30],[],""],[],[],["U_BG_Guerilla3_1",[["FirstAidKit",1],["30Rnd_556x45_Stanag",2,30],["Chemlight_blue",1,1]]],["V_BandollierB_blk",[["30Rnd_556x45_Stanag",1,30],["MiniGrenade",1,1],["SmokeShell",1,1],["SmokeShellGreen",1,1],["Chemlight_blue",1,1]]],[],"H_Cap_oli","",[],["ItemMap","","ItemRadio","ItemCompass","ItemWatch",""]];
 	_this setSkill 0.6;
 	0 remoteExec ['setFeatureType', _this];
@@ -566,8 +574,9 @@ if (_layer845) then {
 	_objects pushback _this;
 	_objectIDs pushback 919;
 	_this setPosWorld [5400.94,17884.2,76.2225];
-	_this setVectorDirAndUp [[-0.22682,0.973231,0.037066],[0.0146601,-0.0346419,0.999292]];
+	_this setVectorDirAndUp [[-0.226814,0.973233,0.0370581],[0.0146601,-0.0346338,0.999293]];
 	_this setSkill 0.6;
+	_this setRank "CAPTAIN";
 	0 remoteExec ['setFeatureType', _this];
 	_this allowdamage false;;
 	_this setname "Thanos Dimitriadis";;
@@ -2116,7 +2125,7 @@ if (_layerRoot) then {
 	_this setVectorDirAndUp [[0.769551,-0.63674,-0.0485132],[0.0519345,-0.0133133,0.998562]];
 	0 remoteExec ['setFeatureType', _this];
 	_this enableSimulation false;
-	[_this,"[[[[""arifle_MXC_F"",""arifle_MXM_F"",""arifle_MX_F"",""arifle_MX_GL_F"",""arifle_MX_SW_F"",""arifle_SDAR_F"",""hgun_P07_F"",""hgun_Pistol_heavy_01_F"",""launch_NLAW_F"",""launch_Titan_F"",""launch_Titan_short_F"",""SMG_01_F"",""srifle_EBR_F"",""srifle_LRR_camo_F"",""srifle_LRR_F"",""FirstAidKit"",""Medikit""],[4,2,8,4,4,2,2,2,2,2,2,2,2,2,2,10,1]],[[""100Rnd_65x39_caseless_mag_Tracer"",""11Rnd_45ACP_Mag"",""16Rnd_9x21_Mag"",""1Rnd_HE_Grenade_shell"",""1Rnd_SmokeBlue_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""1Rnd_SmokeOrange_Grenade_shell"",""1Rnd_SmokePurple_Grenade_shell"",""1Rnd_SmokeRed_Grenade_shell"",""1Rnd_SmokeYellow_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""20Rnd_556x45_UW_mag"",""20Rnd_762x51_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""30Rnd_556x45_Stanag_red"",""30Rnd_65x39_caseless_mag"",""3Rnd_HE_Grenade_shell"",""7Rnd_408_Mag"",""APERSBoundingMine_Range_Mag"",""APERSMine_Range_Mag"",""APERSTripMine_Wire_Mag"",""ATMine_Range_Mag"",""B_IR_Grenade"",""ClaymoreDirectionalMine_Remote_Mag"",""DemoCharge_Remote_Mag"",""HandGrenade"",""Laserbatteries"",""MiniGrenade"",""NLAW_F"",""SatchelCharge_Remote_Mag"",""SLAMDirectionalMine_Wire_Mag"",""SmokeShell"",""SmokeShellBlue"",""SmokeShellGreen"",""SmokeShellOrange"",""SmokeShellPurple"",""SmokeShellRed"",""SmokeShellYellow"",""Titan_AA"",""Titan_AP"",""Titan_AT"",""UGL_FlareGreen_F"",""UGL_FlareWhite_F""],[16,14,14,15,2,2,2,2,2,2,2,6,24,14,6,52,3,12,5,5,5,5,8,5,5,24,5,24,8,5,5,2,2,2,2,2,2,2,6,6,6,2,2]],[[""Binocular"",""Laserdesignator"",""Rangefinder"",""acc_flashlight"",""acc_pointer_IR"",""ItemGPS"",""MineDetector"",""muzzle_snds_acp"",""muzzle_snds_B"",""muzzle_snds_H"",""muzzle_snds_H_SW"",""muzzle_snds_L"",""optic_Aco"",""optic_Aco_smg"",""optic_dms"",""optic_Hamr"",""optic_Holosight"",""optic_lrps"",""optic_MRD"",""optic_NVS"",""optic_SOS"",""optic_tws"",""optic_tws_mg"",""ToolKit""],[1,1,1,5,5,5,1,5,5,5,1,5,2,2,2,2,2,2,2,2,2,2,2,1]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+	[_this,"[[[[],[]],[[],[]],[[],[]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
 	[_this, 2] call ace_cargo_fnc_setSize;;
 };
 
@@ -2130,7 +2139,7 @@ if (_layerRoot) then {
 	_this setVectorDirAndUp [[0.963275,-0.26311,-0.0536072],[0.0519345,-0.0133133,0.998562]];
 	0 remoteExec ['setFeatureType', _this];
 	_this enableSimulation false;
-	[_this,"[[[[""arifle_MXC_F"",""arifle_MXM_F"",""arifle_MX_F"",""arifle_MX_GL_F"",""arifle_MX_SW_F"",""arifle_SDAR_F"",""hgun_P07_F"",""hgun_Pistol_heavy_01_F"",""launch_NLAW_F"",""launch_Titan_F"",""launch_Titan_short_F"",""SMG_01_F"",""srifle_EBR_F"",""srifle_LRR_camo_F"",""srifle_LRR_F"",""FirstAidKit"",""Medikit""],[4,2,8,4,4,2,2,2,2,2,2,2,2,2,2,10,1]],[[""100Rnd_65x39_caseless_mag_Tracer"",""11Rnd_45ACP_Mag"",""16Rnd_9x21_Mag"",""1Rnd_HE_Grenade_shell"",""1Rnd_SmokeBlue_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""1Rnd_SmokeOrange_Grenade_shell"",""1Rnd_SmokePurple_Grenade_shell"",""1Rnd_SmokeRed_Grenade_shell"",""1Rnd_SmokeYellow_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""20Rnd_556x45_UW_mag"",""20Rnd_762x51_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""30Rnd_556x45_Stanag_red"",""30Rnd_65x39_caseless_mag"",""3Rnd_HE_Grenade_shell"",""7Rnd_408_Mag"",""APERSBoundingMine_Range_Mag"",""APERSMine_Range_Mag"",""APERSTripMine_Wire_Mag"",""ATMine_Range_Mag"",""B_IR_Grenade"",""ClaymoreDirectionalMine_Remote_Mag"",""DemoCharge_Remote_Mag"",""HandGrenade"",""Laserbatteries"",""MiniGrenade"",""NLAW_F"",""SatchelCharge_Remote_Mag"",""SLAMDirectionalMine_Wire_Mag"",""SmokeShell"",""SmokeShellBlue"",""SmokeShellGreen"",""SmokeShellOrange"",""SmokeShellPurple"",""SmokeShellRed"",""SmokeShellYellow"",""Titan_AA"",""Titan_AP"",""Titan_AT"",""UGL_FlareGreen_F"",""UGL_FlareWhite_F""],[16,14,14,15,2,2,2,2,2,2,2,6,24,14,6,52,3,12,5,5,5,5,8,5,5,24,5,24,8,5,5,2,2,2,2,2,2,2,6,6,6,2,2]],[[""Binocular"",""Laserdesignator"",""Rangefinder"",""acc_flashlight"",""acc_pointer_IR"",""ItemGPS"",""MineDetector"",""muzzle_snds_acp"",""muzzle_snds_B"",""muzzle_snds_H"",""muzzle_snds_H_SW"",""muzzle_snds_L"",""optic_Aco"",""optic_Aco_smg"",""optic_dms"",""optic_Hamr"",""optic_Holosight"",""optic_lrps"",""optic_MRD"",""optic_NVS"",""optic_SOS"",""optic_tws"",""optic_tws_mg"",""ToolKit""],[1,1,1,5,5,5,1,5,5,5,1,5,2,2,2,2,2,2,2,2,2,2,2,1]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+	[_this,"[[[[],[]],[[],[]],[[],[]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
 	[_this, 2] call ace_cargo_fnc_setSize;;
 };
 
@@ -2159,7 +2168,7 @@ if (_layerRoot) then {
 	_this setVectorDirAndUp [[0.556286,-0.830838,0.0159242],[-0.0186628,0.00666701,0.999804]];
 	0 remoteExec ['setFeatureType', _this];
 	_this enableSimulation false;
-	[_this,"[[[[""arifle_MXC_F"",""arifle_MXM_F"",""arifle_MX_F"",""arifle_MX_GL_F"",""arifle_MX_SW_F"",""arifle_SDAR_F"",""hgun_P07_F"",""hgun_Pistol_heavy_01_F"",""launch_NLAW_F"",""launch_Titan_F"",""launch_Titan_short_F"",""SMG_01_F"",""srifle_EBR_F"",""srifle_LRR_camo_F"",""srifle_LRR_F"",""FirstAidKit"",""Medikit""],[4,2,8,4,4,2,2,2,2,2,2,2,2,2,2,10,1]],[[""100Rnd_65x39_caseless_mag_Tracer"",""11Rnd_45ACP_Mag"",""16Rnd_9x21_Mag"",""1Rnd_HE_Grenade_shell"",""1Rnd_SmokeBlue_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""1Rnd_SmokeOrange_Grenade_shell"",""1Rnd_SmokePurple_Grenade_shell"",""1Rnd_SmokeRed_Grenade_shell"",""1Rnd_SmokeYellow_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""20Rnd_556x45_UW_mag"",""20Rnd_762x51_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""30Rnd_556x45_Stanag_red"",""30Rnd_65x39_caseless_mag"",""3Rnd_HE_Grenade_shell"",""7Rnd_408_Mag"",""APERSBoundingMine_Range_Mag"",""APERSMine_Range_Mag"",""APERSTripMine_Wire_Mag"",""ATMine_Range_Mag"",""B_IR_Grenade"",""ClaymoreDirectionalMine_Remote_Mag"",""DemoCharge_Remote_Mag"",""HandGrenade"",""Laserbatteries"",""MiniGrenade"",""NLAW_F"",""SatchelCharge_Remote_Mag"",""SLAMDirectionalMine_Wire_Mag"",""SmokeShell"",""SmokeShellBlue"",""SmokeShellGreen"",""SmokeShellOrange"",""SmokeShellPurple"",""SmokeShellRed"",""SmokeShellYellow"",""Titan_AA"",""Titan_AP"",""Titan_AT"",""UGL_FlareGreen_F"",""UGL_FlareWhite_F""],[16,14,14,15,2,2,2,2,2,2,2,6,24,14,6,52,3,12,5,5,5,5,8,5,5,24,5,24,8,5,5,2,2,2,2,2,2,2,6,6,6,2,2]],[[""Binocular"",""Laserdesignator"",""Rangefinder"",""acc_flashlight"",""acc_pointer_IR"",""ItemGPS"",""MineDetector"",""muzzle_snds_acp"",""muzzle_snds_B"",""muzzle_snds_H"",""muzzle_snds_H_SW"",""muzzle_snds_L"",""optic_Aco"",""optic_Aco_smg"",""optic_dms"",""optic_Hamr"",""optic_Holosight"",""optic_lrps"",""optic_MRD"",""optic_NVS"",""optic_SOS"",""optic_tws"",""optic_tws_mg"",""ToolKit""],[1,1,1,5,5,5,1,5,5,5,1,5,2,2,2,2,2,2,2,2,2,2,2,1]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+	[_this,"[[[[],[]],[[],[]],[[],[]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
 	[_this, 6] call ace_cargo_fnc_setSize;;
 };
 
@@ -2183,11 +2192,38 @@ if (_layer1004) then {
 	_objects pushback _this;
 	_objectIDs pushback 1003;
 	_this setPosWorld [5371.81,17844.7,73.0831];
-	_this setVectorDirAndUp [[-0.438773,0.898578,-0.00594005],[-0.0625437,-0.0239443,0.997755]];
+	_this setVectorDirAndUp [[-0.438773,0.898578,-0.00594024],[-0.0625437,-0.023944,0.997755]];
 	sk1 = _this;
 	_this setVehicleVarName "sk1";
 	0 remoteExec ['setFeatureType', _this];
 	_this enableSimulation false;
+};
+
+private _item1006 = objNull;
+if (_layerRoot) then {
+	_item1006 = _item1005 createUnit ["B_Soldier_F",[5386.96,17917.3,-7.62939e-006],[],0,"CAN_COLLIDE"];
+	_item1005 selectLeader _item1006;
+	_this = _item1006;
+	_objects pushback _this;
+	_objectIDs pushback 1006;
+	_this setPosWorld [5386.96,17917.4,76.9136];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	selectPlayer _this;
+	0 remoteExec ['setFeatureType', _this];
+	_this setname "Ed Blackburn";;
+	_this setface "WhiteHead_21";;
+	_this setspeaker "male07eng";;
+	_this setpitch 1.0199;;
+	parseSimpleArray "[[""hitface"",""hitneck"",""hithead"",""hitpelvis"",""hitabdomen"",""hitdiaphragm"",""hitchest"",""hitbody"",""hitarms"",""hithands"",""hitlegs"",""incapacitated"",""hitleftarm"",""hitrightarm"",""hitleftleg"",""hitrightleg"",""ace_hdbracket""],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]" params ['_hitpoints', '_damage']; {_this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints;
+	_this setUnitTrait ['Medic', false];
+	_this setUnitTrait ['Engineer', false];
+	_this setUnitTrait ['ExplosiveSpecialist', false];
+	_this setUnitTrait ['UAVHacker', false];
+	if !(0 == ([0, 1] select (_this getUnitTrait 'engineer')) || {0 == -1}) then {_this setVariable ['s', 0, true]};
+	_this setVariable ["ace_advanced_fatigue_performanceFactor", 1, true];
+	_this setVariable ['ACE_isEOD', false, true];
+	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
+	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
 };
 
 
@@ -2219,7 +2255,7 @@ if (_layerRoot) then {
 	_triggers pushback _this;
 	_triggerIDs pushback 980;
 	_item980 setPosATL [5377.97,17920,0];
-	_this setTriggerArea [10,10,87.2237,true,5];
+	_this setTriggerArea [10,10,87.2236,true,5];
 	repStation = _this;
 	_this setTriggerText "Repair Station";
 };
@@ -2235,6 +2271,12 @@ if !(units _this isEqualTo []) then {
 	_this setBehaviour "CARELESS";
 	_this enableDynamicSimulation true;
 	      if (!is3DEN && !(["","ColorWEST","Group North",true] isEqualTo ['', '', '', true])) then      {        [_this, ["","ColorWEST","Group North",true]] spawn        {          scriptName 'ENH_Attribute_GroupMarker';          params ['_group', '["","ColorWEST","Group North",true]'];          ["","ColorWEST","Group North",true] params ['_type', '_color', '_text', '_showGroupSize'];          private _leader = leader _group;          private _marker = createMarker          [            format ['ENH_GroupMarker_["","ColorWEST","Group North",true]', str _group],            _leader          ];          _marker setMarkerType _type;          _marker setMarkerColor _color;          _marker setMarkerText (_text call BIS_fnc_localize);          while {true} do          {            sleep 1;            if (units _group isEqualTo []) exitWith {deleteMarker _marker};            if (_group getVariable ['ENH_GroupMarker_Update', true]) then            {              _marker setMarkerPos _leader;              if (_showGroupSize) then              {                _marker setMarkerText format ['["","ColorWEST","Group North",true] ()', groupId _group, count units _group];              };            };          };        };      };;
+};
+_this = _item1005;
+if !(units _this isEqualTo []) then {
+	[_this,0] setWaypointPosition [position leader _this,0];
+	[_this, "Alpha 1-2"] call CBA_fnc_setCallsign;
+	      if (!is3DEN && !(["","ColorWEST","Alpha 1-2",true] isEqualTo ['', '', '', true])) then      {        [_this, ["","ColorWEST","Alpha 1-2",true]] spawn        {          scriptName 'ENH_Attribute_GroupMarker';          params ['_group', '["","ColorWEST","Alpha 1-2",true]'];          ["","ColorWEST","Alpha 1-2",true] params ['_type', '_color', '_text', '_showGroupSize'];          private _leader = leader _group;          private _marker = createMarker          [            format ['ENH_GroupMarker_["","ColorWEST","Alpha 1-2",true]', str _group],            _leader          ];          _marker setMarkerType _type;          _marker setMarkerColor _color;          _marker setMarkerText (_text call BIS_fnc_localize);          while {true} do          {            sleep 1;            if (units _group isEqualTo []) exitWith {deleteMarker _marker};            if (_group getVariable ['ENH_GroupMarker_Update', true]) then            {              _marker setMarkerPos _leader;              if (_showGroupSize) then              {                _marker setMarkerText format ['["","ColorWEST","Alpha 1-2",true] ()', groupId _group, count units _group];              };            };          };        };      };;
 };
 
 
@@ -2287,7 +2329,7 @@ if (_layer845) then {missionNamespace setVariable ["fia_AI Bots",[[_item849,_ite
 isNil {
 	if !(isnull _item849) then {
 		this = _item849;
-		call{[this, "STAND","ASIS"] call BIS_fnc_ambientAnim;};
+		call{[this, "STAND","ASIS"] call BIS_fnc_ambientAnim; this setDir 104};
 	};
 	if !(isnull _item851) then {
 		this = _item851;
@@ -2295,7 +2337,7 @@ isNil {
 	};
 	if !(isnull _item853) then {
 		this = _item853;
-		call{[this, "BRIEFING","ASIS"] call BIS_fnc_ambientAnim;};
+		call{[this, "BRIEFING","ASIS"] call BIS_fnc_ambientAnim; this setDir 132;};
 	};
 	if !(isnull _item859) then {
 		this = _item859;
@@ -2319,23 +2361,23 @@ isNil {
 	};
 	if !(isnull _item877) then {
 		this = _item877;
-		call{[this,"REPAIR_VEH_PRONE","LIGHT"] call BIS_fnc_ambientAnim;};
+		call{[this,"REPAIR_VEH_PRONE","LIGHT"] call BIS_fnc_ambientAnim; this setDir 175;};
 	};
 	if !(isnull _item879) then {
 		this = _item879;
-		call{[this,"REPAIR_VEH_KNEEL","MEDIUM"] call BIS_fnc_ambientAnim;};
+		call{[this,"REPAIR_VEH_KNEEL","MEDIUM"] call BIS_fnc_ambientAnim; this setDir 174;};
 	};
 	if !(isnull _item881) then {
 		this = _item881;
-		call{[this,"STAND"] call BIS_fnc_ambientAnim;};
+		call{[this,"STAND"] call BIS_fnc_ambientAnim; this setDir 250;};
 	};
 	if !(isnull _item893) then {
 		this = _item893;
-		call{[this,"LEAN","HEAVY"] call BIS_fnc_ambientAnim;};
+		call{[this,"LEAN","HEAVY"] call BIS_fnc_ambientAnim; this setDir 62};
 	};
 	if !(isnull _item895) then {
 		this = _item895;
-		call{[this,"GUARD","HEAVY"] call BIS_fnc_ambientAnim;};
+		call{[this,"GUARD","HEAVY"] call BIS_fnc_ambientAnim; this setDir 159;};
 	};
 	if !(isnull _item897) then {
 		this = _item897;
@@ -2347,7 +2389,11 @@ isNil {
 	};
 	if !(isnull _item907) then {
 		this = _item907;
-		call{[this,"STAND"] call BIS_fnc_ambientAnim;};
+		call{[this,"STAND"] call BIS_fnc_ambientAnim; this setDir 222};
+	};
+	if !(isnull _item917) then {
+		this = _item917;
+		call{this setDir 353};
 	};
 	if !(isnull _item919) then {
 		this = _item919;
