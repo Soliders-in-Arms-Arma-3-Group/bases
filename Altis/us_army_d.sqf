@@ -64,14 +64,6 @@ if (_layerRoot) then {
 private _groups = [];
 private _groupIDs = [];
 
-private _item121 = grpNull;
-if (_layerRoot) then {
-	_item121 = createGroup west;
-	_this = _item121;
-	_groups pushback _this;
-	_groupIDs pushback 121;
-};
-
 private _item187 = grpNull;
 if (_layerRoot) then {
 	_item187 = createGroup west;
@@ -86,6 +78,14 @@ if (_layerRoot) then {
 	_this = _item460;
 	_groups pushback _this;
 	_groupIDs pushback 460;
+};
+
+private _item540 = grpNull;
+if (_layerRoot) then {
+	_item540 = createGroup west;
+	_this = _item540;
+	_groups pushback _this;
+	_groupIDs pushback 540;
 };
 
 
@@ -1169,107 +1169,6 @@ if (_layerRoot) then {
 	0 remoteExec ['setFeatureType', _this];
 };
 
-private _item122 = objNull;
-if (_layerRoot) then {
-	_item122 = _item121 createUnit ["rhsusf_army_ocp_helipilot",[15159.2,17265.7,0.0779991],[],0,"CAN_COLLIDE"];
-	_item121 selectLeader _item122;
-	_this = _item122;
-	_objects pushback _this;
-	_objectIDs pushback 122;
-	_this setPosWorld [15163,17263.1,19.3941];
-	_this setVectorDirAndUp [[0.876987,-0.480514,0.000620605],[0,0.00129154,0.999999]];
-	0 remoteExec ['setFeatureType', _this];
-	_this setname "Quinton Jones";;
-	_this setface "WhiteHead_07";;
-	_this setspeaker "male08eng";;
-	_this setpitch 1.02677;;
-	parseSimpleArray "[[""hitface"",""hitneck"",""hithead"",""hitpelvis"",""hitabdomen"",""hitdiaphragm"",""hitchest"",""hitbody"",""hitarms"",""hithands"",""hitlegs"",""incapacitated"",""hitleftarm"",""hitrightarm"",""hitleftleg"",""hitrightleg"",""ace_hdbracket""],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]" params ['_hitpoints', '_damage']; {_this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints;
-	_this setUnitTrait ['Medic', false];
-	_this setUnitTrait ['Engineer', false];
-	_this setUnitTrait ['ExplosiveSpecialist', false];
-	_this setUnitTrait ['UAVHacker', false];
-	if !(0 == ([0, 1] select (_this getUnitTrait 'engineer')) || {0 == -1}) then {_this setVariable ['s', 0, true]};
-	_this setVariable ["ace_advanced_fatigue_performanceFactor", 1, true];
-	_this setVariable ['ACE_isEOD', false, true];
-	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
-	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
-};
-
-private _item123 = objNull;
-if (_layerRoot) then {
-	_item123 = _item121 createUnit ["rhsusf_army_ocp_helipilot",[15159.2,17265.7,0.0779991],[],0,"CAN_COLLIDE"];
-	_this = _item123;
-	_objects pushback _this;
-	_objectIDs pushback 123;
-	_this setPosWorld [15163.5,17264,19.3934];
-	_this setVectorDirAndUp [[0.876987,-0.480514,0.000620605],[0,0.00129154,0.999999]];
-	0 remoteExec ['setFeatureType', _this];
-	_this setname "Gillian Clark";;
-	_this setface "WhiteHead_19";;
-	_this setspeaker "male05eng";;
-	_this setpitch 0.963196;;
-	parseSimpleArray "[[""hitface"",""hitneck"",""hithead"",""hitpelvis"",""hitabdomen"",""hitdiaphragm"",""hitchest"",""hitbody"",""hitarms"",""hithands"",""hitlegs"",""incapacitated"",""hitleftarm"",""hitrightarm"",""hitleftleg"",""hitrightleg"",""ace_hdbracket""],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]" params ['_hitpoints', '_damage']; {_this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints;
-	_this setUnitTrait ['Medic', false];
-	_this setUnitTrait ['Engineer', false];
-	_this setUnitTrait ['ExplosiveSpecialist', false];
-	_this setUnitTrait ['UAVHacker', false];
-	if !(0 == ([0, 1] select (_this getUnitTrait 'engineer')) || {0 == -1}) then {_this setVariable ['s', 0, true]};
-	_this setVariable ["ace_advanced_fatigue_performanceFactor", 1, true];
-	_this setVariable ['ACE_isEOD', false, true];
-	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
-	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
-};
-
-private _item124 = objNull;
-if (_layerRoot) then {
-	_item124 = _item121 createUnit ["rhsusf_army_ocp_helicrew",[15159.2,17265.7,0.0779991],[],0,"CAN_COLLIDE"];
-	_this = _item124;
-	_objects pushback _this;
-	_objectIDs pushback 124;
-	_this setPosWorld [15162.6,17264.7,19.6514];
-	_this setVectorDirAndUp [[0.876987,-0.480514,0.000620605],[0,0.00129154,0.999999]];
-	0 remoteExec ['setFeatureType', _this];
-	_this setname "Greer Cooper";;
-	_this setface "WhiteHead_13";;
-	_this setspeaker "male10eng";;
-	_this setpitch 1.0383;;
-	parseSimpleArray "[[""hitface"",""hitneck"",""hithead"",""hitpelvis"",""hitabdomen"",""hitdiaphragm"",""hitchest"",""hitbody"",""hitarms"",""hithands"",""hitlegs"",""incapacitated"",""hitleftarm"",""hitrightarm"",""hitleftleg"",""hitrightleg"",""ace_hdbracket""],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]" params ['_hitpoints', '_damage']; {_this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints;
-	_this setUnitTrait ['Medic', false];
-	_this setUnitTrait ['Engineer', false];
-	_this setUnitTrait ['ExplosiveSpecialist', false];
-	_this setUnitTrait ['UAVHacker', false];
-	if !(0 == ([0, 1] select (_this getUnitTrait 'engineer')) || {0 == -1}) then {_this setVariable ['s', 0, true]};
-	_this setVariable ["ace_advanced_fatigue_performanceFactor", 1, true];
-	_this setVariable ['ACE_isEOD', false, true];
-	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
-	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
-};
-
-private _item125 = objNull;
-if (_layerRoot) then {
-	_item125 = _item121 createUnit ["rhsusf_army_ocp_helicrew",[15159.2,17265.7,0.0779991],[],0,"CAN_COLLIDE"];
-	_this = _item125;
-	_objects pushback _this;
-	_objectIDs pushback 125;
-	_this setPosWorld [15161.9,17263.3,19.6345];
-	_this setVectorDirAndUp [[0.876987,-0.480514,0.000620605],[0,0.00129154,0.999999]];
-	0 remoteExec ['setFeatureType', _this];
-	_this setname "Benjamin Bennett";;
-	_this setface "AfricanHead_01";;
-	_this setspeaker "male06eng";;
-	_this setpitch 1.01218;;
-	parseSimpleArray "[[""hitface"",""hitneck"",""hithead"",""hitpelvis"",""hitabdomen"",""hitdiaphragm"",""hitchest"",""hitbody"",""hitarms"",""hithands"",""hitlegs"",""incapacitated"",""hitleftarm"",""hitrightarm"",""hitleftleg"",""hitrightleg"",""ace_hdbracket""],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]" params ['_hitpoints', '_damage']; {_this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints;
-	_this setUnitTrait ['Medic', false];
-	_this setUnitTrait ['Engineer', false];
-	_this setUnitTrait ['ExplosiveSpecialist', false];
-	_this setUnitTrait ['UAVHacker', false];
-	if !(0 == ([0, 1] select (_this getUnitTrait 'engineer')) || {0 == -1}) then {_this setVariable ['s', 0, true]};
-	_this setVariable ["ace_advanced_fatigue_performanceFactor", 1, true];
-	_this setVariable ['ACE_isEOD', false, true];
-	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
-	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
-};
-
 private _item126 = objNull;
 if (_layerRoot) then {
 	_item126 = createVehicle ["Land_New_WiredFence_5m_F",[15191.5,17538.2,9.53674e-007],[],0,"CAN_COLLIDE"];
@@ -1697,7 +1596,7 @@ if (_layerRoot) then {
 	_objects pushback _this;
 	_objectIDs pushback 165;
 	_this setPosWorld [15220.9,17327.9,19.0571];
-	_this setVectorDirAndUp [[-0.71093,-0.703262,0.000490922],[0.000690534,0,1]];
+	_this setVectorDirAndUp [[-0.71093,-0.703262,0.000490745],[0.000690285,0,1]];
 	0 remoteExec ['setFeatureType', _this];
 	_this enableSimulation false;
 };
@@ -1709,7 +1608,7 @@ if (_layerRoot) then {
 	_objects pushback _this;
 	_objectIDs pushback 166;
 	_this setPosWorld [15220.1,17328.8,19.0578];
-	_this setVectorDirAndUp [[-0.753993,-0.656882,0.000520658],[0.000690534,0,1]];
+	_this setVectorDirAndUp [[-0.753993,-0.656882,0.00052047],[0.000690285,0,1]];
 	0 remoteExec ['setFeatureType', _this];
 	_this enableSimulation false;
 };
@@ -2041,7 +1940,7 @@ if (_layerRoot) then {
 	_objectIDs pushback 191;
 	_this setPosWorld [15218.8,17315.6,18.5538];
 	_this setVectorDirAndUp [[-0.854894,-0.518803,0],[0,0,1]];
-	_this setUnitLoadout [[],[],[],["rhs_uniform_acu_ocp",[]],[],[],"rhsusf_patrolcap_ocp","",[],["ItemMap","ItemGPS","ItemRadio","ItemCompass","ItemWatch",""]];
+	_this setUnitLoadout [[],[],[],["rhs_uniform_acu_ocp",[]],[],[],"","",[],["ItemMap","ItemGPS","ItemRadio","ItemCompass","ItemWatch",""]];
 	_this setRank "CAPTAIN";
 	0 remoteExec ['setFeatureType', _this];
 	_this allowdamage false;;
@@ -2070,7 +1969,7 @@ if (_layerRoot) then {
 	_objectIDs pushback 107;
 	_this setPosWorld [15219.4,17303.2,17.9749];
 	_this setVectorDirAndUp [[0.992134,0.125177,0],[0,0,1]];
-	_this setUnitLoadout [[],[],[],["VSM_OCP_Crye_SS_tan_pants_Camo",[]],["rhsusf_spcs_ucp",[]],[],"rhsusf_ach_helmet_ocp","",[],["ItemMap","","ItemRadio","ItemCompass","ItemWatch",""]];
+	_this setUnitLoadout [[],[],[],["VSM_OCP_Crye_SS_tan_pants_Camo",[]],["rhsusf_spcs_ucp",[]],[],"rhsusf_ach_helmet_ucp","",[],["ItemMap","","ItemRadio","ItemCompass","ItemWatch",""]];
 	0 remoteExec ['setFeatureType', _this];
 	_this allowdamage false;;
 	_this setname "Matthew Martinez";;
@@ -2098,7 +1997,7 @@ if (_layerRoot) then {
 	_objectIDs pushback 108;
 	_this setPosWorld [15221.1,17303.7,17.9778];
 	_this setVectorDirAndUp [[-0.945587,-0.32537,0],[0,0,1]];
-	_this setUnitLoadout [[],[],[],["rhs_uniform_FROG01_d",[]],["rhsusf_spc",[]],[],"H_Cap_oli","",[],["ItemMap","","ItemRadio","ItemCompass","ItemWatch",""]];
+	_this setUnitLoadout [[],[],[],["rhs_uniform_FROG01_d",[]],["rhsusf_spc",[]],[],"rhs_8point_marpatd","",[],["ItemMap","","ItemRadio","ItemCompass","ItemWatch",""]];
 	0 remoteExec ['setFeatureType', _this];
 	_this allowdamage false;;
 	_this setname "Ashton Patel";;
@@ -2154,7 +2053,7 @@ if (_layerRoot) then {
 	_objectIDs pushback 110;
 	_this setPosWorld [15295.2,17532.4,16.5766];
 	_this setVectorDirAndUp [[0.941339,0.337461,0],[0,0,1]];
-	_this setUnitLoadout [["rhs_weap_m4","","acc_pointer_IR","optic_Aco",["rhs_mag_30Rnd_556x45_M855A1_Stanag",30],[],""],[],["hgun_P07_F","","","",["16Rnd_9x21_Mag",17],[],""],["rhs_uniform_acu_oefcp",[["FirstAidKit",1]]],["V_Safety_yellow_F",[]],[],"rhsusf_ach_helmet_headset_ocp","G_Tactical_Clear",[],["ItemMap","","ItemRadio","ItemCompass","ItemWatch",""]];
+	_this setUnitLoadout [["rhs_weap_m4_carryhandle","","acc_pointer_IR","",["rhs_mag_30Rnd_556x45_M855A1_Stanag",30],[],""],[],["hgun_P07_F","","","",["16Rnd_9x21_Mag",17],[],""],["rhs_uniform_acu_oefcp",[["FirstAidKit",1]]],["V_Safety_yellow_F",[]],[],"rhsusf_ach_helmet_headset_ocp","G_Tactical_Clear",[],["ItemMap","","ItemRadio","ItemCompass","ItemWatch",""]];
 	0 remoteExec ['setFeatureType', _this];
 	_this allowdamage false;;
 	_this setname "Gillis Robertson";;
@@ -2376,12 +2275,12 @@ if (_layerRoot) then {
 
 private _item199 = objNull;
 if (_layerRoot) then {
-	_item199 = createVehicle ["Land_PaperBox_closed_F",[15194.7,17285.7,0.0399895],[],0,"CAN_COLLIDE"];
+	_item199 = createVehicle ["Land_PaperBox_closed_F",[15195.5,17278,0],[],0,"CAN_COLLIDE"];
 	_this = _item199;
 	_objects pushback _this;
 	_objectIDs pushback 199;
-	_this setPosWorld [15194.7,17285.7,18.6227];
-	_this setVectorDirAndUp [[-0.699657,-0.714478,-0.000903868],[-0.00129187,0,0.999999]];
+	_this setPosWorld [15195.5,17278,18.5806];
+	_this setVectorDirAndUp [[-0.699658,-0.714477,-0.000922803],[0,-0.00129158,0.999999]];
 	0 remoteExec ['setFeatureType', _this];
 	_this enableSimulation false;
 	[_this, 11] call ace_cargo_fnc_setSize;;
@@ -2396,23 +2295,6 @@ if (_layerRoot) then {
 	_this setPosWorld [15217.1,17314.8,19.5951];
 	_this setVectorDirAndUp [[-0.751712,-0.659492,0.000518896],[0.000690285,0,1]];
 	0 remoteExec ['setFeatureType', _this];
-};
-
-private _item203 = objNull;
-if (_layerRoot) then {
-	_item203 = createVehicle ["RHS_UH60M_d",[15159.2,17265.7,0.0779991],[],0,"CAN_COLLIDE"];
-	_this = _item203;
-	_objects pushback _this;
-	_objectIDs pushback 203;
-	_this setPosWorld [15159.2,17265.7,20.7029];
-	_this setVectorDirAndUp [[0.876987,-0.480514,0.000620605],[0,0.00129154,0.999999]];
-	_this setPylonLoadout [1,"rhsusf_M130_CMFlare_Chaff_Magazine_x2"];
-	0 remoteExec ['setFeatureType', _this];
-	[_this,"[[[[""rhs_weap_m4_carryhandle"",""FirstAidKit"",""Medikit""],[2,10,2]],[[""rhs_mag_30Rnd_556x45_M855A1_Stanag"",""rhs_mag_m67"",""rhs_mag_m18_green"",""rhs_mag_m18_red"",""rhs_mag_an_m8hc""],[12,4,2,2,4]],[[],[]],[[""B_Parachute""],[4]]],false]"] call bis_fnc_initAmmoBox;;
-	_this setVehicleReportOwnPosition true;
-	parseSimpleArray "[[""hithull"",""hitengine1"",""hitengine2"",""hitengine"",""hittail"",""hitvrotor"",""hithrotor"",""hitwinch"",""hitglass7"",""hithydraulics"",""hittransmission"",""hithstabilizerl1"",""hithstabilizerr1"",""hitpylon1"",""hitpylon2"",""hitpylon3"",""hitpylon4"",""hitfuel"",""hitavionics"",""hitmissiles"",""hitglass1"",""hitglass2"",""hitglass3"",""hitglass4"",""hitglass5"",""hitglass6"",""hitglass8"",""hitglass9"",""hitglass10"",""hitglass11"",""hitglass12"",""hitglass13"",""hitglass14"",""hitrglass"",""hitlglass"",""hitengine3"",""hitlight"",""hitgear"",""hitvstabilizer1"",""hitpitottube"",""hitstaticport"",""hitstarter1"",""hitstarter2"",""hitstarter3"",""#p svetlo"",""#l svetlo"",""#cabin_light"",""#cargo_light_1"",""#cargo_light_2""],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]" params ['_hitpoints', '_damage']; {_this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints;
-	[_this, 8] call ace_cargo_fnc_setSpace;;
-	[_this] call ace_fastroping_fnc_equipFRIES;
 };
 
 private _item204 = objNull;
@@ -2439,7 +2321,7 @@ if (_layerRoot) then {
 
 private _item205 = objNull;
 if (_layerRoot) then {
-	_item205 = createVehicle ["rhsusf_m1025_d",[15178.9,17318.4,0],[],0,"CAN_COLLIDE"];
+	_item205 = createVehicle ["rhsusf_m1025_d",[15178.9,17318.4,5.72205e-006],[],0,"CAN_COLLIDE"];
 	_this = _item205;
 	_objects pushback _this;
 	_objectIDs pushback 205;
@@ -2451,8 +2333,8 @@ if (_layerRoot) then {
 	parseSimpleArray "[[""hitwindshield_1"",""hitwindshield_2"",""hitglass1"",""hitglass2"",""hitglass3"",""hitglass4"",""hitglass5"",""hitglass6"",""hitbody"",""hitfuel"",""hitlfwheel"",""hitrfwheel"",""hitlf2wheel"",""hitrf2wheel"",""hitengine"",""hithull"",""hitrglass"",""hitlglass"",""hitlbwheel"",""hitlmwheel"",""hitrbwheel"",""hitrmwheel"",""#light_hd_1"",""#light_hd_2"",""#light_hd_1"",""#light_hd_2"",""#light_hd_1"",""#light_hd_2"",""#light_hd_2"",""#light_hd_1""],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]" params ['_hitpoints', '_damage']; {_this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints;
 	_this setVariable ['s',1];;
 	[_this, 4] call ace_cargo_fnc_setSpace;;
-	if(0 != 'NoChange')then{ [_this,'unitdecals_1',0] call rhs_fnc_hmmwv_setDecal};
-	if(0 != 'NoChange')then{ [_this,'unitdecals_2',0] call rhs_fnc_hmmwv_setDecal};
+	//if(0 != 'NoChange')then{ [_this,'unitdecals_1',0] call rhs_fnc_hmmwv_setDecal};
+	//if(0 != 'NoChange')then{ [_this,'unitdecals_2',0] call rhs_fnc_hmmwv_setDecal};
 	_this animate ['hide_CIP',0,true];
 	_this animate ['hide_BFT',0,true];
 	_this animate ['hide_Antenna',0,true];
@@ -2470,15 +2352,14 @@ if (_layerRoot) then {
 
 private _item207 = objNull;
 if (_layerRoot) then {
-	_item207 = createVehicle ["Land_Pallet_MilBoxes_F",[15197.2,17288.1,0.0428505],[],0,"CAN_COLLIDE"];
+	_item207 = createVehicle ["Land_Pallet_MilBoxes_F",[15195.7,17287.5,0],[],0,"CAN_COLLIDE"];
 	_this = _item207;
 	_objects pushback _this;
 	_objectIDs pushback 207;
-	_this setPosWorld [15197.2,17288.1,18.433];
-	_this setVectorDirAndUp [[0.710492,0.703705,0.000917864],[-0.00129187,0,0.999999]];
+	_this setPosWorld [15195.7,17287.5,18.3901];
+	_this setVectorDirAndUp [[0.710492,0.703705,0],[0,0,1]];
 	0 remoteExec ['setFeatureType', _this];
 	_this enableSimulation false;
-	if (!is3DEN) then {[_this, +[["arifle_MX_F","arifle_MX_Black_F","arifle_MX_GL_F","arifle_MX_GL_Black_F","arifle_MX_SW_F","arifle_MX_SW_Black_F","arifle_MXC_F","arifle_MXC_Black_F","arifle_MXM_F","arifle_MXM_Black_F","SMG_01_F","arifle_SPAR_01_blk_F","arifle_SPAR_01_snd_F","arifle_SPAR_01_GL_blk_F","arifle_SPAR_01_GL_snd_F","arifle_SPAR_02_blk_F","arifle_SPAR_02_snd_F","arifle_SPAR_03_blk_F","arifle_SPAR_03_snd_F","MMG_02_black_F","MMG_02_camo_F","MMG_02_sand_F","srifle_EBR_F","srifle_DMR_03_tan_F","srifle_DMR_03_F","launch_NLAW_F","launch_MRAWS_sand_F","rhs_weap_M136_hedp","rhs_weap_M136","rhs_weap_M136_hp","hgun_P07_F","optic_Holosight_blk_F","optic_Holosight","ACE_optic_Hamr_2D","ACE_optic_Hamr_PIP","optic_Hamr","acc_flashlight","acc_flashlight_smg_01","acc_pointer_IR","ACE_acc_pointer_green","muzzle_snds_H","muzzle_snds_H_khk_F","muzzle_snds_H_snd_F","muzzle_snds_65_TI_blk_F","muzzle_snds_65_TI_hex_F","muzzle_snds_65_TI_ghex_F","ACE_muzzle_mzls_H","muzzle_snds_H_MG","muzzle_snds_H_MG_blk_F","muzzle_snds_H_MG_khk_F","muzzle_snds_acp","ACE_muzzle_mzls_smg_01","muzzle_snds_M","muzzle_snds_m_khk_F","muzzle_snds_m_snd_F","ACE_muzzle_mzls_L","muzzle_snds_B","muzzle_snds_B_khk_F","muzzle_snds_B_snd_F","muzzle_snds_B_arid_F","muzzle_snds_B_lush_F","ACE_muzzle_mzls_B","muzzle_snds_338_black","muzzle_snds_338_green","muzzle_snds_338_sand","ACE_muzzle_mzls_338","muzzle_snds_L","ACE_muzzle_mzls_smg_02","bipod_01_F_blk","bipod_01_F_snd","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_black_mag","30Rnd_65x39_caseless_mag_Tracer","100Rnd_65x39_caseless_mag","100Rnd_65x39_caseless_black_mag","100Rnd_65x39_caseless_mag_Tracer","100Rnd_65x39_caseless_black_mag_tracer","1Rnd_HE_Grenade_shell","UGL_FlareWhite_F","UGL_FlareGreen_F","UGL_FlareRed_F","UGL_FlareYellow_F","UGL_FlareCIR_F","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeRed_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeYellow_Grenade_shell","1Rnd_SmokePurple_Grenade_shell","1Rnd_SmokeBlue_Grenade_shell","1Rnd_SmokeOrange_Grenade_shell","rhs_mag_m4009","30Rnd_45ACP_Mag_SMG_01","30Rnd_45ACP_Mag_SMG_01_Tracer_Green","30Rnd_45ACP_Mag_SMG_01_Tracer_Red","30Rnd_45ACP_Mag_SMG_01_Tracer_Yellow","30Rnd_556x45_Stanag_red","30Rnd_556x45_Stanag_Tracer_Red","30Rnd_556x45_Stanag_Sand_red","30Rnd_556x45_Stanag_Sand_Tracer_Red","150Rnd_556x45_Drum_Mag_F","150Rnd_556x45_Drum_Mag_Tracer_F","150Rnd_556x45_Drum_Sand_Mag_F","150Rnd_556x45_Drum_Sand_Mag_Tracer_F","20Rnd_762x51_Mag","130Rnd_338_Mag","10Rnd_Mk14_762x51_Mag","MRAWS_HEAT_F","MRAWS_HE_F","MRAWS_HEAT55_F","16Rnd_9x21_Mag","16Rnd_9x21_red_Mag","30Rnd_9x21_Mag","30Rnd_9x21_Red_Mag","30Rnd_65x39_caseless_black_mag_Tracer","ACE_SpareBarrel","H_HelmetB_light","H_HelmetB_light_black","H_HelmetB_light_desert","H_HelmetB_light_grass","H_HelmetB_light_sand","H_HelmetB_light_snakeskin","H_HelmetSpecB","H_HelmetSpecB_blk","H_HelmetSpecB_paint2","H_HelmetSpecB_paint1","H_HelmetSpecB_sand","H_HelmetSpecB_snakeskin","H_HelmetB","H_HelmetB_black","H_HelmetB_camo","H_HelmetB_desert","H_HelmetB_grass","H_HelmetB_sand","H_HelmetB_snakeskin","rhsusf_bowman_cap","U_B_CombatUniform_mcam_vest","U_B_CombatUniform_mcam_tshirt","U_B_CombatUniform_mcam","V_TacVest_oli","V_PlateCarrier1_rgr","V_PlateCarrier2_rgr","V_PlateCarrierGL_rgr","V_PlateCarrierSpec_rgr","V_PlateCarrierSpec_mtp","V_Chestrig_rgr","B_Kitbag_rgr","B_Kitbag_mcamo","B_FieldPack_green_F","B_Carryall_mcamo","B_Carryall_green_F","B_AssaultPack_rgr","B_AssaultPack_mcamo","rhs_googles_black","rhs_googles_clear","rhs_googles_yellow","rhs_googles_orange","rhs_ess_black","G_Tactical_Clear","G_Tactical_Black","rhsusf_oakley_goggles_ylw","rhsusf_oakley_goggles_clr","rhsusf_oakley_goggles_blk","rhsusf_ANPVS_15","NVGoggles","Binocular","ACE_VectorDay","ACE_Vector","ItemMap","ItemCompass","ItemWatch","ACE_Altimeter","Chemlight_blue","Chemlight_green","ACE_Chemlight_Orange","Chemlight_red","ACE_Chemlight_IR","ACE_Chemlight_White","Chemlight_yellow","B_IR_Grenade","ACE_HandFlare_Yellow","ACE_HandFlare_Red","ACE_HandFlare_White","ACE_HandFlare_Green","HandGrenade","SmokeShellYellow","SmokeShellRed","SmokeShellPurple","SmokeShellOrange","SmokeShellGreen","SmokeShellBlue","ACE_M84","DemoCharge_Remote_Mag","ACE_fieldDressing","ACE_elasticBandage","ACE_packingBandage","ACE_quikclot","ACE_bloodIV","ACE_bloodIV_250","ACE_bloodIV_500","ACE_bodyBag","ACE_CableTie","ACE_DefusalKit","ACE_EarPlugs","ACE_DAGR","ACE_EntrenchingTool","ACE_epinephrine","ACE_Kestrel4500","ACE_Clacker","ACE_Flashlight_XL50","ACE_MapTools","ACE_microDAGR","ACE_morphine","ACE_personalAidKit","ACE_plasmaIV","ACE_plasmaIV_250","ACE_plasmaIV_500","ACE_RangeCard","ACE_rope12","ACE_rope15","ACE_rope18","ACE_rope27","ACE_rope36","ACE_salineIV","ACE_salineIV_250","ACE_salineIV_500","ACE_Sandbag_empty","ACE_splint","ACE_SpottingScope","ACE_SpraypaintBlack","ACE_SpraypaintGreen","ACE_SpraypaintBlue","ACE_SpraypaintRed","ACE_Tripod","ACE_surgicalKit","ToolKit","ACE_tourniquet","ACE_UAVBattery","ACE_wirecutter","ACE_ATragMX","ACE_adenosine","ACE_artilleryTable","ACE_RangeTable_82mm","TFAR_anprc152","TFAR_rf7800str","TFAR_rt1523g_green","TFAR_rt1523g","TFAR_rt1523g_big_rhs","B_RadioBag_01_mtp_F"],0]] call ace_arsenal_fnc_attributeInit};
 };
 
 private _item209 = objNull;
@@ -2495,14 +2376,13 @@ if (_layerRoot) then {
 
 private _item220 = objNull;
 if (_layerRoot) then {
-	_item220 = createVehicle ["Gunrack1",[15191.8,17288.1,0.0799999],[],0,"CAN_COLLIDE"];
+	_item220 = createVehicle ["Gunrack1",[15191.8,17288.1,0],[],0,"CAN_COLLIDE"];
 	_this = _item220;
 	_objects pushback _this;
 	_objectIDs pushback 220;
-	_this setPosWorld [15191.8,17288.1,18.5205];
-	_this setVectorDirAndUp [[-0.701891,-0.712283,-0.000906524],[-0.00129154,0,0.999999]];
+	_this setPosWorld [15191.8,17288.1,18.4405];
+	_this setVectorDirAndUp [[-0.701891,-0.712283,-0.000906754],[-0.00129187,0,0.999999]];
 	0 remoteExec ['setFeatureType', _this];
-	if (!is3DEN) then {[_this, +[["rhs_weap_hk416d145","rhs_weap_m16a4_carryhandle","rhs_weap_m16a4_carryhandle_M203","rhs_weap_m14ebrri","rhs_weap_m4_carryhandle","rhs_weap_m4_carryhandle_m203","rhs_weap_m40a5","rhs_weap_m4a1_carryhandle","rhs_weap_m4a1_carryhandle_m203","rhs_weap_m4a1_blockII_bk","rhs_weap_m4a1","rhs_weap_m4a1_m203","rhs_weap_mk18_bk","rhs_weap_M136","rhs_weap_M136_hedp","rhs_weap_M136_hp","rhsusf_weap_glock17g4","rhsusf_weap_m9","rhsusf_acc_ACOG_RMR","rhsusf_acc_mrds","rhsusf_acc_compm4","rhsusf_acc_eotech_552","rhsusf_acc_ACOG","rhsusf_acc_ELCAN","rhsusf_acc_g33_xps3","optic_Holosight_blk_F","rhsusf_acc_wmx_bk","rhsusf_acc_wmx","rhsusf_acc_anpeq15_wmx","rhsusf_acc_anpeq15_wmx_light","rhsusf_acc_rotex5_grey","rhsusf_acc_rotex_mp7","rhsusf_acc_omega9k","rhsusf_acc_grip2","rhsusf_acc_grip1","rhsusf_acc_saw_bipod","rhsusf_acc_tacsac_blk","rhsusf_acc_tdstubby_blk","rhsusf_acc_grip3","rhs_mag_30Rnd_556x45_M855A1_PMAG","rhs_mag_M441_HE","rhs_mag_M433_HEDP","rhs_mag_M397_HET","rhs_mag_m4009","rhs_mag_m576","rhs_mag_M585_white","rhs_mag_m661_green","rhs_mag_m662_red","rhs_mag_m713_Red","rhs_mag_m714_White","rhs_mag_m715_Green","rhs_mag_m716_yellow","1Rnd_HE_Grenade_shell","UGL_FlareWhite_F","UGL_FlareGreen_F","UGL_FlareRed_F","UGL_FlareYellow_F","UGL_FlareCIR_F","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeRed_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeYellow_Grenade_shell","1Rnd_SmokePurple_Grenade_shell","1Rnd_SmokeBlue_Grenade_shell","1Rnd_SmokeOrange_Grenade_shell","ACE_40mm_Flare_white","ACE_40mm_Flare_red","ACE_40mm_Flare_green","ACE_40mm_Flare_ir","rhsusf_20Rnd_762x51_m118_special_Mag","20Rnd_762x51_Mag","10Rnd_Mk14_762x51_Mag","ACE_20Rnd_762x51_Mag_Tracer","ACE_10Rnd_762x51_M118LR_Mag","rhsusf_100Rnd_762x51","rhsusf_50Rnd_762x51_m62_tracer","rhsusf_5Rnd_762x51_AICS_m118_special_Mag","rhsusf_10Rnd_762x51_m118_special_Mag","rhsusf_10Rnd_762x51_m993_Mag","rhsusf_10Rnd_762x51_m62_Mag","rhsusf_5Rnd_762x51_m118_special_Mag","rhs_mag_20Rnd_SCAR_762x51_m118_special","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_FMJ","rhsusf_mag_15Rnd_9x19_JHP","rhsusf_mag_15Rnd_9x19_FMJ","rhs_mag_100Rnd_556x45_M855A1_cmag","rhsusf_50Rnd_762x51","rhsusf_ach_helmet_ocp","rhsusf_ach_helmet_ocp_alt","rhsusf_ach_helmet_ESS_ocp","rhsusf_ach_helmet_ESS_ocp_alt","rhsusf_ach_helmet_headset_ocp","rhsusf_ach_helmet_headset_ocp_alt","rhsusf_ach_helmet_headset_ess_ocp","rhsusf_ach_helmet_headset_ess_ocp_alt","rhsusf_ach_helmet_camo_ocp","rhsusf_ach_helmet_ocp_norotos","rhs_Booniehat_ocp","rhsusf_patrolcap_ocp","rhsusf_bowman_cap","rhsusf_opscore_paint","rhsusf_opscore_paint_pelt","rhsusf_opscore_paint_pelt_nsw","rhsusf_opscore_paint_pelt_nsw_cam","rhsusf_opscore_ut","rhsusf_opscore_ut_pelt","rhsusf_opscore_ut_pelt_cam","rhsusf_opscore_ut_pelt_nsw","rhsusf_opscore_ut_pelt_nsw_cam","rhsusf_opscore_coy_cover","rhsusf_opscore_coy_cover_pelt","rhsusf_opscore_bk_pelt","rhsusf_opscore_bk","rhsusf_iotv_ocp_Rifleman","rhsusf_assault_eagleaiii_ocp","rhs_googles_black","rhs_googles_clear","rhs_googles_yellow","rhs_googles_orange","rhs_ess_black","Binocular","ItemMap","ItemCompass","ItemWatch","ACE_M84","rhs_mag_m67","rhs_mag_m18_yellow","rhs_mag_m18_red","rhs_mag_m18_purple","rhs_mag_m18_green","B_IR_Grenade","Chemlight_blue","Chemlight_green","Chemlight_red","ACE_Chemlight_IR","ACE_Chemlight_Orange","ACE_Chemlight_White","Chemlight_yellow","rhs_mag_an_m8hc","DemoCharge_Remote_Mag","ACE_fieldDressing","ACE_elasticBandage","ACE_packingBandage","ACE_adenosine","ACE_bloodIV","ACE_bloodIV_250","ACE_bloodIV_500","ACE_quikclot","ACE_bodyBag","ACE_CableTie","ACE_EarPlugs","ACE_DefusalKit","ACE_EntrenchingTool","ACE_epinephrine","ACE_Kestrel4500","ACE_M26_Clacker","ACE_Clacker","ACE_IR_Strobe_Item","ACE_Flashlight_XL50","ACE_MapTools","ACE_microDAGR","ACE_morphine","ACE_personalAidKit","ACE_plasmaIV","ACE_plasmaIV_250","ACE_plasmaIV_500","ACE_rope12","ACE_rope15","ACE_rope18","ACE_rope27","ACE_rope36","ACE_RangeCard","ACE_salineIV","ACE_salineIV_250","ACE_Sandbag_empty","ACE_salineIV_500","ACE_splint","ACE_SpottingScope","ACE_SpraypaintBlack","ACE_SpraypaintBlue","ACE_SpraypaintGreen","ACE_SpraypaintRed","ACE_Tripod","ACE_surgicalKit","ToolKit","ACE_tourniquet","ACE_UAVBattery","ACE_wirecutter","ACE_ATragMX","ACE_DAGR","VSM_OCP_Backpack_Kitbag","VSM_OCP_Backpack_Compact","VSM_OCP_carryall","TFAR_rt1523g_big_rhs","TFAR_rt1523g","VSM_OCP_Crye_od_pants_Camo","VSM_OCP_Crye_od_shirt_Camo","VSM_OCP_Crye_tan_pants_Camo","VSM_OCP_Crye_tan_shirt_Camo","VSM_OCP_Crye_grey_pants_Camo","VSM_OCP_Crye_grey_shirt_Camo","VSM_OCP_Crye_SS_grey_pants_Camo","VSM_OCP_Crye_SS_grey_shirt_Camo","VSM_OCP_Crye_SS_od_pants_Camo","VSM_OCP_Crye_SS_od_shirt_Camo","VSM_OCP_Crye_SS_tan_pants_Camo","VSM_OCP_Crye_SS_tan_shirt_Camo","VSM_OCP_Crye_SS_Camo","VSM_OCP_Crye_Tee_Camo","TFAR_anprc152","rhs_weap_maaws","rhs_weap_m72a7","launch_MRAWS_sand_rail_F","MRAWS_HE_F","MRAWS_HEAT55_F","MRAWS_HEAT_F","rhsusf_iotv_ocp_Repair","rhsusf_iotv_ocp","rhsusf_iotv_ocp_Medic","rhsusf_iotv_ocp_Grenadier","rhsusf_spcs_ocp_machinegunner","rhsusf_spcs_ocp_crewman","rhsusf_spcs_ocp_grenadier","rhsusf_spcs_ocp_medic","rhsusf_spcs_ocp","rhsusf_spcs_ocp_rifleman_alt","rhsusf_spcs_ocp_rifleman","rhsusf_spcs_ocp_saw","rhsusf_spcs_ocp_sniper","rhsusf_spcs_ocp_squadleader","rhsusf_spcs_ocp_teamleader_alt","rhsusf_spcs_ocp_teamleader","VSM_RAV_operator_OCP","VSM_RAV_MG_OCP","VSM_LBT6094_operator_OCP","VSM_LBT6094_MG_OCP","VSM_CarrierRig_Operator_OCP","VSM_CarrierRig_Gunner_OCP","VSM_FAPC_Operator_OCP","VSM_FAPC_MG_OCP","VSM_CarrierRig_Operator_OGA","VSM_LBT6094_operator_OGA","VSM_LBT6094_MG_OGA","VSM_CarrierRig_Gunner_OGA","VSM_RAV_MG_OGA","rhs_uniform_acu_oefcp","RHS_M2_Gun_Bag","RHS_M2_Tripod_Bag","rhs_M252_Gun_Bag","rhs_M252_Bipod_Bag","VSM_OGA_carryall","VSM_OGA_Backpack_Compact","VSM_OGA_OD_Backpack_Compact","VSM_Balaclava2_tan_glasses","rhsusf_oakley_goggles_ylw","rhsusf_oakley_goggles_clr","rhsusf_oakley_goggles_blk","rhsusf_shemagh_tan","rhsusf_shemagh_od","rhsusf_shemagh2_tan","rhsusf_shemagh2_od","rhsusf_shemagh_gogg_od","rhsusf_shemagh2_gogg_od","rhsusf_shemagh_gogg_tan","rhsusf_shemagh2_gogg_tan","rhsusf_ANPVS_15","rhsusf_Rhino","rhsusf_bino_lerca_1200_black","ACE_VectorDay","ACE_Vector","ACE_Yardage450","rhsusf_bino_leopold_mk4","ACE_M14","ClaymoreDirectionalMine_Remote_Mag","rhsusf_m112x4_mag","rhsusf_m112_mag","ACE_artilleryTable","rhs_weap_fgm148","rhs_fgm148_magazine_AT","rhsusf_200Rnd_556x45_mixed_soft_pouch_ucp","rhsusf_200Rnd_556x45_soft_pouch_ucp","rhsusf_acc_anpeq15_bk","rhsusf_acc_anpeq15_bk_light","rhsusf_acc_anpeq15_light","rhsusf_acc_anpeq15","rhs_weap_M320","rhsusf_200Rnd_556x45_box","rhsusf_200rnd_556x45_mixed_box","rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red","rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red","rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan","rhs_mag_30Rnd_556x45_M855A1_Stanag","rhs_mag_30Rnd_556x45_Mk318_SCAR","rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red","rhs_weap_XM2010_d","rhsusf_5Rnd_300winmag_xm2010","rhs_weap_m249_pip","rhs_weap_m249_pip_L","rhs_weap_m249_pip_S_para","ACE_HandFlare_White","ACE_HandFlare_Red","ACE_HandFlare_Green","rhsusf_acc_ACOG2","rhsusf_acc_eotech_552_d","rhsusf_acc_M8541","rhsusf_acc_eotech_xps3","TFAR_rf7800str","ItemAndroid","ItemMicroDAGR","ItemcTab","ACE_HandFlare_Yellow","APERSMine_Range_Mag","ATMine_Range_Mag","kat_guedel","ItemcTabHCam","ACE_HuntIR_monitor","ACE_HuntIR_M203","launch_NLAW_F","muzzle_snds_B","muzzle_snds_H","muzzle_snds_M","rhsusf_opscore_mc","rhsusf_opscore_mc_pelt","rhsusf_opscore_mc_pelt_nsw","kat_Painkiller","ACE_SpareBarrel","kat_stretcherBag"],0]] call ace_arsenal_fnc_attributeInit};
 };
 
 private _item222 = objNull;
@@ -2543,7 +2423,7 @@ if (_layer221) then {
 
 private _item225 = objNull;
 if (_layer221) then {
-	_item225 = createVehicle ["Land_Shoot_House_Wall_F",[14728.4,16090.6,0],[],0,"CAN_COLLIDE"];
+	_item225 = createVehicle ["Land_Shoot_House_Wall_F",[14728.4,16090.6,-3.8147e-006],[],0,"CAN_COLLIDE"];
 	_this = _item225;
 	_objects pushback _this;
 	_objectIDs pushback 225;
@@ -2795,7 +2675,7 @@ if (_layer221) then {
 
 private _item246 = objNull;
 if (_layer221) then {
-	_item246 = createVehicle ["Land_Shoot_House_Wall_F",[14726.9,16096.2,0],[],0,"CAN_COLLIDE"];
+	_item246 = createVehicle ["Land_Shoot_House_Wall_F",[14726.9,16096.2,-3.62396e-005],[],0,"CAN_COLLIDE"];
 	_this = _item246;
 	_objects pushback _this;
 	_objectIDs pushback 246;
@@ -2939,7 +2819,7 @@ if (_layer221) then {
 
 private _item258 = objNull;
 if (_layer221) then {
-	_item258 = createVehicle ["Land_Shoot_House_Wall_F",[14723,16083.4,0],[],0,"CAN_COLLIDE"];
+	_item258 = createVehicle ["Land_Shoot_House_Wall_F",[14723,16083.4,1.90735e-006],[],0,"CAN_COLLIDE"];
 	_this = _item258;
 	_objects pushback _this;
 	_objectIDs pushback 258;
@@ -2975,7 +2855,7 @@ if (_layer221) then {
 
 private _item261 = objNull;
 if (_layer221) then {
-	_item261 = createVehicle ["Land_Shoot_House_Wall_F",[14724.4,16084.8,0],[],0,"CAN_COLLIDE"];
+	_item261 = createVehicle ["Land_Shoot_House_Wall_F",[14724.4,16084.8,1.90735e-006],[],0,"CAN_COLLIDE"];
 	_this = _item261;
 	_objects pushback _this;
 	_objectIDs pushback 261;
@@ -3071,7 +2951,7 @@ if (_layer221) then {
 
 private _item269 = objNull;
 if (_layer221) then {
-	_item269 = createVehicle ["Land_Shoot_House_Wall_F",[14725.7,16086.3,0],[],0,"CAN_COLLIDE"];
+	_item269 = createVehicle ["Land_Shoot_House_Wall_F",[14725.7,16086.3,1.90735e-006],[],0,"CAN_COLLIDE"];
 	_this = _item269;
 	_objects pushback _this;
 	_objectIDs pushback 269;
@@ -3575,7 +3455,7 @@ if (_layer221) then {
 
 private _item311 = objNull;
 if (_layer221) then {
-	_item311 = createVehicle ["Land_Shoot_House_Wall_F",[14714.1,16097.3,0],[],0,"CAN_COLLIDE"];
+	_item311 = createVehicle ["Land_Shoot_House_Wall_F",[14714.1,16097.3,2.28882e-005],[],0,"CAN_COLLIDE"];
 	_this = _item311;
 	_objects pushback _this;
 	_objectIDs pushback 311;
@@ -4763,7 +4643,7 @@ if (_layer390 && _layer221) then {
 
 private _item407 = objNull;
 if (_layer390 && _layer221) then {
-	_item407 = createVehicle ["Sign_Arrow_F",[14708.1,16093.9,1.90735e-006],[],0,"CAN_COLLIDE"];
+	_item407 = createVehicle ["Sign_Arrow_F",[14708.1,16093.9,-1.14441e-005],[],0,"CAN_COLLIDE"];
 	_this = _item407;
 	_objects pushback _this;
 	_objectIDs pushback 407;
@@ -5273,7 +5153,6 @@ if (_layerRoot) then {
 	_this setPosWorld [14768.5,16069.5,19.2013];
 	_this setVectorDirAndUp [[-0.701533,-0.712637,0.000605604],[0.031983,-0.0306357,0.999019]];
 	0 remoteExec ['setFeatureType', _this];
-	if (!is3DEN) then {[_this, +[["rhs_weap_hk416d145","rhs_weap_m16a4_carryhandle","rhs_weap_m16a4_carryhandle_M203","rhs_weap_m14ebrri","rhs_weap_m4_carryhandle","rhs_weap_m4_carryhandle_m203","rhs_weap_m40a5","rhs_weap_m4a1_carryhandle","rhs_weap_m4a1_carryhandle_m203","rhs_weap_m4a1_blockII_bk","rhs_weap_m4a1","rhs_weap_m4a1_m203","rhs_weap_mk18_bk","rhs_weap_M136","rhs_weap_M136_hedp","rhs_weap_M136_hp","rhsusf_weap_glock17g4","rhsusf_weap_m9","rhsusf_acc_ACOG_RMR","rhsusf_acc_mrds","rhsusf_acc_compm4","rhsusf_acc_eotech_552","rhsusf_acc_ACOG","rhsusf_acc_ELCAN","rhsusf_acc_g33_xps3","optic_Holosight_blk_F","rhsusf_acc_wmx_bk","rhsusf_acc_wmx","rhsusf_acc_anpeq15_wmx","rhsusf_acc_anpeq15_wmx_light","rhsusf_acc_rotex5_grey","rhsusf_acc_rotex_mp7","rhsusf_acc_omega9k","rhsusf_acc_grip2","rhsusf_acc_grip1","rhsusf_acc_saw_bipod","rhsusf_acc_tacsac_blk","rhsusf_acc_tdstubby_blk","rhsusf_acc_grip3","rhs_mag_30Rnd_556x45_M855A1_PMAG","rhs_mag_M441_HE","rhs_mag_M433_HEDP","rhs_mag_M397_HET","rhs_mag_m4009","rhs_mag_m576","rhs_mag_M585_white","rhs_mag_m661_green","rhs_mag_m662_red","rhs_mag_m713_Red","rhs_mag_m714_White","rhs_mag_m715_Green","rhs_mag_m716_yellow","1Rnd_HE_Grenade_shell","UGL_FlareWhite_F","UGL_FlareGreen_F","UGL_FlareRed_F","UGL_FlareYellow_F","UGL_FlareCIR_F","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeRed_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeYellow_Grenade_shell","1Rnd_SmokePurple_Grenade_shell","1Rnd_SmokeBlue_Grenade_shell","1Rnd_SmokeOrange_Grenade_shell","ACE_40mm_Flare_white","ACE_40mm_Flare_red","ACE_40mm_Flare_green","ACE_40mm_Flare_ir","rhsusf_20Rnd_762x51_m118_special_Mag","20Rnd_762x51_Mag","10Rnd_Mk14_762x51_Mag","ACE_20Rnd_762x51_Mag_Tracer","ACE_10Rnd_762x51_M118LR_Mag","rhsusf_100Rnd_762x51","rhsusf_50Rnd_762x51_m62_tracer","rhsusf_5Rnd_762x51_AICS_m118_special_Mag","rhsusf_10Rnd_762x51_m118_special_Mag","rhsusf_10Rnd_762x51_m993_Mag","rhsusf_10Rnd_762x51_m62_Mag","rhsusf_5Rnd_762x51_m118_special_Mag","rhs_mag_20Rnd_SCAR_762x51_m118_special","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_FMJ","rhsusf_mag_15Rnd_9x19_JHP","rhsusf_mag_15Rnd_9x19_FMJ","rhs_mag_100Rnd_556x45_M855A1_cmag","rhsusf_50Rnd_762x51","rhsusf_ach_helmet_ocp","rhsusf_ach_helmet_ocp_alt","rhsusf_ach_helmet_ESS_ocp","rhsusf_ach_helmet_ESS_ocp_alt","rhsusf_ach_helmet_headset_ocp","rhsusf_ach_helmet_headset_ocp_alt","rhsusf_ach_helmet_headset_ess_ocp","rhsusf_ach_helmet_headset_ess_ocp_alt","rhsusf_ach_helmet_camo_ocp","rhsusf_ach_helmet_ocp_norotos","rhs_Booniehat_ocp","rhsusf_patrolcap_ocp","rhsusf_bowman_cap","rhsusf_opscore_paint","rhsusf_opscore_paint_pelt","rhsusf_opscore_paint_pelt_nsw","rhsusf_opscore_paint_pelt_nsw_cam","rhsusf_opscore_ut","rhsusf_opscore_ut_pelt","rhsusf_opscore_ut_pelt_cam","rhsusf_opscore_ut_pelt_nsw","rhsusf_opscore_ut_pelt_nsw_cam","rhsusf_opscore_coy_cover","rhsusf_opscore_coy_cover_pelt","rhsusf_opscore_bk_pelt","rhsusf_opscore_bk","rhsusf_iotv_ocp_Rifleman","rhsusf_assault_eagleaiii_ocp","rhs_googles_black","rhs_googles_clear","rhs_googles_yellow","rhs_googles_orange","rhs_ess_black","Binocular","ItemMap","ItemCompass","ItemWatch","ACE_M84","rhs_mag_m67","rhs_mag_m18_yellow","rhs_mag_m18_red","rhs_mag_m18_purple","rhs_mag_m18_green","B_IR_Grenade","Chemlight_blue","Chemlight_green","Chemlight_red","ACE_Chemlight_IR","ACE_Chemlight_Orange","ACE_Chemlight_White","Chemlight_yellow","rhs_mag_an_m8hc","DemoCharge_Remote_Mag","ACE_fieldDressing","ACE_elasticBandage","ACE_packingBandage","ACE_adenosine","ACE_bloodIV","ACE_bloodIV_250","ACE_bloodIV_500","ACE_quikclot","ACE_bodyBag","ACE_CableTie","ACE_EarPlugs","ACE_DefusalKit","ACE_EntrenchingTool","ACE_epinephrine","ACE_Kestrel4500","ACE_M26_Clacker","ACE_Clacker","ACE_IR_Strobe_Item","ACE_Flashlight_XL50","ACE_MapTools","ACE_microDAGR","ACE_morphine","ACE_personalAidKit","ACE_plasmaIV","ACE_plasmaIV_250","ACE_plasmaIV_500","ACE_rope12","ACE_rope15","ACE_rope18","ACE_rope27","ACE_rope36","ACE_RangeCard","ACE_salineIV","ACE_salineIV_250","ACE_Sandbag_empty","ACE_salineIV_500","ACE_splint","ACE_SpottingScope","ACE_SpraypaintBlack","ACE_SpraypaintBlue","ACE_SpraypaintGreen","ACE_SpraypaintRed","ACE_Tripod","ACE_surgicalKit","ToolKit","ACE_tourniquet","ACE_UAVBattery","ACE_wirecutter","ACE_ATragMX","ACE_DAGR","VSM_OCP_Backpack_Kitbag","VSM_OCP_Backpack_Compact","VSM_OCP_carryall","TFAR_rt1523g_big_rhs","TFAR_rt1523g","VSM_OCP_Crye_od_pants_Camo","VSM_OCP_Crye_od_shirt_Camo","VSM_OCP_Crye_tan_pants_Camo","VSM_OCP_Crye_tan_shirt_Camo","VSM_OCP_Crye_grey_pants_Camo","VSM_OCP_Crye_grey_shirt_Camo","VSM_OCP_Crye_SS_grey_pants_Camo","VSM_OCP_Crye_SS_grey_shirt_Camo","VSM_OCP_Crye_SS_od_pants_Camo","VSM_OCP_Crye_SS_od_shirt_Camo","VSM_OCP_Crye_SS_tan_pants_Camo","VSM_OCP_Crye_SS_tan_shirt_Camo","VSM_OCP_Crye_SS_Camo","VSM_OCP_Crye_Tee_Camo","TFAR_anprc152","rhs_weap_maaws","rhs_weap_m72a7","launch_MRAWS_sand_rail_F","MRAWS_HE_F","MRAWS_HEAT55_F","MRAWS_HEAT_F","rhsusf_iotv_ocp_Repair","rhsusf_iotv_ocp","rhsusf_iotv_ocp_Medic","rhsusf_iotv_ocp_Grenadier","rhsusf_spcs_ocp_machinegunner","rhsusf_spcs_ocp_crewman","rhsusf_spcs_ocp_grenadier","rhsusf_spcs_ocp_medic","rhsusf_spcs_ocp","rhsusf_spcs_ocp_rifleman_alt","rhsusf_spcs_ocp_rifleman","rhsusf_spcs_ocp_saw","rhsusf_spcs_ocp_sniper","rhsusf_spcs_ocp_squadleader","rhsusf_spcs_ocp_teamleader_alt","rhsusf_spcs_ocp_teamleader","VSM_RAV_operator_OCP","VSM_RAV_MG_OCP","VSM_LBT6094_operator_OCP","VSM_LBT6094_MG_OCP","VSM_CarrierRig_Operator_OCP","VSM_CarrierRig_Gunner_OCP","VSM_FAPC_Operator_OCP","VSM_FAPC_MG_OCP","VSM_CarrierRig_Operator_OGA","VSM_LBT6094_operator_OGA","VSM_LBT6094_MG_OGA","VSM_CarrierRig_Gunner_OGA","VSM_RAV_MG_OGA","rhs_uniform_acu_oefcp","RHS_M2_Gun_Bag","RHS_M2_Tripod_Bag","rhs_M252_Gun_Bag","rhs_M252_Bipod_Bag","VSM_OGA_carryall","VSM_OGA_Backpack_Compact","VSM_OGA_OD_Backpack_Compact","VSM_Balaclava2_tan_glasses","rhsusf_oakley_goggles_ylw","rhsusf_oakley_goggles_clr","rhsusf_oakley_goggles_blk","rhsusf_shemagh_tan","rhsusf_shemagh_od","rhsusf_shemagh2_tan","rhsusf_shemagh2_od","rhsusf_shemagh_gogg_od","rhsusf_shemagh2_gogg_od","rhsusf_shemagh_gogg_tan","rhsusf_shemagh2_gogg_tan","rhsusf_ANPVS_15","rhsusf_Rhino","rhsusf_bino_lerca_1200_black","ACE_VectorDay","ACE_Vector","ACE_Yardage450","rhsusf_bino_leopold_mk4","ACE_M14","ClaymoreDirectionalMine_Remote_Mag","rhsusf_m112x4_mag","rhsusf_m112_mag","ACE_artilleryTable","rhs_weap_fgm148","rhs_fgm148_magazine_AT","rhsusf_200Rnd_556x45_mixed_soft_pouch_ucp","rhsusf_200Rnd_556x45_soft_pouch_ucp","rhsusf_acc_anpeq15_bk","rhsusf_acc_anpeq15_bk_light","rhsusf_acc_anpeq15_light","rhsusf_acc_anpeq15","rhs_weap_M320","rhsusf_200Rnd_556x45_box","rhsusf_200rnd_556x45_mixed_box","rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red","rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red","rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan","rhs_mag_30Rnd_556x45_M855A1_Stanag","rhs_mag_30Rnd_556x45_Mk318_SCAR","rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red","rhs_weap_XM2010_d","rhsusf_5Rnd_300winmag_xm2010","rhs_weap_m249_pip","rhs_weap_m249_pip_L","rhs_weap_m249_pip_S_para"],0]] call ace_arsenal_fnc_attributeInit};
 };
 
 private _item454 = objNull;
@@ -5410,7 +5289,7 @@ if (_layerRoot) then {
 	_objects pushback _this;
 	_objectIDs pushback 464;
 	_this setPosWorld [15215.7,17314.2,18.5536];
-	_this setVectorDirAndUp [[0.712127,0.70204,0.00378499],[-0.00399675,-0.0013372,0.999991]];
+	_this setVectorDirAndUp [[0.712127,0.70204,0.00378476],[-0.00399675,-0.00133687,0.999991]];
 	hq_button = _this;
 	_this setVehicleVarName "hq_button";
 	0 remoteExec ['setFeatureType', _this];
@@ -5510,14 +5389,13 @@ if (_layerRoot) then {
 
 private _item495 = objNull;
 if (_layerRoot) then {
-	_item495 = createVehicle ["Gunrack1",[15194.6,17290.4,0.0399971],[],0,"CAN_COLLIDE"];
+	_item495 = createVehicle ["Gunrack1",[15194.6,17290.4,-1.90735e-006],[],0,"CAN_COLLIDE"];
 	_this = _item495;
 	_objects pushback _this;
 	_objectIDs pushback 495;
-	_this setPosWorld [15194.6,17290.4,18.4842];
+	_this setPosWorld [15194.6,17290.4,18.4442];
 	_this setVectorDirAndUp [[-0.701891,-0.712283,-0.000906754],[-0.00129187,0,0.999999]];
 	0 remoteExec ['setFeatureType', _this];
-	if (!is3DEN) then {[_this, +[["rhs_weap_hk416d145","rhs_weap_m16a4_carryhandle","rhs_weap_m16a4_carryhandle_M203","rhs_weap_m14ebrri","rhs_weap_m4_carryhandle","rhs_weap_m4_carryhandle_m203","rhs_weap_m40a5","rhs_weap_m4a1_carryhandle","rhs_weap_m4a1_carryhandle_m203","rhs_weap_m4a1_blockII_bk","rhs_weap_m4a1","rhs_weap_m4a1_m203","rhs_weap_mk18_bk","rhs_weap_M136","rhs_weap_M136_hedp","rhs_weap_M136_hp","rhsusf_weap_glock17g4","rhsusf_weap_m9","rhsusf_acc_ACOG_RMR","rhsusf_acc_mrds","rhsusf_acc_compm4","rhsusf_acc_eotech_552","rhsusf_acc_ACOG","rhsusf_acc_ELCAN","rhsusf_acc_g33_xps3","optic_Holosight_blk_F","rhsusf_acc_wmx_bk","rhsusf_acc_wmx","rhsusf_acc_anpeq15_wmx","rhsusf_acc_anpeq15_wmx_light","rhsusf_acc_rotex5_grey","rhsusf_acc_rotex_mp7","rhsusf_acc_omega9k","rhsusf_acc_grip2","rhsusf_acc_grip1","rhsusf_acc_saw_bipod","rhsusf_acc_tacsac_blk","rhsusf_acc_tdstubby_blk","rhsusf_acc_grip3","rhs_mag_30Rnd_556x45_M855A1_PMAG","rhs_mag_M441_HE","rhs_mag_M433_HEDP","rhs_mag_M397_HET","rhs_mag_m4009","rhs_mag_m576","rhs_mag_M585_white","rhs_mag_m661_green","rhs_mag_m662_red","rhs_mag_m713_Red","rhs_mag_m714_White","rhs_mag_m715_Green","rhs_mag_m716_yellow","1Rnd_HE_Grenade_shell","UGL_FlareWhite_F","UGL_FlareGreen_F","UGL_FlareRed_F","UGL_FlareYellow_F","UGL_FlareCIR_F","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeRed_Grenade_shell","1Rnd_SmokeGreen_Grenade_shell","1Rnd_SmokeYellow_Grenade_shell","1Rnd_SmokePurple_Grenade_shell","1Rnd_SmokeBlue_Grenade_shell","1Rnd_SmokeOrange_Grenade_shell","ACE_40mm_Flare_white","ACE_40mm_Flare_red","ACE_40mm_Flare_green","ACE_40mm_Flare_ir","rhsusf_20Rnd_762x51_m118_special_Mag","20Rnd_762x51_Mag","10Rnd_Mk14_762x51_Mag","ACE_20Rnd_762x51_Mag_Tracer","ACE_10Rnd_762x51_M118LR_Mag","rhsusf_100Rnd_762x51","rhsusf_50Rnd_762x51_m62_tracer","rhsusf_5Rnd_762x51_AICS_m118_special_Mag","rhsusf_10Rnd_762x51_m118_special_Mag","rhsusf_10Rnd_762x51_m993_Mag","rhsusf_10Rnd_762x51_m62_Mag","rhsusf_5Rnd_762x51_m118_special_Mag","rhs_mag_20Rnd_SCAR_762x51_m118_special","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_FMJ","rhsusf_mag_15Rnd_9x19_JHP","rhsusf_mag_15Rnd_9x19_FMJ","rhs_mag_100Rnd_556x45_M855A1_cmag","rhsusf_50Rnd_762x51","rhsusf_ach_helmet_ocp","rhsusf_ach_helmet_ocp_alt","rhsusf_ach_helmet_ESS_ocp","rhsusf_ach_helmet_ESS_ocp_alt","rhsusf_ach_helmet_headset_ocp","rhsusf_ach_helmet_headset_ocp_alt","rhsusf_ach_helmet_headset_ess_ocp","rhsusf_ach_helmet_headset_ess_ocp_alt","rhsusf_ach_helmet_camo_ocp","rhsusf_ach_helmet_ocp_norotos","rhs_Booniehat_ocp","rhsusf_patrolcap_ocp","rhsusf_bowman_cap","rhsusf_opscore_paint","rhsusf_opscore_paint_pelt","rhsusf_opscore_paint_pelt_nsw","rhsusf_opscore_paint_pelt_nsw_cam","rhsusf_opscore_ut","rhsusf_opscore_ut_pelt","rhsusf_opscore_ut_pelt_cam","rhsusf_opscore_ut_pelt_nsw","rhsusf_opscore_ut_pelt_nsw_cam","rhsusf_opscore_coy_cover","rhsusf_opscore_coy_cover_pelt","rhsusf_opscore_bk_pelt","rhsusf_opscore_bk","rhsusf_iotv_ocp_Rifleman","rhsusf_assault_eagleaiii_ocp","rhs_googles_black","rhs_googles_clear","rhs_googles_yellow","rhs_googles_orange","rhs_ess_black","Binocular","ItemMap","ItemCompass","ItemWatch","ACE_M84","rhs_mag_m67","rhs_mag_m18_yellow","rhs_mag_m18_red","rhs_mag_m18_purple","rhs_mag_m18_green","B_IR_Grenade","Chemlight_blue","Chemlight_green","Chemlight_red","ACE_Chemlight_IR","ACE_Chemlight_Orange","ACE_Chemlight_White","Chemlight_yellow","rhs_mag_an_m8hc","DemoCharge_Remote_Mag","ACE_fieldDressing","ACE_elasticBandage","ACE_packingBandage","ACE_adenosine","ACE_bloodIV","ACE_bloodIV_250","ACE_bloodIV_500","ACE_quikclot","ACE_bodyBag","ACE_CableTie","ACE_EarPlugs","ACE_DefusalKit","ACE_EntrenchingTool","ACE_epinephrine","ACE_Kestrel4500","ACE_M26_Clacker","ACE_Clacker","ACE_IR_Strobe_Item","ACE_Flashlight_XL50","ACE_MapTools","ACE_microDAGR","ACE_morphine","ACE_personalAidKit","ACE_plasmaIV","ACE_plasmaIV_250","ACE_plasmaIV_500","ACE_rope12","ACE_rope15","ACE_rope18","ACE_rope27","ACE_rope36","ACE_RangeCard","ACE_salineIV","ACE_salineIV_250","ACE_Sandbag_empty","ACE_salineIV_500","ACE_splint","ACE_SpottingScope","ACE_SpraypaintBlack","ACE_SpraypaintBlue","ACE_SpraypaintGreen","ACE_SpraypaintRed","ACE_Tripod","ACE_surgicalKit","ToolKit","ACE_tourniquet","ACE_UAVBattery","ACE_wirecutter","ACE_ATragMX","ACE_DAGR","VSM_OCP_Backpack_Kitbag","VSM_OCP_Backpack_Compact","VSM_OCP_carryall","TFAR_rt1523g_big_rhs","TFAR_rt1523g","VSM_OCP_Crye_od_pants_Camo","VSM_OCP_Crye_od_shirt_Camo","VSM_OCP_Crye_tan_pants_Camo","VSM_OCP_Crye_tan_shirt_Camo","VSM_OCP_Crye_grey_pants_Camo","VSM_OCP_Crye_grey_shirt_Camo","VSM_OCP_Crye_SS_grey_pants_Camo","VSM_OCP_Crye_SS_grey_shirt_Camo","VSM_OCP_Crye_SS_od_pants_Camo","VSM_OCP_Crye_SS_od_shirt_Camo","VSM_OCP_Crye_SS_tan_pants_Camo","VSM_OCP_Crye_SS_tan_shirt_Camo","VSM_OCP_Crye_SS_Camo","VSM_OCP_Crye_Tee_Camo","TFAR_anprc152","rhs_weap_maaws","rhs_weap_m72a7","launch_MRAWS_sand_rail_F","MRAWS_HE_F","MRAWS_HEAT55_F","MRAWS_HEAT_F","rhsusf_iotv_ocp_Repair","rhsusf_iotv_ocp","rhsusf_iotv_ocp_Medic","rhsusf_iotv_ocp_Grenadier","rhsusf_spcs_ocp_machinegunner","rhsusf_spcs_ocp_crewman","rhsusf_spcs_ocp_grenadier","rhsusf_spcs_ocp_medic","rhsusf_spcs_ocp","rhsusf_spcs_ocp_rifleman_alt","rhsusf_spcs_ocp_rifleman","rhsusf_spcs_ocp_saw","rhsusf_spcs_ocp_sniper","rhsusf_spcs_ocp_squadleader","rhsusf_spcs_ocp_teamleader_alt","rhsusf_spcs_ocp_teamleader","VSM_RAV_operator_OCP","VSM_RAV_MG_OCP","VSM_LBT6094_operator_OCP","VSM_LBT6094_MG_OCP","VSM_CarrierRig_Operator_OCP","VSM_CarrierRig_Gunner_OCP","VSM_FAPC_Operator_OCP","VSM_FAPC_MG_OCP","VSM_CarrierRig_Operator_OGA","VSM_LBT6094_operator_OGA","VSM_LBT6094_MG_OGA","VSM_CarrierRig_Gunner_OGA","VSM_RAV_MG_OGA","rhs_uniform_acu_oefcp","RHS_M2_Gun_Bag","RHS_M2_Tripod_Bag","rhs_M252_Gun_Bag","rhs_M252_Bipod_Bag","VSM_OGA_carryall","VSM_OGA_Backpack_Compact","VSM_OGA_OD_Backpack_Compact","VSM_Balaclava2_tan_glasses","rhsusf_oakley_goggles_ylw","rhsusf_oakley_goggles_clr","rhsusf_oakley_goggles_blk","rhsusf_shemagh_tan","rhsusf_shemagh_od","rhsusf_shemagh2_tan","rhsusf_shemagh2_od","rhsusf_shemagh_gogg_od","rhsusf_shemagh2_gogg_od","rhsusf_shemagh_gogg_tan","rhsusf_shemagh2_gogg_tan","rhsusf_ANPVS_15","rhsusf_Rhino","rhsusf_bino_lerca_1200_black","ACE_VectorDay","ACE_Vector","ACE_Yardage450","rhsusf_bino_leopold_mk4","ACE_M14","ClaymoreDirectionalMine_Remote_Mag","rhsusf_m112x4_mag","rhsusf_m112_mag","ACE_artilleryTable","rhs_weap_fgm148","rhs_fgm148_magazine_AT","rhsusf_200Rnd_556x45_mixed_soft_pouch_ucp","rhsusf_200Rnd_556x45_soft_pouch_ucp","rhsusf_acc_anpeq15_bk","rhsusf_acc_anpeq15_bk_light","rhsusf_acc_anpeq15_light","rhsusf_acc_anpeq15","rhs_weap_M320","rhsusf_200Rnd_556x45_box","rhsusf_200rnd_556x45_mixed_box","rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red","rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red","rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan","rhs_mag_30Rnd_556x45_M855A1_Stanag","rhs_mag_30Rnd_556x45_Mk318_SCAR","rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red","rhs_weap_XM2010_d","rhsusf_5Rnd_300winmag_xm2010","rhs_weap_m249_pip","rhs_weap_m249_pip_L","rhs_weap_m249_pip_S_para","ACE_HandFlare_White","ACE_HandFlare_Red","ACE_HandFlare_Green","rhsusf_acc_ACOG2","rhsusf_acc_eotech_552_d","rhsusf_acc_M8541","rhsusf_acc_eotech_xps3","TFAR_rf7800str","ItemAndroid","ItemMicroDAGR","ItemcTab","ACE_HandFlare_Yellow","APERSMine_Range_Mag","ATMine_Range_Mag","kat_guedel","ItemcTabHCam","ACE_HuntIR_monitor","ACE_HuntIR_M203","launch_NLAW_F","muzzle_snds_B","muzzle_snds_H","muzzle_snds_M","rhsusf_opscore_mc","rhsusf_opscore_mc_pelt","rhsusf_opscore_mc_pelt_nsw","kat_Painkiller","ACE_SpareBarrel","kat_stretcherBag"],0]] call ace_arsenal_fnc_attributeInit};
 };
 
 private _item498 = objNull;
@@ -5556,7 +5434,7 @@ if (_layerRoot) then {
 	_objects pushback _this;
 	_objectIDs pushback 509;
 	_this setPosWorld [15219.4,17329.6,19.0584];
-	_this setVectorDirAndUp [[-0.71093,-0.703262,0.000490922],[0.000690534,0,1]];
+	_this setVectorDirAndUp [[-0.71093,-0.703262,0.000490745],[0.000690285,0,1]];
 	0 remoteExec ['setFeatureType', _this];
 	_this enableSimulation false;
 };
@@ -5568,7 +5446,7 @@ if (_layerRoot) then {
 	_objects pushback _this;
 	_objectIDs pushback 510;
 	_this setPosWorld [15218.5,17330.4,19.059];
-	_this setVectorDirAndUp [[-0.753993,-0.656882,0.000520658],[0.000690534,0,1]];
+	_this setVectorDirAndUp [[-0.753993,-0.656882,0.00052047],[0.000690285,0,1]];
 	0 remoteExec ['setFeatureType', _this];
 	_this enableSimulation false;
 };
@@ -5607,7 +5485,7 @@ if (_layerRoot) then {
 	_objects pushback _this;
 	_objectIDs pushback 524;
 	_this setPosWorld [15221.9,17328.9,19.0564];
-	_this setVectorDirAndUp [[-0.71093,-0.703262,0.000490922],[0.000690534,0,1]];
+	_this setVectorDirAndUp [[-0.71093,-0.703262,0.000490745],[0.000690285,0,1]];
 	0 remoteExec ['setFeatureType', _this];
 	_this enableSimulation false;
 };
@@ -5619,7 +5497,7 @@ if (_layerRoot) then {
 	_objects pushback _this;
 	_objectIDs pushback 525;
 	_this setPosWorld [15221.1,17329.8,19.057];
-	_this setVectorDirAndUp [[-0.753993,-0.656882,0.000520658],[0.000690534,0,1]];
+	_this setVectorDirAndUp [[-0.753993,-0.656882,0.00052047],[0.000690285,0,1]];
 	0 remoteExec ['setFeatureType', _this];
 	_this enableSimulation false;
 };
@@ -5631,7 +5509,7 @@ if (_layerRoot) then {
 	_objects pushback _this;
 	_objectIDs pushback 526;
 	_this setPosWorld [15220.3,17330.7,19.0576];
-	_this setVectorDirAndUp [[-0.71093,-0.703262,0.000490922],[0.000690534,0,1]];
+	_this setVectorDirAndUp [[-0.71093,-0.703262,0.000490745],[0.000690285,0,1]];
 	0 remoteExec ['setFeatureType', _this];
 	_this enableSimulation false;
 };
@@ -5643,9 +5521,127 @@ if (_layerRoot) then {
 	_objects pushback _this;
 	_objectIDs pushback 527;
 	_this setPosWorld [15219.5,17331.5,19.0582];
-	_this setVectorDirAndUp [[-0.753993,-0.656882,0.000520658],[0.000690534,0,1]];
+	_this setVectorDirAndUp [[-0.753993,-0.656882,0.00052047],[0.000690285,0,1]];
 	0 remoteExec ['setFeatureType', _this];
 	_this enableSimulation false;
+};
+
+private _item542 = objNull;
+if (_layerRoot) then {
+	_item542 = _item540 createUnit ["rhsusf_army_ocp_helipilot",[15157.4,17266.2,0],[],0,"CAN_COLLIDE"];
+	_item540 selectLeader _item542;
+	_this = _item542;
+	_objects pushback _this;
+	_objectIDs pushback 542;
+	_this setPosWorld [15160.8,17263.1,19.3206];
+	_this setVectorDirAndUp [[0.806217,-0.591617,0.00187856],[-0.0013439,0.0013439,0.999998]];
+	0 remoteExec ['setFeatureType', _this];
+	_this setname "Charles Johnson";;
+	_this setface "WhiteHead_20";;
+	_this setspeaker "Male07ENG";;
+	_this setpitch 0.99;;
+	parseSimpleArray "[[""hitface"",""hitneck"",""hithead"",""hitpelvis"",""hitabdomen"",""hitdiaphragm"",""hitchest"",""hitbody"",""hitarms"",""hithands"",""hitlegs"",""incapacitated"",""hitleftarm"",""hitrightarm"",""hitleftleg"",""hitrightleg"",""ace_hdbracket""],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]" params ['_hitpoints', '_damage']; {_this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints;
+	_this setUnitTrait ['Medic', false];
+	_this setUnitTrait ['Engineer', false];
+	_this setUnitTrait ['ExplosiveSpecialist', false];
+	_this setUnitTrait ['UAVHacker', false];
+	if !(0 == ([0, 1] select (_this getUnitTrait 'engineer')) || {0 == -1}) then {_this setVariable ['s', 0, true]};
+	_this setVariable ["ace_advanced_fatigue_performanceFactor", 1, true];
+	_this setVariable ['ACE_isEOD', false, true];
+	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
+	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
+};
+
+private _item543 = objNull;
+if (_layerRoot) then {
+	_item543 = _item540 createUnit ["rhsusf_army_ocp_helipilot",[15157.4,17266.2,0],[],0,"CAN_COLLIDE"];
+	_this = _item543;
+	_objects pushback _this;
+	_objectIDs pushback 543;
+	_this setPosWorld [15161.4,17263.9,19.3208];
+	_this setVectorDirAndUp [[0.806217,-0.591617,0.00187856],[-0.0013439,0.0013439,0.999998]];
+	0 remoteExec ['setFeatureType', _this];
+	_this setname "Liam Williams";;
+	_this setface "AfricanHead_01";;
+	_this setspeaker "male01eng";;
+	_this setpitch 1.03719;;
+	parseSimpleArray "[[""hitface"",""hitneck"",""hithead"",""hitpelvis"",""hitabdomen"",""hitdiaphragm"",""hitchest"",""hitbody"",""hitarms"",""hithands"",""hitlegs"",""incapacitated"",""hitleftarm"",""hitrightarm"",""hitleftleg"",""hitrightleg"",""ace_hdbracket""],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]" params ['_hitpoints', '_damage']; {_this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints;
+	_this setUnitTrait ['Medic', false];
+	_this setUnitTrait ['Engineer', false];
+	_this setUnitTrait ['ExplosiveSpecialist', false];
+	_this setUnitTrait ['UAVHacker', false];
+	if !(0 == ([0, 1] select (_this getUnitTrait 'engineer')) || {0 == -1}) then {_this setVariable ['s', 0, true]};
+	_this setVariable ["ace_advanced_fatigue_performanceFactor", 1, true];
+	_this setVariable ['ACE_isEOD', false, true];
+	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
+	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
+};
+
+private _item544 = objNull;
+if (_layerRoot) then {
+	_item544 = _item540 createUnit ["rhsusf_army_ocp_helicrew",[15157.4,17266.2,0],[],0,"CAN_COLLIDE"];
+	_this = _item544;
+	_objects pushback _this;
+	_objectIDs pushback 544;
+	_this setPosWorld [15160.6,17264.8,19.5776];
+	_this setVectorDirAndUp [[0.806217,-0.591617,0.00187856],[-0.0013439,0.0013439,0.999998]];
+	0 remoteExec ['setFeatureType', _this];
+	_this setname "Ryan Blackburn";;
+	_this setface "WhiteHead_13";;
+	_this setspeaker "male08eng";;
+	_this setpitch 0.97996;;
+	parseSimpleArray "[[""hitface"",""hitneck"",""hithead"",""hitpelvis"",""hitabdomen"",""hitdiaphragm"",""hitchest"",""hitbody"",""hitarms"",""hithands"",""hitlegs"",""incapacitated"",""hitleftarm"",""hitrightarm"",""hitleftleg"",""hitrightleg"",""ace_hdbracket""],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]" params ['_hitpoints', '_damage']; {_this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints;
+	_this setUnitTrait ['Medic', false];
+	_this setUnitTrait ['Engineer', false];
+	_this setUnitTrait ['ExplosiveSpecialist', false];
+	_this setUnitTrait ['UAVHacker', false];
+	if !(0 == ([0, 1] select (_this getUnitTrait 'engineer')) || {0 == -1}) then {_this setVariable ['s', 0, true]};
+	_this setVariable ["ace_advanced_fatigue_performanceFactor", 1, true];
+	_this setVariable ['ACE_isEOD', false, true];
+	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
+	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
+};
+
+private _item545 = objNull;
+if (_layerRoot) then {
+	_item545 = _item540 createUnit ["rhsusf_army_ocp_helicrew",[15157.4,17266.2,0],[],0,"CAN_COLLIDE"];
+	_this = _item545;
+	_objects pushback _this;
+	_objectIDs pushback 545;
+	_this setPosWorld [15159.7,17263.5,19.5594];
+	_this setVectorDirAndUp [[0.806217,-0.591617,0.00187856],[-0.0013439,0.0013439,0.999998]];
+	0 remoteExec ['setFeatureType', _this];
+	_this setname "Corey Wright";;
+	_this setface "Barklem";;
+	_this setspeaker "male06eng";;
+	_this setpitch 0.990541;;
+	parseSimpleArray "[[""hitface"",""hitneck"",""hithead"",""hitpelvis"",""hitabdomen"",""hitdiaphragm"",""hitchest"",""hitbody"",""hitarms"",""hithands"",""hitlegs"",""incapacitated"",""hitleftarm"",""hitrightarm"",""hitleftleg"",""hitrightleg"",""ace_hdbracket""],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]" params ['_hitpoints', '_damage']; {_this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints;
+	_this setUnitTrait ['Medic', false];
+	_this setUnitTrait ['Engineer', false];
+	_this setUnitTrait ['ExplosiveSpecialist', false];
+	_this setUnitTrait ['UAVHacker', false];
+	if !(0 == ([0, 1] select (_this getUnitTrait 'engineer')) || {0 == -1}) then {_this setVariable ['s', 0, true]};
+	_this setVariable ["ace_advanced_fatigue_performanceFactor", 1, true];
+	_this setVariable ['ACE_isEOD', false, true];
+	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
+	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
+};
+
+private _item541 = objNull;
+if (_layerRoot) then {
+	_item541 = createVehicle ["RHS_UH60M_d",[15157.4,17266.2,0],[],0,"CAN_COLLIDE"];
+	_this = _item541;
+	_objects pushback _this;
+	_objectIDs pushback 541;
+	_this setPosWorld [15157.4,17266.2,20.6241];
+	_this setVectorDirAndUp [[0.806217,-0.591617,0.00187856],[-0.0013439,0.0013439,0.999998]];
+	_this setPylonLoadout [1,"rhsusf_M130_CMFlare_Chaff_Magazine_x2"];
+	0 remoteExec ['setFeatureType', _this];
+	[_this,"[[[[""rhs_weap_m4_carryhandle"",""FirstAidKit"",""Medikit""],[2,10,2]],[[""rhs_mag_30Rnd_556x45_M855A1_Stanag"",""rhs_mag_m67"",""rhs_mag_m18_green"",""rhs_mag_m18_red"",""rhs_mag_an_m8hc""],[12,4,2,2,4]],[[],[]],[[""B_Parachute""],[4]]],false]"] call bis_fnc_initAmmoBox;;
+	_this setVehicleReportOwnPosition true;
+	parseSimpleArray "[[""hithull"",""hitengine1"",""hitengine2"",""hitengine"",""hittail"",""hitvrotor"",""hithrotor"",""hitwinch"",""hitglass7"",""hithydraulics"",""hittransmission"",""hithstabilizerl1"",""hithstabilizerr1"",""hitpylon1"",""hitpylon2"",""hitpylon3"",""hitpylon4"",""hitfuel"",""hitavionics"",""hitmissiles"",""hitglass1"",""hitglass2"",""hitglass3"",""hitglass4"",""hitglass5"",""hitglass6"",""hitglass8"",""hitglass9"",""hitglass10"",""hitglass11"",""hitglass12"",""hitglass13"",""hitglass14"",""hitrglass"",""hitlglass"",""hitengine3"",""hitlight"",""hitgear"",""hitvstabilizer1"",""hitpitottube"",""hitstaticport"",""hitstarter1"",""hitstarter2"",""hitstarter3"",""#p svetlo"",""#l svetlo"",""#cabin_light"",""#cargo_light_1"",""#cargo_light_2""],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]" params ['_hitpoints', '_damage']; {_this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints;
+	[_this, 8] call ace_cargo_fnc_setSpace;;
+	[_this] call ace_fastroping_fnc_equipFRIES;
 };
 
 
@@ -5717,26 +5713,25 @@ if (_layerRoot) then {
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 // Group attributes (applied only once group units exist)
-_this = _item121;
-if !(units _this isEqualTo []) then {
-	[_this,0] setWaypointPosition [position leader _this,0];
-	[_this, "November"] call CBA_fnc_setCallsign;
-	_this setBehaviour "CARELESS";
-	      if (!is3DEN && !(["b_air","ColorWEST","November 1",false] isEqualTo ['', '', '', true])) then      {        [_this, ["b_air","ColorWEST","November 1",false]] spawn        {          scriptName 'ENH_Attribute_GroupMarker';          params ['_group', '["b_air","ColorWEST","November 1",false]'];          ["b_air","ColorWEST","November 1",false] params ['_type', '_color', '_text', '_showGroupSize'];          private _leader = leader _group;          private _marker = createMarker          [            format ['ENH_GroupMarker_["b_air","ColorWEST","November 1",false]', str _group],            _leader          ];          _marker setMarkerType _type;          _marker setMarkerColor _color;          _marker setMarkerText (_text call BIS_fnc_localize);          while {true} do          {            sleep 1;            if (units _group isEqualTo []) exitWith {deleteMarker _marker};            if (_group getVariable ['ENH_GroupMarker_Update', true]) then            {              _marker setMarkerPos _leader;              if (_showGroupSize) then              {                _marker setMarkerText format ['["b_air","ColorWEST","November 1",false] ()', groupId _group, count units _group];              };            };          };        };      };;
-};
 _this = _item187;
 if !(units _this isEqualTo []) then {
 	[_this,0] setWaypointPosition [position leader _this,0];
 	[_this, "HQ"] call CBA_fnc_setCallsign;
 	_this setBehaviour "CARELESS";
 	_this enableDynamicSimulation true;
-	      if (!is3DEN && !(["","ColorWEST","Alpha 1-3",true] isEqualTo ['', '', '', true])) then      {        [_this, ["","ColorWEST","Alpha 1-3",true]] spawn        {          scriptName 'ENH_Attribute_GroupMarker';          params ['_group', '["","ColorWEST","Alpha 1-3",true]'];          ["","ColorWEST","Alpha 1-3",true] params ['_type', '_color', '_text', '_showGroupSize'];          private _leader = leader _group;          private _marker = createMarker          [            format ['ENH_GroupMarker_["","ColorWEST","Alpha 1-3",true]', str _group],            _leader          ];          _marker setMarkerType _type;          _marker setMarkerColor _color;          _marker setMarkerText (_text call BIS_fnc_localize);          while {true} do          {            sleep 1;            if (units _group isEqualTo []) exitWith {deleteMarker _marker};            if (_group getVariable ['ENH_GroupMarker_Update', true]) then            {              _marker setMarkerPos _leader;              if (_showGroupSize) then              {                _marker setMarkerText format ['["","ColorWEST","Alpha 1-3",true] ()', groupId _group, count units _group];              };            };          };        };      };;
+	     // if (!is3DEN && !(["","ColorWEST","HQ",true] isEqualTo ['', '', '', true])) then      {        [_this, ["","ColorWEST","HQ",true]] spawn        {          scriptName 'ENH_Attribute_GroupMarker';          params ['_group', '["","ColorWEST","HQ",true]'];          ["","ColorWEST","HQ",true] params ['_type', '_color', '_text', '_showGroupSize'];          private _leader = leader _group;          private _marker = createMarker          [            format ['ENH_GroupMarker_["","ColorWEST","HQ",true]', str _group],            _leader          ];          _marker setMarkerType _type;          _marker setMarkerColor _color;          _marker setMarkerText (_text call BIS_fnc_localize);          while {true} do          {            sleep 1;            if (units _group isEqualTo []) exitWith {deleteMarker _marker};            if (_group getVariable ['ENH_GroupMarker_Update', true]) then            {              _marker setMarkerPos _leader;              if (_showGroupSize) then              {                _marker setMarkerText format ['["","ColorWEST","HQ",true] ()', groupId _group, count units _group];              };            };          };        };      };;
 };
 _this = _item460;
 if !(units _this isEqualTo []) then {
 	[_this,0] setWaypointPosition [position leader _this,0];
 	[_this, "Rangemaster"] call CBA_fnc_setCallsign;
-	      if (!is3DEN && !(["","ColorWEST","Alpha 1-5",true] isEqualTo ['', '', '', true])) then      {        [_this, ["","ColorWEST","Alpha 1-5",true]] spawn        {          scriptName 'ENH_Attribute_GroupMarker';          params ['_group', '["","ColorWEST","Alpha 1-5",true]'];          ["","ColorWEST","Alpha 1-5",true] params ['_type', '_color', '_text', '_showGroupSize'];          private _leader = leader _group;          private _marker = createMarker          [            format ['ENH_GroupMarker_["","ColorWEST","Alpha 1-5",true]', str _group],            _leader          ];          _marker setMarkerType _type;          _marker setMarkerColor _color;          _marker setMarkerText (_text call BIS_fnc_localize);          while {true} do          {            sleep 1;            if (units _group isEqualTo []) exitWith {deleteMarker _marker};            if (_group getVariable ['ENH_GroupMarker_Update', true]) then            {              _marker setMarkerPos _leader;              if (_showGroupSize) then              {                _marker setMarkerText format ['["","ColorWEST","Alpha 1-5",true] ()', groupId _group, count units _group];              };            };          };        };      };;
+	      //if (!is3DEN && !(["","ColorWEST","",false] isEqualTo ['', '', '', true])) then      {        [_this, ["","ColorWEST","",false]] spawn        {          scriptName 'ENH_Attribute_GroupMarker';          params ['_group', '["","ColorWEST","",false]'];          ["","ColorWEST","",false] params ['_type', '_color', '_text', '_showGroupSize'];          private _leader = leader _group;          private _marker = createMarker          [            format ['ENH_GroupMarker_["","ColorWEST","",false]', str _group],            _leader          ];          _marker setMarkerType _type;          _marker setMarkerColor _color;          _marker setMarkerText (_text call BIS_fnc_localize);          while {true} do          {            sleep 1;            if (units _group isEqualTo []) exitWith {deleteMarker _marker};            if (_group getVariable ['ENH_GroupMarker_Update', true]) then            {              _marker setMarkerPos _leader;              if (_showGroupSize) then              {                _marker setMarkerText format ['["","ColorWEST","",false] ()', groupId _group, count units _group];              };            };          };        };      };;
+};
+_this = _item540;
+if !(units _this isEqualTo []) then {
+	[_this,0] setWaypointPosition [position leader _this,0];
+	[_this, "November"] call CBA_fnc_setCallsign;
+	     // if (!is3DEN && !(["","ColorWEST","Alpha 1-1",true] isEqualTo ['', '', '', true])) then      {        [_this, ["","ColorWEST","Alpha 1-1",true]] spawn        {          scriptName 'ENH_Attribute_GroupMarker';          params ['_group', '["","ColorWEST","Alpha 1-1",true]'];          ["","ColorWEST","Alpha 1-1",true] params ['_type', '_color', '_text', '_showGroupSize'];          private _leader = leader _group;          private _marker = createMarker          [            format ['ENH_GroupMarker_["","ColorWEST","Alpha 1-1",true]', str _group],            _leader          ];          _marker setMarkerType _type;          _marker setMarkerColor _color;          _marker setMarkerText (_text call BIS_fnc_localize);          while {true} do          {            sleep 1;            if (units _group isEqualTo []) exitWith {deleteMarker _marker};            if (_group getVariable ['ENH_GroupMarker_Update', true]) then            {              _marker setMarkerPos _leader;              if (_showGroupSize) then              {                _marker setMarkerText format ['["","ColorWEST","Alpha 1-1",true] ()', groupId _group, count units _group];              };            };          };        };      };;
 };
 
 
@@ -5972,10 +5967,10 @@ if (_layer24) then {missionNamespace setVariable ["us_army_d_Canteen #1",[[_item
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 // Crews
-if (!isNull _item122 && !isNull _item203) then {_item122 moveInDriver _item203;};
-if (!isNull _item123 && !isNull _item203) then {_item123 moveInTurret [_item203,[0]];};
-if (!isNull _item124 && !isNull _item203) then {_item124 moveInTurret [_item203,[1]];};
-if (!isNull _item125 && !isNull _item203) then {_item125 moveInTurret [_item203,[2]];};
+if (!isNull _item542 && !isNull _item541) then {_item542 moveInDriver _item541;};
+if (!isNull _item543 && !isNull _item541) then {_item543 moveInTurret [_item541,[0]];};
+if (!isNull _item544 && !isNull _item541) then {_item544 moveInTurret [_item541,[1]];};
+if (!isNull _item545 && !isNull _item541) then {_item545 moveInTurret [_item541,[2]];};
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -6010,6 +6005,10 @@ isNil {
   false, false    
 ] call BIS_fnc_holdActionAdd; 
 };
+	};
+	if !(isnull _item207) then {
+		this = _item207;
+		call{arsenals pushBack this;};
 	};
 	if !(isnull _item220) then {
 		this = _item220;
