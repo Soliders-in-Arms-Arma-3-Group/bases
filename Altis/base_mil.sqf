@@ -4835,7 +4835,7 @@ if (_layer450) then {
 	_objects pushback _this;
 	_objectIDs pushback 451;
 	_this setPosWorld [15193,17312.7,22.6638];
-	_this setVectorDirAndUp [[-0.738337,0.674429,-0.00189862],[-0.0013439,0.0013439,0.999998]];
+	_this setVectorDirAndUp [[-0.738337,0.674429,-0.00188917],[-0.00133721,0.00133721,0.999998]];
 	0 remoteExec ['setFeatureType', _this];
 	_this allowdamage false;;
 };
@@ -4863,18 +4863,6 @@ if (_layer452 && _layer450) then {
 	_this enableDynamicSimulation true;
 };
 
-private _item455 = objNull;
-if (_layer452 && _layer450) then {
-	_item455 = createVehicle ["Land_Pallet_MilBoxes_F",[15197,17292,0.601],[],0,"CAN_COLLIDE"];
-	_this = _item455;
-	_objects pushback _this;
-	_objectIDs pushback 455;
-	_this setPosWorld [15197,17292,18.9911];
-	_this setVectorDirAndUp [[0.710492,0.703705,0],[0,0,1]];
-	0 remoteExec ['setFeatureType', _this];
-	_this enableSimulation false;
-};
-
 private _item456 = objNull;
 if (_layer452 && _layer450) then {
 	_item456 = createVehicle ["Land_PaperBox_open_empty_F",[15201.5,17290.2,0.720978],[],0,"CAN_COLLIDE"];
@@ -4900,47 +4888,9 @@ if (_layer452 && _layer450) then {
 	[_this, 11] call ace_cargo_fnc_setSize;;
 };
 
-private _item458 = objNull;
-if (_layer452 && _layer450) then {
-	_item458 = createSimpleObject ["Land_CampingTable_F",[15194.7,17294.5,18.5406]];
-	_this = _item458;
-	_objects pushback _this;
-	_objectIDs pushback 458;
-	_this setPosWorld [15194.7,17294.5,18.9521];
-	_this setVectorDirAndUp [[0.715137,0.698985,0],[0,0,1]];
-	0 remoteExec ['setFeatureType', _this];
-};
-
-private _item459 = objNull;
-if (_layer452 && _layer450) then {
-	_item459 = createVehicle ["Box_NATO_Equip_F",[15196,17290.5,0.601],[],0,"CAN_COLLIDE"];
-	_this = _item459;
-	_objects pushback _this;
-	_objectIDs pushback 459;
-	_this setPosWorld [15196,17290.5,18.9225];
-	_this setVectorDirAndUp [[0.689708,0.724088,0],[0,0,1]];
-	0 remoteExec ['setFeatureType', _this];
-	_this enableDynamicSimulation true;
-	[_this,"[[[[],[]],[[],[]],[[],[]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
-	if !(false) then {_this setVariable ['s', false, true];};;
-};
-
-private _item462 = objNull;
-if (_layer452 && _layer450) then {
-	_item462 = createVehicle ["Box_NATO_Ammo_F",[15195,17294.1,1.416],[],0,"CAN_COLLIDE"];
-	_this = _item462;
-	_objects pushback _this;
-	_objectIDs pushback 462;
-	_this setPosWorld [15195,17294.1,19.6401];
-	_this setVectorDirAndUp [[-0.658138,0.752898,0],[0,0,1]];
-	0 remoteExec ['setFeatureType', _this];
-	[_this,"[[[[],[]],[[],[]],[[],[]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
-	if !(false) then {_this setVariable ['s', false, true];};;
-};
-
 private _item463 = objNull;
 if (_layer452 && _layer450) then {
-	_item463 = createVehicle ["Land_InfoStand_V1_F",[15215.3,17313.9,-0.0429993],[],0,"CAN_COLLIDE"];
+	_item463 = createVehicle ["Land_InfoStand_V1_F",[15215.3,17313.9,-0.0430031],[],0,"CAN_COLLIDE"];
 	_this = _item463;
 	_objects pushback _this;
 	_objectIDs pushback 463;
@@ -4953,14 +4903,27 @@ if (_layer452 && _layer450) then {
 	_this setObjectTextureGlobal [0,"images\tpimg.jpg"];
 };
 
-private _item565 = objNull;
+private _item572 = objNull;
 if (_layer452 && _layer450) then {
-	_item565 = createVehicle ["Box_NATO_Ammo_F",[15194.5,17294.8,1.3928],[],0,"CAN_COLLIDE"];
-	_this = _item565;
+	_item572 = createVehicle ["B_supplyCrate_F",[15195.2,17294,0.600563],[],0,"CAN_COLLIDE"];
+	_this = _item572;
 	_objects pushback _this;
-	_objectIDs pushback 565;
-	_this setPosWorld [15194.5,17294.8,19.6161];
-	_this setVectorDirAndUp [[-0.658138,0.752898,0],[0,0,1]];
+	_objectIDs pushback 572;
+	_this setPosWorld [15195.2,17294,19.433];
+	_this setVectorDirAndUp [[-0.728383,-0.68517,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+	[_this,"[[[[],[]],[[],[]],[[],[]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+	if !(false) then {_this setVariable ['s', false, true];};;
+};
+
+private _item573 = objNull;
+if (_layer452 && _layer450) then {
+	_item573 = createVehicle ["B_supplyCrate_F",[15195.7,17290.5,0.600563],[],0,"CAN_COLLIDE"];
+	_this = _item573;
+	_objects pushback _this;
+	_objectIDs pushback 573;
+	_this setPosWorld [15195.7,17290.5,19.433];
+	_this setVectorDirAndUp [[0.754834,-0.655916,0],[0,0,1]];
 	0 remoteExec ['setFeatureType', _this];
 	[_this,"[[[[],[]],[[],[]],[[],[]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
 	if !(false) then {_this setVariable ['s', false, true];};;
@@ -5953,18 +5916,6 @@ if (_layerRoot) then {
 	_this enableSimulation false;
 };
 
-private _item163 = objNull;
-if (_layerRoot) then {
-	_item163 = createVehicle ["Flag_NATO_F",[15196.3,17345.4,-0.000936508],[],0,"CAN_COLLIDE"];
-	_this = _item163;
-	_objects pushback _this;
-	_objectIDs pushback 163;
-	_this setPosWorld [15196.3,17345.4,21.8881];
-	_this setVectorDirAndUp [[-0.768494,-0.639857,0],[0,0,1]];
-	0 remoteExec ['setFeatureType', _this];
-	_this enableDynamicSimulation true;
-};
-
 private _item564 = objNull;
 if (_layerRoot) then {
 	_item564 = createVehicle ["Land_TentLamp_01_suspended_F",[15216.3,17327.4,4.011],[],0,"CAN_COLLIDE"];
@@ -6083,6 +6034,7 @@ if (_layer498) then {
 	_this setTriggerStatements ["call{player in thisList}","call{{_x call ace_medical_treatment_fnc_fullHealLocal} forEach thisList;  
 hint ""You heave been fully healed"";  
 }",""];
+	aceHealer = _this;
 	_this setTriggerTimeout [3,3,3,true];
 };
 
@@ -6096,7 +6048,7 @@ if !(units _this isEqualTo []) then {
 	[_this, "HQ"] call CBA_fnc_setCallsign;
 	_this setBehaviour "CARELESS";
 	_this enableDynamicSimulation true;
-	    //  if (!is3DEN && !(["","ColorWEST","HQ",true] isEqualTo ['', '', '', true])) then      {        [_this, ["","ColorWEST","HQ",true]] spawn        {          scriptName 'ENH_Attribute_GroupMarker';          params ['_group', '["","ColorWEST","HQ",true]'];          ["","ColorWEST","HQ",true] params ['_type', '_color', '_text', '_showGroupSize'];          private _leader = leader _group;          private _marker = createMarker          [            format ['ENH_GroupMarker_["","ColorWEST","HQ",true]', str _group],            _leader          ];          _marker setMarkerType _type;          _marker setMarkerColor _color;          _marker setMarkerText (_text call BIS_fnc_localize);          while {true} do          {            sleep 1;            if (units _group isEqualTo []) exitWith {deleteMarker _marker};            if (_group getVariable ['ENH_GroupMarker_Update', true]) then            {              _marker setMarkerPos _leader;              if (_showGroupSize) then              {                _marker setMarkerText format ['["","ColorWEST","HQ",true] ()', groupId _group, count units _group];              };            };          };        };      };;
+	     // if (!is3DEN && !(["","ColorWEST","HQ",true] isEqualTo ['', '', '', true])) then      {        [_this, ["","ColorWEST","HQ",true]] spawn        {          scriptName 'ENH_Attribute_GroupMarker';          params ['_group', '["","ColorWEST","HQ",true]'];          ["","ColorWEST","HQ",true] params ['_type', '_color', '_text', '_showGroupSize'];          private _leader = leader _group;          private _marker = createMarker          [            format ['ENH_GroupMarker_["","ColorWEST","HQ",true]', str _group],            _leader          ];          _marker setMarkerType _type;          _marker setMarkerColor _color;          _marker setMarkerText (_text call BIS_fnc_localize);          while {true} do          {            sleep 1;            if (units _group isEqualTo []) exitWith {deleteMarker _marker};            if (_group getVariable ['ENH_GroupMarker_Update', true]) then            {              _marker setMarkerPos _leader;              if (_showGroupSize) then              {                _marker setMarkerText format ['["","ColorWEST","HQ",true] ()', groupId _group, count units _group];              };            };          };        };      };;
 };
 
 
@@ -6295,8 +6247,8 @@ if (_layer566) then {missionNamespace setVariable ["base_mil_Pandemics_HALO_C130
 if (_layer570) then {missionNamespace setVariable ["base_mil_Pandemics_HALO_C130",[[_item567,_item568,_item569],[]]];};
 if (_layer498) then {missionNamespace setVariable ["base_mil_Hospital",[[_item499,_item500,_item501,_item502,_item503,_item504,_item505,_item506,_item507,_item509,_item510,_item511,_item512,_item513,_item514,_item515,_item516,_item517,_item518,_item519,_item520,_item521,_item522,_item523,_item524,_item525,_item526,_item527,_item528,_item529,_item530,_item531,_item532,_item533,_item534,_item535,_item536,_item537,_item538,_item539,_item540,_item541,_item542,_item543,_item544,_item545,_item546,_item561],[]]];};
 if (_layer464) then {missionNamespace setVariable ["base_mil_Canteen #1",[[_item465,_item466,_item467,_item468,_item469,_item470,_item471,_item472,_item473,_item474,_item475,_item476,_item477,_item478,_item479,_item480,_item481,_item482,_item483,_item484,_item485,_item486,_item487,_item488,_item489,_item490,_item491,_item492,_item493,_item494,_item495,_item496,_item497],[]]];};
-if (_layer452) then {missionNamespace setVariable ["base_mil_Armory",[[_item453,_item454,_item455,_item456,_item457,_item458,_item459,_item462,_item463,_item565],[]]];};
-if (_layer450) then {missionNamespace setVariable ["base_mil_Base",[[_item451,_item453,_item454,_item455,_item456,_item457,_item458,_item459,_item462,_item463,_item565,_item465,_item466,_item467,_item468,_item469,_item470,_item471,_item472,_item473,_item474,_item475,_item476,_item477,_item478,_item479,_item480,_item481,_item482,_item483,_item484,_item485,_item486,_item487,_item488,_item489,_item490,_item491,_item492,_item493,_item494,_item495,_item496,_item497],[]]];};
+if (_layer452) then {missionNamespace setVariable ["base_mil_Armory",[[_item453,_item454,_item456,_item457,_item463,_item572,_item573],[]]];};
+if (_layer450) then {missionNamespace setVariable ["base_mil_Base",[[_item451,_item453,_item454,_item456,_item457,_item463,_item572,_item573,_item465,_item466,_item467,_item468,_item469,_item470,_item471,_item472,_item473,_item474,_item475,_item476,_item477,_item478,_item479,_item480,_item481,_item482,_item483,_item484,_item485,_item486,_item487,_item488,_item489,_item490,_item491,_item492,_item493,_item494,_item495,_item496,_item497],[]]];};
 if (_layer448) then {missionNamespace setVariable ["base_mil_Repair Station_1",[[_item449],[]]];};
 if (_layer446) then {missionNamespace setVariable ["base_mil_Repair Station",[[_item447,_item449],[]]];};
 if (_layer401) then {missionNamespace setVariable ["base_mil_AT Range",[[_item402,_item403,_item404,_item405],[]]];};
@@ -6347,20 +6299,12 @@ isNil {
 ] call BIS_fnc_holdActionAdd; 
 };
 	};
-	if !(isnull _item455) then {
-		this = _item455;
-		call{arsenals pushBack this};
-	};
-	if !(isnull _item459) then {
-		this = _item459;
+	if !(isnull _item572) then {
+		this = _item572;
 		call{[this, false] call ace_dragging_fnc_setCarryable; [this, false] call ace_dragging_fnc_setDraggable; arsenals pushBack this;};
 	};
-	if !(isnull _item462) then {
-		this = _item462;
-		call{[this, false] call ace_dragging_fnc_setCarryable; [this, false] call ace_dragging_fnc_setDraggable; arsenals pushBack this;};
-	};
-	if !(isnull _item565) then {
-		this = _item565;
+	if !(isnull _item573) then {
+		this = _item573;
 		call{[this, false] call ace_dragging_fnc_setCarryable; [this, false] call ace_dragging_fnc_setDraggable; arsenals pushBack this;};
 	};
 	if !(isnull _item567) then {
