@@ -6301,6 +6301,7 @@ if (_layer498) then {
 hint ""You heave been fully healed"";  
 }",""];
 	_this setTriggerTimeout [3,3,3,true];
+	aceHealer = _this;
 };
 
 
