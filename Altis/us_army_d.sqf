@@ -5673,6 +5673,7 @@ if (_layerRoot) then {
 	_this setTriggerActivation ["ANYPLAYER","PRESENT",true];
 	_this setTriggerStatements ["call{this}","call{{_x call ace_medical_treatment_fnc_fullHealLocal} foreach thislist }",""];
 	_this setTriggerTimeout [15,15,15,true];
+	aceHealer = _this;
 };
 
 private _item436 = objNull;
