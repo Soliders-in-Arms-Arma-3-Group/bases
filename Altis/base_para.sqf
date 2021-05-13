@@ -4273,6 +4273,7 @@ hint ""You have been fully healed"";
 }",""];
 	_this setTriggerText "Ace Heal";
 	_this setTriggerTimeout [3,3,3,true];
+		aceHealer = _this;
 };
 
 private _item1518 = objNull;
