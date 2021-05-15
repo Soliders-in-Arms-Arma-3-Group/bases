@@ -1,1 +1,1 @@
-script_handler = execVM "config\bases\us_army_d.sqf";
+script_handler = execVM "bases\us_army_d.sqf";
