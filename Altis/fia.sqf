@@ -2208,7 +2208,6 @@ if (_layerRoot) then {
 	_objectIDs pushback 1006;
 	_this setPosWorld [5386.96,17917.4,76.9136];
 	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
-	selectPlayer _this;
 	0 remoteExec ['setFeatureType', _this];
 	_this setname "Ed Blackburn";;
 	_this setface "WhiteHead_21";;
@@ -2224,6 +2223,7 @@ if (_layerRoot) then {
 	_this setVariable ['ACE_isEOD', false, true];
 	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
 	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
+	hideObjectGlobal _this;
 };
 
 
