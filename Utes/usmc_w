@@ -1,0 +1,918 @@
+// Export of 'usmc_w.utes' by McKendrick on v0.9
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Init
+params [["_layerWhiteList",[],[[]]],["_layerBlacklist",[],[[]]],["_posCenter",[0,0,0],[[]]],["_dir",0,[0]],["_idBlacklist",[],[[]]]];
+private _allWhitelisted = _layerWhiteList isEqualTo [];
+private _layerRoot = (_allWhitelisted || {true in _layerWhiteList}) && {!(true in _layerBlackList)};
+private _layer405 = (_allWhitelisted || {"skeet machine" in _layerWhiteList}) && {!("skeet machine" in _layerBlackList)};
+private _layer127 = (_allWhitelisted || {"repair station" in _layerWhiteList}) && {!("repair station" in _layerBlackList)};
+private _layer349 = (_allWhitelisted || {"sia zgm essentials" in _layerWhiteList}) && {!("sia zgm essentials" in _layerBlackList)};
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Markers
+private _markers = [];
+private _markerIDs = [];
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Groups
+private _groups = [];
+private _groupIDs = [];
+
+private _item395 = grpNull;
+if (_layerRoot) then {
+	_item395 = createGroup west;
+	_this = _item395;
+	_groups pushback _this;
+	_groupIDs pushback 395;
+};
+
+private _item413 = grpNull;
+if (_layerRoot) then {
+	_item413 = createGroup west;
+	_this = _item413;
+	_groups pushback _this;
+	_groupIDs pushback 413;
+};
+
+private _item406 = grpNull;
+if (_layerRoot) then {
+	_item406 = createGroup west;
+	_this = _item406;
+	_groups pushback _this;
+	_groupIDs pushback 406;
+};
+
+private _item369 = grpNull;
+if (_layerRoot) then {
+	_item369 = createGroup west;
+	_this = _item369;
+	_groups pushback _this;
+	_groupIDs pushback 369;
+};
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Objects
+private _objects = [];
+private _objectIDs = [];
+
+private _item120 = objNull;
+if (_layer349) then {
+	_item120 = createVehicle ["Land_InfoStand_V1_F",[1369.87,999.907,114.885],[],0,"CAN_COLLIDE"];
+	_this = _item120;
+	_objects pushback _this;
+	_objectIDs pushback 120;
+	_this setPosWorld [1369.87,999.907,16.4605];
+	_this setVectorDirAndUp [[-0.997281,-0.0736984,0],[0,0,1]];
+	hq_button = _this;
+	_this setVehicleVarName "hq_button";
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+	_this setObjectTextureGlobal [0,"images\tpimg.jpg"];
+};
+
+private _item408 = objNull;
+if (_layer127 && _layer349) then {
+	_item408 = createVehicle ["B_Slingload_01_Repair_F",[1382.54,952.352,114.885],[],0,"CAN_COLLIDE"];
+	_this = _item408;
+	_objects pushback _this;
+	_objectIDs pushback 408;
+	_this setPosWorld [1382.54,952.352,17.2456];
+	_this setVectorDirAndUp [[0.0365391,0.999332,0],[0,0,1]];
+	repStation = _this;
+	_this setVehicleVarName "repStation";
+	0 remoteExec ['setFeatureType', _this];
+	_this enableDynamicSimulation true;
+	_this allowdamage false;;
+	[_this,"[[[[],[]],[[],[]],[[""ToolKit""],[1]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+	if (1 != (if (isNumber (configOf _this >> "ace_repair_canRepair")) then {getNumber (configOf _this >> "ace_repair_canRepair")} else {0})) then {_this setVariable ['s', 1, true]};
+	[_this, 12] call ace_cargo_fnc_setSpace;;
+};
+
+private _item400 = objNull;
+if (_layer349) then {
+	_item400 = createVehicle ["Gunrack1",[1370.37,997.654,114.885],[],0,"CAN_COLLIDE"];
+	_this = _item400;
+	_objects pushback _this;
+	_objectIDs pushback 400;
+	_this setPosWorld [1370.37,997.654,16.3898];
+	_this setVectorDirAndUp [[0.999371,0.0354618,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+};
+
+private _item401 = objNull;
+if (_layer349) then {
+	_item401 = createVehicle ["Gunrack1",[1370.37,993.993,114.885],[],0,"CAN_COLLIDE"];
+	_this = _item401;
+	_objects pushback _this;
+	_objectIDs pushback 401;
+	_this setPosWorld [1370.37,993.993,16.3899];
+	_this setVectorDirAndUp [[1,0.000534133,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+};
+
+private _item402 = objNull;
+if (_layer349) then {
+	_item402 = createVehicle ["Gunrack1",[1371.89,1004.01,114.885],[],0,"CAN_COLLIDE"];
+	_this = _item402;
+	_objects pushback _this;
+	_objectIDs pushback 402;
+	_this setPosWorld [1371.89,1004.01,16.3899];
+	_this setVectorDirAndUp [[0.0340047,-0.999422,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+};
+
+private _item403 = objNull;
+if (_layer349) then {
+	_item403 = createVehicle ["Gunrack1",[1374.99,1003.94,114.885],[],0,"CAN_COLLIDE"];
+	_this = _item403;
+	_objects pushback _this;
+	_objectIDs pushback 403;
+	_this setPosWorld [1374.99,1003.94,16.3899];
+	_this setVectorDirAndUp [[-0.00276097,-0.999996,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+};
+
+private _item404 = objNull;
+if (_layer405) then {
+	_item404 = createVehicle ["SkeetMachine",[1380.44,893.427,114.881],[],0,"CAN_COLLIDE"];
+	_this = _item404;
+	_objects pushback _this;
+	_objectIDs pushback 404;
+	_this setPosWorld [1380.44,893.427,16.3579];
+	_this setVectorDirAndUp [[0.305546,0.952177,0],[0,0,1]];
+	sk1 = _this;
+	_this setVehicleVarName "sk1";
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+};
+
+private _item361 = objNull;
+if (_layerRoot) then {
+	_item361 = createVehicle ["Land_CampingChair_V2_F",[1375.86,989.238,114.885],[],0,"CAN_COLLIDE"];
+	_this = _item361;
+	_objects pushback _this;
+	_objectIDs pushback 361;
+	_this setPosWorld [1375.86,989.238,16.3916];
+	_this setVectorDirAndUp [[0.00387468,-0.999992,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+};
+
+private _item393 = objNull;
+if (_layerRoot) then {
+	_item393 = createVehicle ["rhsusf_f22",[1379.05,1092.87,114.885],[],0,"FLY"];
+	_this = _item393;
+	_objects pushback _this;
+	_objectIDs pushback 393;
+	_this setPosWorld [1379.04,1092.88,18.4136];
+	_this setVectorDirAndUp [[-0.999779,-0.0210127,0],[0,0,1]];
+	_this setPylonLoadout [1,"rhs_mag_Sidewinder_int"];
+	_this setPylonLoadout [2,"rhs_mag_aim120d_int"];
+	_this setPylonLoadout [3,"rhs_mag_aim120d_2_F22_l"];
+	_this setPylonLoadout [4,"rhs_mag_aim120d_2_F22_r"];
+	_this setPylonLoadout [5,"rhs_mag_aim120d_int"];
+	_this setPylonLoadout [6,"rhs_mag_Sidewinder_int"];
+	_this setPylonLoadout [7,"rhsusf_ANALE52_CMFlare_Chaff_Magazine_x4"];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+	[_this,"[[[[],[]],[[],[]],[[],[]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+	_this setVehicleReportRemoteTargets true;
+	_this setVehicleReceiveRemoteTargets true;
+	_this setVehicleReportOwnPosition true;
+	parseSimpleArray "[[""hithull"",""hitavionics"",""hitengine"",""hitengine2"",""hitfuel"",""hitlaileron"",""hitraileron"",""hitcontrolrear"",""hitlcelevator"",""hitrelevator"",""hitlcrudder"",""hitrrudder"",""hitglass1"",""#light_1_hit"",""#light_1_hit"",""#light_2_hit"",""#light_2_hit""],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]" params ['_hitpoints', '_damage']; {_this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints;
+};
+
+private _item392 = objNull;
+if (_layerRoot) then {
+	_item392 = createVehicle ["rhsusf_f22",[1379.18,1068.48,114.885],[],0,"FLY"];
+	_this = _item392;
+	_objects pushback _this;
+	_objectIDs pushback 392;
+	_this setPosWorld [1379.17,1068.49,18.4135];
+	_this setVectorDirAndUp [[-0.999779,-0.0210127,0],[0,0,1]];
+	_this setPylonLoadout [1,"rhs_mag_Sidewinder_int"];
+	_this setPylonLoadout [2,"rhs_mag_aim120d_int"];
+	_this setPylonLoadout [3,"rhs_mag_aim120d_2_F22_l"];
+	_this setPylonLoadout [4,"rhs_mag_aim120d_2_F22_r"];
+	_this setPylonLoadout [5,"rhs_mag_aim120d_int"];
+	_this setPylonLoadout [6,"rhs_mag_Sidewinder_int"];
+	_this setPylonLoadout [7,"rhsusf_ANALE52_CMFlare_Chaff_Magazine_x4"];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+	[_this,"[[[[],[]],[[],[]],[[],[]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+	_this setVehicleReportRemoteTargets true;
+	_this setVehicleReceiveRemoteTargets true;
+	_this setVehicleReportOwnPosition true;
+	parseSimpleArray "[[""hithull"",""hitavionics"",""hitengine"",""hitengine2"",""hitfuel"",""hitlaileron"",""hitraileron"",""hitcontrolrear"",""hitlcelevator"",""hitrelevator"",""hitlcrudder"",""hitrrudder"",""hitglass1"",""#light_1_hit"",""#light_1_hit"",""#light_2_hit"",""#light_2_hit""],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]" params ['_hitpoints', '_damage']; {_this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints;
+};
+
+private _item396 = objNull;
+if (_layerRoot) then {
+	_item396 = createVehicle ["rhsusf_CH53E_USMC",[1377.66,921.302,114.885],[],0,"FLY"];
+	_this = _item396;
+	_objects pushback _this;
+	_objectIDs pushback 396;
+	_this setPosWorld [1377.66,921.305,20.6523];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setPylonLoadout [1,"rhsusf_ANALE39_CMFlare_Chaff_Magazine_x2"];
+	0 remoteExec ['setFeatureType', _this];
+	_this allowdamage false;;
+	[_this,"[[[[],[]],[[],[]],[[],[]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+	if (local _this) then {if (isSimpleObject _this) then {_this setVariable ['bis_fnc_initVehicle_customization',[[],["hide_winch",0,"hide_ANAAQ24",0,"mainRotor_folded_handler",1,"hide_cargo",0]]]} else {([_this] + [[],["hide_winch",0,"hide_ANAAQ24",0,"mainRotor_folded_handler",1,"hide_cargo",0]] + [true]) call (uinamespace getvariable 'bis_fnc_initVehicle');};};;
+	parseSimpleArray "[[""hithull"",""hitengine1"",""hitengine2"",""hitengine"",""hitfuel"",""hitfuel2"",""hitavionics"",""hittail"",""hitvrotor"",""hithrotor"",""hitglass1"",""hitglass2"",""hitglass3"",""hitglass4"",""hitglass5"",""hitglass6"",""hitglass7"",""hitglass8"",""hitglass9"",""hitglass10"",""hitglass11"",""hitglass12"",""hitglass13"",""hitglass14"",""hitglass15"",""hitglass16"",""hitglass17"",""hitmissiles"",""hitrglass"",""hitlglass"",""hitengine3"",""hitwinch"",""hittransmission"",""hitlight"",""hithydraulics"",""hitgear"",""hithstabilizerl1"",""hithstabilizerr1"",""hitvstabilizer1"",""hitpitottube"",""hitstaticport"",""hitstarter1"",""hitstarter2"",""hitstarter3"",""hitturret"",""hitgun"",""#landleft"",""#landright"",""#cabin_light"",""#cargo_light_1"",""#cargo_light_2"",""#cargo_light_3""],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]" params ['_hitpoints', '_damage']; {_this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints;
+	[_this, 16] call ace_cargo_fnc_setSpace;;
+	_this setVariable ['rhs_decalNumber_type', "USMCGrey"];[_this,[['Number', cCH53NumberPlaces, "USMCGrey"]]] call rhsusf_fnc_decalsInit;
+	if( -1 >= 0)then{[_this, [['Number', cCH53NumberPlaces, _this getVariable ['rhs_decalNumber_type','USMCGrey'], -1] ] ] call rhsusf_fnc_decalsInit};;
+	_this animate ['ramp_bottom',0];_this animate ['ramp_top',0];;
+	[_this,0,true] call rhsusf_fnc_ch53_fold;
+	_this animate ['hide_cargo',0,true];_this lockCargo (0 == 1);
+	if(0 == 1)then{[_this] spawn rhs_fnc_cargoAttach}else{{if(not(_x isKindOf 'Man'))then{detach _x}}foreach attachedObjects _this};;
+};
+
+private _item397 = objNull;
+if (_layerRoot) then {
+	_item397 = _item395 createUnit ["rhsusf_usmc_marpat_wd_helipilot",[1379.58,928.749,115.448],[],0,"CAN_COLLIDE"];
+	_item395 selectLeader _item397;
+	_this = _item397;
+	_objects pushback _this;
+	_objectIDs pushback 397;
+	_this setPosWorld [1377.66,921.305,20.6523];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+	_this setname "Geoff Dorgan";;
+	_this setface "WhiteHead_13";;
+	_this setspeaker "Male05ENG";;
+	_this setpitch 0.96;;
+	parseSimpleArray "[[""hitface"",""hitneck"",""hithead"",""hitpelvis"",""hitabdomen"",""hitdiaphragm"",""hitchest"",""hitbody"",""hitarms"",""hithands"",""hitlegs"",""incapacitated"",""hitleftarm"",""hitrightarm"",""hitleftleg"",""hitrightleg"",""ace_hdbracket""],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]" params ['_hitpoints', '_damage']; {_this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints;
+	_this setUnitTrait ['Medic', false];
+	_this setUnitTrait ['Engineer', false];
+	_this setUnitTrait ['ExplosiveSpecialist', false];
+	_this setUnitTrait ['UAVHacker', false];
+	if !(0 == ([0, 1] select (_this getUnitTrait 'engineer')) || {0 == -1}) then {_this setVariable ['s', 0, true]};
+	_this setVariable ["ace_advanced_fatigue_performanceFactor", 1, true];
+	_this setVariable ['ACE_isEOD', false, true];
+	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
+	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
+};
+
+private _item398 = objNull;
+if (_layerRoot) then {
+	_item398 = _item395 createUnit ["rhsusf_usmc_marpat_wd_helipilot",[1379.58,928.749,115.448],[],0,"CAN_COLLIDE"];
+	_this = _item398;
+	_objects pushback _this;
+	_objectIDs pushback 398;
+	_this setPosWorld [1377.66,921.305,20.6523];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+	_this setname "Colin Turner";;
+	_this setface "WhiteHead_05";;
+	_this setspeaker "male12eng";;
+	_this setpitch 0.965983;;
+	parseSimpleArray "[[""hitface"",""hitneck"",""hithead"",""hitpelvis"",""hitabdomen"",""hitdiaphragm"",""hitchest"",""hitbody"",""hitarms"",""hithands"",""hitlegs"",""incapacitated"",""hitleftarm"",""hitrightarm"",""hitleftleg"",""hitrightleg"",""ace_hdbracket""],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]" params ['_hitpoints', '_damage']; {_this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints;
+	_this setUnitTrait ['Medic', false];
+	_this setUnitTrait ['Engineer', false];
+	_this setUnitTrait ['ExplosiveSpecialist', false];
+	_this setUnitTrait ['UAVHacker', false];
+	if !(0 == ([0, 1] select (_this getUnitTrait 'engineer')) || {0 == -1}) then {_this setVariable ['s', 0, true]};
+	_this setVariable ["ace_advanced_fatigue_performanceFactor", 1, true];
+	_this setVariable ['ACE_isEOD', false, true];
+	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
+	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
+};
+
+private _item412 = objNull;
+if (_layerRoot) then {
+	_item412 = _item413 createUnit ["rhsusf_usmc_marpat_wd_officer",[1374.64,991.72,114.885],[],0,"CAN_COLLIDE"];
+	_item413 selectLeader _item412;
+	_this = _item412;
+	_objects pushback _this;
+	_objectIDs pushback 412;
+	_this setPosWorld [1374.64,991.77,15.8864];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setUnitLoadout [[],[],[],["rhs_uniform_FROG01_wd",[]],["rhsusf_spc",[]],[],"rhs_8point_marpatwd","",[],["ItemMap","","ItemRadio","ItemCompass","ItemWatch",""]];
+	_this setRank "CORPORAL";
+	0 remoteExec ['setFeatureType', _this];
+	_this allowdamage false;;
+	_this setname "Jacob MacDonald";;
+	_this setface "AfricanHead_02";;
+	_this setspeaker "Male03ENG";;
+	_this setpitch 0.95;;
+	parseSimpleArray "[[""hitface"",""hitneck"",""hithead"",""hitpelvis"",""hitabdomen"",""hitdiaphragm"",""hitchest"",""hitbody"",""hitarms"",""hithands"",""hitlegs"",""incapacitated"",""hitleftarm"",""hitrightarm"",""hitleftleg"",""hitrightleg"",""ace_hdbracket""],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]" params ['_hitpoints', '_damage']; {_this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints;
+	      if !(["SIT_U1",["hubsittingchairua_idle1","hubsittingchairua_idle2","hubsittingchairua_idle3","hubsittingchairua_move1"],false,true] # 0 isEqualTo '') then      {        ["SIT_U1",["hubsittingchairua_idle1","hubsittingchairua_idle2","hubsittingchairua_idle3","hubsittingchairua_move1"],false,true] params ['_animSet', '_anims', '_canExit', '_attach'];                _this setVariable ['ENH_ambientAnimations_anims', _anims];        _this disableAI 'ANIM';        if (_attach && !is3DEN) then        {          private _logic = group _this createUnit ['Logic', getPosATL _this, [], 0, 'NONE'];          _this setVariable ['ENH_ambientAnimations_logic', _logic];          [_this, _logic] call BIS_fnc_attachToRelative;        };                ENH_fnc_ambientAnimations_play =        {          params ['_unit'];          private _anim = selectRandom (_unit getVariable ['ENH_ambientAnimations_anims', []]);          [_unit, _anim] remoteExec ['switchMove', 0];        };                ENH_fnc_ambientAnimations_exit =        {          params ['_unit'];          if !(_unit getVariable ['ENH_ambientAnimations_exit', true]) exitWith {false};          _unit setVariable ['ENH_ambientAnimations_exit', true];          detach _unit;          deleteVehicle (_unit getVariable ['ENH_ambientAnimations_logic', objNull]);          [_unit, ''] remoteExec ['switchMove', 0];                    _unit enableAI 'ANIM';                    _unit removeEventHandler ['Killed', _unit getVariable ['ENH_EHKilled',-1]];          _unit removeEventHandler ['Dammaged', _unit getVariable ['ENH_EHDammaged',-1]];          _unit removeEventHandler ['AnimDone', _unit getVariable ['ENH_EHAnimDone',-1]];        };                private _EHAnimDone = _this addEventHandler ['AnimDone',          {            params ['_unit'];            if (alive _unit) then            {              _unit call ENH_fnc_ambientAnimations_play;            }            else            {              _unit call ENH_fnc_ambientAnimations_exit;            };          }        ];        _this setVariable ['ENH_EHAnimDone', _EHAnimDone];                if (_canExit && !is3DEN) then        {          private _EHKilled = _this addEventHandler ['Killed',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHKilled', _EHKilled];          private _EHDammaged = _this addEventHandler ['Dammaged',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHDammaged', _EHDammaged];          _this spawn          {            scriptName 'ENH_Attribute_AmbientAnimations';            params ['_unit'];            waitUntil            {              sleep 1; (_unit getVariable ['ENH_ambientAnimations_exit', false]) || {behaviour _unit == 'COMBAT'}            };            _unit call ENH_fnc_ambientAnimations_exit;          };        };        _this call ENH_fnc_ambientAnimations_play;      };;
+	_this setUnitTrait ['Medic', false];
+	_this setUnitTrait ['Engineer', false];
+	_this setUnitTrait ['ExplosiveSpecialist', false];
+	_this setUnitTrait ['UAVHacker', false];
+	if !(0 == ([0, 1] select (_this getUnitTrait 'engineer')) || {0 == -1}) then {_this setVariable ['s', 0, true]};
+	_this setVariable ["ace_advanced_fatigue_performanceFactor", 1, true];
+	_this setVariable ['ACE_isEOD', false, true];
+	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
+	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
+};
+
+private _item407 = objNull;
+if (_layerRoot) then {
+	_item407 = _item406 createUnit ["rhsusf_usmc_marpat_wd_officer",[1381.6,894.145,114.885],[],0,"CAN_COLLIDE"];
+	_item406 selectLeader _item407;
+	_this = _item407;
+	_objects pushback _this;
+	_objectIDs pushback 407;
+	_this setPosWorld [1381.6,894.195,15.8864];
+	_this setVectorDirAndUp [[-0.560018,-0.828481,0],[0,0,1]];
+	_this setUnitLoadout [[],[],[],["rhs_uniform_FROG01_wd",[]],["V_Safety_orange_F",[]],[],"rhs_8point_marpatwd","rhs_googles_clear",[],["ItemMap","","ItemRadio","ItemCompass","ItemWatch",""]];
+	sk_op = _this;
+	_this setVehicleVarName "sk_op";
+	0 remoteExec ['setFeatureType', _this];
+	_this allowdamage false;;
+	_this setname "Chris Murphy";;
+	_this setface "WhiteHead_14";;
+	_this setspeaker "Male12ENG";;
+	_this setpitch 0.98;;
+	parseSimpleArray "[[""hitface"",""hitneck"",""hithead"",""hitpelvis"",""hitabdomen"",""hitdiaphragm"",""hitchest"",""hitbody"",""hitarms"",""hithands"",""hitlegs"",""incapacitated"",""hitleftarm"",""hitrightarm"",""hitleftleg"",""hitrightleg"",""ace_hdbracket""],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]" params ['_hitpoints', '_damage']; {_this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints;
+	      if !(["STAND_U2",["hubstandingub_idle1","hubstandingub_idle2","hubstandingub_idle3","hubstandingub_move1"],false,true] # 0 isEqualTo '') then      {        ["STAND_U2",["hubstandingub_idle1","hubstandingub_idle2","hubstandingub_idle3","hubstandingub_move1"],false,true] params ['_animSet', '_anims', '_canExit', '_attach'];                _this setVariable ['ENH_ambientAnimations_anims', _anims];        _this disableAI 'ANIM';        if (_attach && !is3DEN) then        {          private _logic = group _this createUnit ['Logic', getPosATL _this, [], 0, 'NONE'];          _this setVariable ['ENH_ambientAnimations_logic', _logic];          [_this, _logic] call BIS_fnc_attachToRelative;        };                ENH_fnc_ambientAnimations_play =        {          params ['_unit'];          private _anim = selectRandom (_unit getVariable ['ENH_ambientAnimations_anims', []]);          [_unit, _anim] remoteExec ['switchMove', 0];        };                ENH_fnc_ambientAnimations_exit =        {          params ['_unit'];          if !(_unit getVariable ['ENH_ambientAnimations_exit', true]) exitWith {false};          _unit setVariable ['ENH_ambientAnimations_exit', true];          detach _unit;          deleteVehicle (_unit getVariable ['ENH_ambientAnimations_logic', objNull]);          [_unit, ''] remoteExec ['switchMove', 0];                    _unit enableAI 'ANIM';                    _unit removeEventHandler ['Killed', _unit getVariable ['ENH_EHKilled',-1]];          _unit removeEventHandler ['Dammaged', _unit getVariable ['ENH_EHDammaged',-1]];          _unit removeEventHandler ['AnimDone', _unit getVariable ['ENH_EHAnimDone',-1]];        };                private _EHAnimDone = _this addEventHandler ['AnimDone',          {            params ['_unit'];            if (alive _unit) then            {              _unit call ENH_fnc_ambientAnimations_play;            }            else            {              _unit call ENH_fnc_ambientAnimations_exit;            };          }        ];        _this setVariable ['ENH_EHAnimDone', _EHAnimDone];                if (_canExit && !is3DEN) then        {          private _EHKilled = _this addEventHandler ['Killed',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHKilled', _EHKilled];          private _EHDammaged = _this addEventHandler ['Dammaged',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHDammaged', _EHDammaged];          _this spawn          {            scriptName 'ENH_Attribute_AmbientAnimations';            params ['_unit'];            waitUntil            {              sleep 1; (_unit getVariable ['ENH_ambientAnimations_exit', false]) || {behaviour _unit == 'COMBAT'}            };            _unit call ENH_fnc_ambientAnimations_exit;          };        };        _this call ENH_fnc_ambientAnimations_play;      };;
+	_this setUnitTrait ['Medic', false];
+	_this setUnitTrait ['Engineer', false];
+	_this setUnitTrait ['ExplosiveSpecialist', false];
+	_this setUnitTrait ['UAVHacker', false];
+	if !(0 == ([0, 1] select (_this getUnitTrait 'engineer')) || {0 == -1}) then {_this setVariable ['s', 0, true]};
+	_this setVariable ["ace_advanced_fatigue_performanceFactor", 1, true];
+	_this setVariable ['ACE_isEOD', false, true];
+	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
+	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
+};
+
+private _item411 = objNull;
+if (_layerRoot) then {
+	_item411 = createVehicle ["Land_Missle_Trolley_02_F",[1373.33,1056.86,114.885],[],0,"CAN_COLLIDE"];
+	_this = _item411;
+	_objects pushback _this;
+	_objectIDs pushback 411;
+	_this setPosWorld [1373.33,1056.86,16.6183];
+	_this setVectorDirAndUp [[0.845576,0.533854,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+};
+
+private _item350 = objNull;
+if (_layerRoot) then {
+	_item350 = createSimpleObject ["Land_Stretcher_01_F",[1371.1,986.116,15.8851]];
+	_this = _item350;
+	_objects pushback _this;
+	_objectIDs pushback 350;
+	_this setPosWorld [1371.1,986.116,16.1267];
+	_this setVectorDirAndUp [[0.999392,0.0348741,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+};
+
+private _item351 = objNull;
+if (_layerRoot) then {
+	_item351 = createSimpleObject ["Land_FirstAidKit_01_open_F",[1371.71,986.211,16.3854]];
+	_this = _item351;
+	_objects pushback _this;
+	_objectIDs pushback 351;
+	_this setPosWorld [1371.71,986.211,16.4482];
+	_this setVectorDirAndUp [[0.701655,-0.712517,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+};
+
+private _item352 = objNull;
+if (_layerRoot) then {
+	_item352 = createVehicle ["Land_CampingChair_V2_F",[1374.47,994.203,114.885],[],0,"CAN_COLLIDE"];
+	_this = _item352;
+	_objects pushback _this;
+	_objectIDs pushback 352;
+	_this setPosWorld [1374.47,994.203,16.3916];
+	_this setVectorDirAndUp [[0.00387468,-0.999992,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+};
+
+private _item353 = objNull;
+if (_layerRoot) then {
+	_item353 = createVehicle ["Land_CampingChair_V2_F",[1375.94,994.251,114.885],[],0,"CAN_COLLIDE"];
+	_this = _item353;
+	_objects pushback _this;
+	_objectIDs pushback 353;
+	_this setPosWorld [1375.94,994.251,16.3916];
+	_this setVectorDirAndUp [[0.00387468,-0.999992,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+};
+
+private _item354 = objNull;
+if (_layerRoot) then {
+	_item354 = createVehicle ["Land_CampingChair_V2_F",[1377.33,994.253,114.885],[],0,"CAN_COLLIDE"];
+	_this = _item354;
+	_objects pushback _this;
+	_objectIDs pushback 354;
+	_this setPosWorld [1377.33,994.253,16.3916];
+	_this setVectorDirAndUp [[0.00387468,-0.999992,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+};
+
+private _item355 = objNull;
+if (_layerRoot) then {
+	_item355 = createVehicle ["Land_CampingChair_V2_F",[1378.79,994.494,114.885],[],0,"CAN_COLLIDE"];
+	_this = _item355;
+	_objects pushback _this;
+	_objectIDs pushback 355;
+	_this setPosWorld [1378.79,994.494,16.3916];
+	_this setVectorDirAndUp [[0.00387468,-0.999992,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+};
+
+private _item356 = objNull;
+if (_layerRoot) then {
+	_item356 = createSimpleObject ["Land_CampingChair_V2_F",[1374.61,991.652,15.885]];
+	_this = _item356;
+	_objects pushback _this;
+	_objectIDs pushback 356;
+	_this setPosWorld [1374.61,991.652,16.3915];
+	_this setVectorDirAndUp [[0.00387468,-0.999992,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+};
+
+private _item357 = objNull;
+if (_layerRoot) then {
+	_item357 = createVehicle ["Land_CampingChair_V2_F",[1375.94,991.494,114.885],[],0,"CAN_COLLIDE"];
+	_this = _item357;
+	_objects pushback _this;
+	_objectIDs pushback 357;
+	_this setPosWorld [1375.94,991.494,16.3916];
+	_this setVectorDirAndUp [[0.00387468,-0.999992,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+};
+
+private _item358 = objNull;
+if (_layerRoot) then {
+	_item358 = createVehicle ["Land_CampingChair_V2_F",[1377.03,991.521,114.885],[],0,"CAN_COLLIDE"];
+	_this = _item358;
+	_objects pushback _this;
+	_objectIDs pushback 358;
+	_this setPosWorld [1377.03,991.521,16.3916];
+	_this setVectorDirAndUp [[0.00387468,-0.999992,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+};
+
+private _item359 = objNull;
+if (_layerRoot) then {
+	_item359 = createVehicle ["Land_CampingChair_V2_F",[1378.39,991.761,114.885],[],0,"CAN_COLLIDE"];
+	_this = _item359;
+	_objects pushback _this;
+	_objectIDs pushback 359;
+	_this setPosWorld [1378.39,991.761,16.3916];
+	_this setVectorDirAndUp [[0.00387468,-0.999992,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+};
+
+private _item360 = objNull;
+if (_layerRoot) then {
+	_item360 = createVehicle ["Land_CampingChair_V2_F",[1374.67,989.256,114.885],[],0,"CAN_COLLIDE"];
+	_this = _item360;
+	_objects pushback _this;
+	_objectIDs pushback 360;
+	_this setPosWorld [1374.67,989.256,16.3916];
+	_this setVectorDirAndUp [[0.00387468,-0.999992,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+};
+
+private _item370 = objNull;
+if (_layerRoot) then {
+	_item370 = _item369 createUnit ["B_Deck_Crew_F",[1378.1,989.509,114.885],[],0,"CAN_COLLIDE"];
+	_item369 selectLeader _item370;
+	_this = _item370;
+	_objects pushback _this;
+	_objectIDs pushback 370;
+	_this setPosWorld [1378.1,989.559,15.8865];
+	_this setVectorDirAndUp [[-0.00312978,0.999995,0],[0,0,1]];
+	_this setUnitLoadout [[],[],[],["U_B_HeliPilotCoveralls",[["FirstAidKit",1]]],["V_DeckCrew_yellow_F",[]],[],"AOR2_Cap","",[],["ItemMap","ItemGPS","ItemRadio","ItemCompass","ItemWatch",""]];
+	0 remoteExec ['setFeatureType', _this];
+	_this allowdamage false;;
+	_this setname "Jacob Thompson";;
+	_this setface "AfricanHead_02";;
+	_this setspeaker "Male08ENG";;
+	_this setpitch 0.99;;
+	parseSimpleArray "[[""hitface"",""hitneck"",""hithead"",""hitpelvis"",""hitabdomen"",""hitdiaphragm"",""hitchest"",""hitbody"",""hitarms"",""hithands"",""hitlegs"",""incapacitated"",""hitleftarm"",""hitrightarm"",""hitleftleg"",""hitrightleg"",""ace_hdbracket""],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]" params ['_hitpoints', '_damage']; {_this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints;
+	      if !(["SIT_U3",["hubsittingchairuc_idle1","hubsittingchairuc_idle2","hubsittingchairuc_idle3","hubsittingchairuc_move1"],false,true] # 0 isEqualTo '') then      {        ["SIT_U3",["hubsittingchairuc_idle1","hubsittingchairuc_idle2","hubsittingchairuc_idle3","hubsittingchairuc_move1"],false,true] params ['_animSet', '_anims', '_canExit', '_attach'];                _this setVariable ['ENH_ambientAnimations_anims', _anims];        _this disableAI 'ANIM';        if (_attach && !is3DEN) then        {          private _logic = group _this createUnit ['Logic', getPosATL _this, [], 0, 'NONE'];          _this setVariable ['ENH_ambientAnimations_logic', _logic];          [_this, _logic] call BIS_fnc_attachToRelative;        };                ENH_fnc_ambientAnimations_play =        {          params ['_unit'];          private _anim = selectRandom (_unit getVariable ['ENH_ambientAnimations_anims', []]);          [_unit, _anim] remoteExec ['switchMove', 0];        };                ENH_fnc_ambientAnimations_exit =        {          params ['_unit'];          if !(_unit getVariable ['ENH_ambientAnimations_exit', true]) exitWith {false};          _unit setVariable ['ENH_ambientAnimations_exit', true];          detach _unit;          deleteVehicle (_unit getVariable ['ENH_ambientAnimations_logic', objNull]);          [_unit, ''] remoteExec ['switchMove', 0];                    _unit enableAI 'ANIM';                    _unit removeEventHandler ['Killed', _unit getVariable ['ENH_EHKilled',-1]];          _unit removeEventHandler ['Dammaged', _unit getVariable ['ENH_EHDammaged',-1]];          _unit removeEventHandler ['AnimDone', _unit getVariable ['ENH_EHAnimDone',-1]];        };                private _EHAnimDone = _this addEventHandler ['AnimDone',          {            params ['_unit'];            if (alive _unit) then            {              _unit call ENH_fnc_ambientAnimations_play;            }            else            {              _unit call ENH_fnc_ambientAnimations_exit;            };          }        ];        _this setVariable ['ENH_EHAnimDone', _EHAnimDone];                if (_canExit && !is3DEN) then        {          private _EHKilled = _this addEventHandler ['Killed',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHKilled', _EHKilled];          private _EHDammaged = _this addEventHandler ['Dammaged',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHDammaged', _EHDammaged];          _this spawn          {            scriptName 'ENH_Attribute_AmbientAnimations';            params ['_unit'];            waitUntil            {              sleep 1; (_unit getVariable ['ENH_ambientAnimations_exit', false]) || {behaviour _unit == 'COMBAT'}            };            _unit call ENH_fnc_ambientAnimations_exit;          };        };        _this call ENH_fnc_ambientAnimations_play;      };;
+	_this setUnitTrait ['Medic', false];
+	_this setUnitTrait ['Engineer', false];
+	_this setUnitTrait ['ExplosiveSpecialist', false];
+	_this setUnitTrait ['UAVHacker', false];
+	if !(0 == ([0, 1] select (_this getUnitTrait 'engineer')) || {0 == -1}) then {_this setVariable ['s', 0, true]};
+	_this setVariable ["ace_advanced_fatigue_performanceFactor", 1, true];
+	_this setVariable ['ACE_isEOD', false, true];
+	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
+	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
+};
+
+private _item378 = objNull;
+if (_layerRoot) then {
+	_item378 = _item369 createUnit ["B_Deck_Crew_F",[1375.13,965.204,114.885],[],0,"CAN_COLLIDE"];
+	_this = _item378;
+	_objects pushback _this;
+	_objectIDs pushback 378;
+	_this setPosWorld [1375.13,965.254,15.8864];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setUnitLoadout [[],[],[],["U_B_HeliPilotCoveralls",[["FirstAidKit",1]]],["V_DeckCrew_blue_F",[]],[],"H_HelmetCrew_B","",[],["ItemMap","ItemGPS","ItemRadio","ItemCompass","ItemWatch",""]];
+	0 remoteExec ['setFeatureType', _this];
+	_this allowdamage false;;
+	_this setname "Jamie Davis";;
+	_this setface "GreekHead_A3_06";;
+	_this setspeaker "Male08ENG";;
+	_this setpitch 0.99;;
+	parseSimpleArray "[[""hitface"",""hitneck"",""hithead"",""hitpelvis"",""hitabdomen"",""hitdiaphragm"",""hitchest"",""hitbody"",""hitarms"",""hithands"",""hitlegs"",""incapacitated"",""hitleftarm"",""hitrightarm"",""hitleftleg"",""hitrightleg"",""ace_hdbracket""],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]" params ['_hitpoints', '_damage']; {_this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints;
+	      if !(["IDLE_2",["Acts_CivilIdle_2"],false,false] # 0 isEqualTo '') then      {        ["IDLE_2",["Acts_CivilIdle_2"],false,false] params ['_animSet', '_anims', '_canExit', '_attach'];                _this setVariable ['ENH_ambientAnimations_anims', _anims];        _this disableAI 'ANIM';        if (_attach && !is3DEN) then        {          private _logic = group _this createUnit ['Logic', getPosATL _this, [], 0, 'NONE'];          _this setVariable ['ENH_ambientAnimations_logic', _logic];          [_this, _logic] call BIS_fnc_attachToRelative;        };                ENH_fnc_ambientAnimations_play =        {          params ['_unit'];          private _anim = selectRandom (_unit getVariable ['ENH_ambientAnimations_anims', []]);          [_unit, _anim] remoteExec ['switchMove', 0];        };                ENH_fnc_ambientAnimations_exit =        {          params ['_unit'];          if !(_unit getVariable ['ENH_ambientAnimations_exit', true]) exitWith {false};          _unit setVariable ['ENH_ambientAnimations_exit', true];          detach _unit;          deleteVehicle (_unit getVariable ['ENH_ambientAnimations_logic', objNull]);          [_unit, ''] remoteExec ['switchMove', 0];                    _unit enableAI 'ANIM';                    _unit removeEventHandler ['Killed', _unit getVariable ['ENH_EHKilled',-1]];          _unit removeEventHandler ['Dammaged', _unit getVariable ['ENH_EHDammaged',-1]];          _unit removeEventHandler ['AnimDone', _unit getVariable ['ENH_EHAnimDone',-1]];        };                private _EHAnimDone = _this addEventHandler ['AnimDone',          {            params ['_unit'];            if (alive _unit) then            {              _unit call ENH_fnc_ambientAnimations_play;            }            else            {              _unit call ENH_fnc_ambientAnimations_exit;            };          }        ];        _this setVariable ['ENH_EHAnimDone', _EHAnimDone];                if (_canExit && !is3DEN) then        {          private _EHKilled = _this addEventHandler ['Killed',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHKilled', _EHKilled];          private _EHDammaged = _this addEventHandler ['Dammaged',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHDammaged', _EHDammaged];          _this spawn          {            scriptName 'ENH_Attribute_AmbientAnimations';            params ['_unit'];            waitUntil            {              sleep 1; (_unit getVariable ['ENH_ambientAnimations_exit', false]) || {behaviour _unit == 'COMBAT'}            };            _unit call ENH_fnc_ambientAnimations_exit;          };        };        _this call ENH_fnc_ambientAnimations_play;      };;
+	_this setUnitTrait ['Medic', false];
+	_this setUnitTrait ['Engineer', false];
+	_this setUnitTrait ['ExplosiveSpecialist', false];
+	_this setUnitTrait ['UAVHacker', false];
+	if !(0 == ([0, 1] select (_this getUnitTrait 'engineer')) || {0 == -1}) then {_this setVariable ['s', 0, true]};
+	_this setVariable ["ace_advanced_fatigue_performanceFactor", 1, true];
+	_this setVariable ['ACE_isEOD', false, true];
+	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
+	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
+};
+
+private _item380 = objNull;
+if (_layerRoot) then {
+	_item380 = _item369 createUnit ["B_Deck_Crew_F",[1373.37,1055.88,114.885],[],0,"CAN_COLLIDE"];
+	_this = _item380;
+	_objects pushback _this;
+	_objectIDs pushback 380;
+	_this setPosWorld [1373.37,1055.93,15.8864];
+	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
+	_this setUnitLoadout [[],[],[],["U_B_HeliPilotCoveralls",[["FirstAidKit",1]]],["V_DeckCrew_red_F",[]],[],"H_HelmetCrew_B","",[],["ItemMap","ItemGPS","ItemRadio","ItemCompass","ItemWatch",""]];
+	0 remoteExec ['setFeatureType', _this];
+	_this allowdamage false;;
+	_this setname "Charlie Davis";;
+	_this setface "GreekHead_A3_07";;
+	_this setspeaker "Male08ENG";;
+	_this setpitch 0.99;;
+	parseSimpleArray "[[""hitface"",""hitneck"",""hithead"",""hitpelvis"",""hitabdomen"",""hitdiaphragm"",""hitchest"",""hitbody"",""hitarms"",""hithands"",""hitlegs"",""incapacitated"",""hitleftarm"",""hitrightarm"",""hitleftleg"",""hitrightleg"",""ace_hdbracket""],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]" params ['_hitpoints', '_damage']; {_this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints;
+	      if !(["IDLE_2",["Acts_CivilIdle_2"],false,true] # 0 isEqualTo '') then      {        ["IDLE_2",["Acts_CivilIdle_2"],false,true] params ['_animSet', '_anims', '_canExit', '_attach'];                _this setVariable ['ENH_ambientAnimations_anims', _anims];        _this disableAI 'ANIM';        if (_attach && !is3DEN) then        {          private _logic = group _this createUnit ['Logic', getPosATL _this, [], 0, 'NONE'];          _this setVariable ['ENH_ambientAnimations_logic', _logic];          [_this, _logic] call BIS_fnc_attachToRelative;        };                ENH_fnc_ambientAnimations_play =        {          params ['_unit'];          private _anim = selectRandom (_unit getVariable ['ENH_ambientAnimations_anims', []]);          [_unit, _anim] remoteExec ['switchMove', 0];        };                ENH_fnc_ambientAnimations_exit =        {          params ['_unit'];          if !(_unit getVariable ['ENH_ambientAnimations_exit', true]) exitWith {false};          _unit setVariable ['ENH_ambientAnimations_exit', true];          detach _unit;          deleteVehicle (_unit getVariable ['ENH_ambientAnimations_logic', objNull]);          [_unit, ''] remoteExec ['switchMove', 0];                    _unit enableAI 'ANIM';                    _unit removeEventHandler ['Killed', _unit getVariable ['ENH_EHKilled',-1]];          _unit removeEventHandler ['Dammaged', _unit getVariable ['ENH_EHDammaged',-1]];          _unit removeEventHandler ['AnimDone', _unit getVariable ['ENH_EHAnimDone',-1]];        };                private _EHAnimDone = _this addEventHandler ['AnimDone',          {            params ['_unit'];            if (alive _unit) then            {              _unit call ENH_fnc_ambientAnimations_play;            }            else            {              _unit call ENH_fnc_ambientAnimations_exit;            };          }        ];        _this setVariable ['ENH_EHAnimDone', _EHAnimDone];                if (_canExit && !is3DEN) then        {          private _EHKilled = _this addEventHandler ['Killed',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHKilled', _EHKilled];          private _EHDammaged = _this addEventHandler ['Dammaged',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHDammaged', _EHDammaged];          _this spawn          {            scriptName 'ENH_Attribute_AmbientAnimations';            params ['_unit'];            waitUntil            {              sleep 1; (_unit getVariable ['ENH_ambientAnimations_exit', false]) || {behaviour _unit == 'COMBAT'}            };            _unit call ENH_fnc_ambientAnimations_exit;          };        };        _this call ENH_fnc_ambientAnimations_play;      };;
+	_this setUnitTrait ['Medic', false];
+	_this setUnitTrait ['Engineer', false];
+	_this setUnitTrait ['ExplosiveSpecialist', false];
+	_this setUnitTrait ['UAVHacker', false];
+	if !(0 == ([0, 1] select (_this getUnitTrait 'engineer')) || {0 == -1}) then {_this setVariable ['s', 0, true]};
+	_this setVariable ["ace_advanced_fatigue_performanceFactor", 1, true];
+	_this setVariable ['ACE_isEOD', false, true];
+	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
+	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
+};
+
+private _item382 = objNull;
+if (_layerRoot) then {
+	_item382 = _item369 createUnit ["B_Deck_Crew_F",[1383,956.94,114.885],[],0,"CAN_COLLIDE"];
+	_this = _item382;
+	_objects pushback _this;
+	_objectIDs pushback 382;
+	_this setPosWorld [1383,956.99,15.8865];
+	_this setVectorDirAndUp [[0.74016,0.67243,0],[0,0,1]];
+	_this setUnitLoadout [[],[],[],["U_B_HeliPilotCoveralls",[["FirstAidKit",1]]],["V_DeckCrew_violet_F",[]],[],"H_HelmetCrew_B","",[],["ItemMap","ItemGPS","ItemRadio","ItemCompass","ItemWatch",""]];
+	0 remoteExec ['setFeatureType', _this];
+	_this allowdamage false;;
+	_this setname "Connor Faulkner";;
+	_this setface "WhiteHead_15";;
+	_this setspeaker "Male08ENG";;
+	_this setpitch 0.99;;
+	parseSimpleArray "[[""hitface"",""hitneck"",""hithead"",""hitpelvis"",""hitabdomen"",""hitdiaphragm"",""hitchest"",""hitbody"",""hitarms"",""hithands"",""hitlegs"",""incapacitated"",""hitleftarm"",""hitrightarm"",""hitleftleg"",""hitrightleg"",""ace_hdbracket""],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]" params ['_hitpoints', '_damage']; {_this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints;
+	      if !(["IDLE_1",["Acts_CivilIdle_1"],false,true] # 0 isEqualTo '') then      {        ["IDLE_1",["Acts_CivilIdle_1"],false,true] params ['_animSet', '_anims', '_canExit', '_attach'];                _this setVariable ['ENH_ambientAnimations_anims', _anims];        _this disableAI 'ANIM';        if (_attach && !is3DEN) then        {          private _logic = group _this createUnit ['Logic', getPosATL _this, [], 0, 'NONE'];          _this setVariable ['ENH_ambientAnimations_logic', _logic];          [_this, _logic] call BIS_fnc_attachToRelative;        };                ENH_fnc_ambientAnimations_play =        {          params ['_unit'];          private _anim = selectRandom (_unit getVariable ['ENH_ambientAnimations_anims', []]);          [_unit, _anim] remoteExec ['switchMove', 0];        };                ENH_fnc_ambientAnimations_exit =        {          params ['_unit'];          if !(_unit getVariable ['ENH_ambientAnimations_exit', true]) exitWith {false};          _unit setVariable ['ENH_ambientAnimations_exit', true];          detach _unit;          deleteVehicle (_unit getVariable ['ENH_ambientAnimations_logic', objNull]);          [_unit, ''] remoteExec ['switchMove', 0];                    _unit enableAI 'ANIM';                    _unit removeEventHandler ['Killed', _unit getVariable ['ENH_EHKilled',-1]];          _unit removeEventHandler ['Dammaged', _unit getVariable ['ENH_EHDammaged',-1]];          _unit removeEventHandler ['AnimDone', _unit getVariable ['ENH_EHAnimDone',-1]];        };                private _EHAnimDone = _this addEventHandler ['AnimDone',          {            params ['_unit'];            if (alive _unit) then            {              _unit call ENH_fnc_ambientAnimations_play;            }            else            {              _unit call ENH_fnc_ambientAnimations_exit;            };          }        ];        _this setVariable ['ENH_EHAnimDone', _EHAnimDone];                if (_canExit && !is3DEN) then        {          private _EHKilled = _this addEventHandler ['Killed',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHKilled', _EHKilled];          private _EHDammaged = _this addEventHandler ['Dammaged',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHDammaged', _EHDammaged];          _this spawn          {            scriptName 'ENH_Attribute_AmbientAnimations';            params ['_unit'];            waitUntil            {              sleep 1; (_unit getVariable ['ENH_ambientAnimations_exit', false]) || {behaviour _unit == 'COMBAT'}            };            _unit call ENH_fnc_ambientAnimations_exit;          };        };        _this call ENH_fnc_ambientAnimations_play;      };;
+	_this setUnitTrait ['Medic', false];
+	_this setUnitTrait ['Engineer', false];
+	_this setUnitTrait ['ExplosiveSpecialist', false];
+	_this setUnitTrait ['UAVHacker', false];
+	if !(0 == ([0, 1] select (_this getUnitTrait 'engineer')) || {0 == -1}) then {_this setVariable ['s', 0, true]};
+	_this setVariable ["ace_advanced_fatigue_performanceFactor", 1, true];
+	_this setVariable ['ACE_isEOD', false, true];
+	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
+	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
+};
+
+private _item384 = objNull;
+if (_layerRoot) then {
+	_item384 = _item369 createUnit ["B_Deck_Crew_F",[1375.21,967.114,115.01],[],0,"CAN_COLLIDE"];
+	_this = _item384;
+	_objects pushback _this;
+	_objectIDs pushback 384;
+	_this setPosWorld [1375.21,967.164,16.0112];
+	_this setVectorDirAndUp [[0.196148,-0.980574,0],[0,0,1]];
+	_this setUnitLoadout [[],[],[],["U_B_HeliPilotCoveralls",[["FirstAidKit",1]]],["V_DeckCrew_blue_F",[]],[],"H_HelmetCrew_B","",[],["ItemMap","ItemGPS","ItemRadio","ItemCompass","ItemWatch",""]];
+	0 remoteExec ['setFeatureType', _this];
+	_this allowdamage false;;
+	_this setname "Andy Hall";;
+	_this setface "WhiteHead_20";;
+	_this setspeaker "Male08ENG";;
+	_this setpitch 0.99;;
+	parseSimpleArray "[[""hitface"",""hitneck"",""hithead"",""hitpelvis"",""hitabdomen"",""hitdiaphragm"",""hitchest"",""hitbody"",""hitarms"",""hithands"",""hitlegs"",""incapacitated"",""hitleftarm"",""hitrightarm"",""hitleftleg"",""hitrightleg"",""ace_hdbracket""],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]" params ['_hitpoints', '_damage']; {_this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints;
+	      if !(["SIT_HIGH2",["hubsittinghighb_move1"],false,true] # 0 isEqualTo '') then      {        ["SIT_HIGH2",["hubsittinghighb_move1"],false,true] params ['_animSet', '_anims', '_canExit', '_attach'];                _this setVariable ['ENH_ambientAnimations_anims', _anims];        _this disableAI 'ANIM';        if (_attach && !is3DEN) then        {          private _logic = group _this createUnit ['Logic', getPosATL _this, [], 0, 'NONE'];          _this setVariable ['ENH_ambientAnimations_logic', _logic];          [_this, _logic] call BIS_fnc_attachToRelative;        };                ENH_fnc_ambientAnimations_play =        {          params ['_unit'];          private _anim = selectRandom (_unit getVariable ['ENH_ambientAnimations_anims', []]);          [_unit, _anim] remoteExec ['switchMove', 0];        };                ENH_fnc_ambientAnimations_exit =        {          params ['_unit'];          if !(_unit getVariable ['ENH_ambientAnimations_exit', true]) exitWith {false};          _unit setVariable ['ENH_ambientAnimations_exit', true];          detach _unit;          deleteVehicle (_unit getVariable ['ENH_ambientAnimations_logic', objNull]);          [_unit, ''] remoteExec ['switchMove', 0];                    _unit enableAI 'ANIM';                    _unit removeEventHandler ['Killed', _unit getVariable ['ENH_EHKilled',-1]];          _unit removeEventHandler ['Dammaged', _unit getVariable ['ENH_EHDammaged',-1]];          _unit removeEventHandler ['AnimDone', _unit getVariable ['ENH_EHAnimDone',-1]];        };                private _EHAnimDone = _this addEventHandler ['AnimDone',          {            params ['_unit'];            if (alive _unit) then            {              _unit call ENH_fnc_ambientAnimations_play;            }            else            {              _unit call ENH_fnc_ambientAnimations_exit;            };          }        ];        _this setVariable ['ENH_EHAnimDone', _EHAnimDone];                if (_canExit && !is3DEN) then        {          private _EHKilled = _this addEventHandler ['Killed',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHKilled', _EHKilled];          private _EHDammaged = _this addEventHandler ['Dammaged',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHDammaged', _EHDammaged];          _this spawn          {            scriptName 'ENH_Attribute_AmbientAnimations';            params ['_unit'];            waitUntil            {              sleep 1; (_unit getVariable ['ENH_ambientAnimations_exit', false]) || {behaviour _unit == 'COMBAT'}            };            _unit call ENH_fnc_ambientAnimations_exit;          };        };        _this call ENH_fnc_ambientAnimations_play;      };;
+	_this setUnitTrait ['Medic', false];
+	_this setUnitTrait ['Engineer', false];
+	_this setUnitTrait ['ExplosiveSpecialist', false];
+	_this setUnitTrait ['UAVHacker', false];
+	if !(0 == ([0, 1] select (_this getUnitTrait 'engineer')) || {0 == -1}) then {_this setVariable ['s', 0, true]};
+	_this setVariable ["ace_advanced_fatigue_performanceFactor", 1, true];
+	_this setVariable ['ACE_isEOD', false, true];
+	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
+	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
+};
+
+private _item417 = objNull;
+if (_layerRoot) then {
+	_item417 = _item369 createUnit ["B_Deck_Crew_F",[1347.72,983.481,113.535],[],0,"CAN_COLLIDE"];
+	_this = _item417;
+	_objects pushback _this;
+	_objectIDs pushback 417;
+	_this setPosWorld [1347.72,983.531,14.5369];
+	_this setVectorDirAndUp [[-0.994487,-0.104862,0],[0,0,1]];
+	_this setUnitLoadout [[],[],[],["U_B_HeliPilotCoveralls",[["FirstAidKit",1]]],["V_DeckCrew_yellow_F",[]],[],"AOR2_Cap","",[],["ItemMap","ItemGPS","ItemRadio","ItemCompass","ItemWatch",""]];
+	0 remoteExec ['setFeatureType', _this];
+	_this allowdamage false;;
+	_this setname "Bradley Wilson";;
+	_this setface "WhiteHead_12";;
+	_this setspeaker "Male08ENG";;
+	_this setpitch 0.99;;
+	parseSimpleArray "[[""hitface"",""hitneck"",""hithead"",""hitpelvis"",""hitabdomen"",""hitdiaphragm"",""hitchest"",""hitbody"",""hitarms"",""hithands"",""hitlegs"",""incapacitated"",""hitleftarm"",""hitrightarm"",""hitleftleg"",""hitrightleg"",""ace_hdbracket""],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]" params ['_hitpoints', '_damage']; {_this setHitPointDamage [_x, _damage # _forEachIndex, false]} forEach _hitpoints;
+	      if !(["WARMUP_2",["Acts_AidlPercMstpSnonWnonDnon_warmup_3_loop"],false,true] # 0 isEqualTo '') then      {        ["WARMUP_2",["Acts_AidlPercMstpSnonWnonDnon_warmup_3_loop"],false,true] params ['_animSet', '_anims', '_canExit', '_attach'];                _this setVariable ['ENH_ambientAnimations_anims', _anims];        _this disableAI 'ANIM';        if (_attach && !is3DEN) then        {          private _logic = group _this createUnit ['Logic', getPosATL _this, [], 0, 'NONE'];          _this setVariable ['ENH_ambientAnimations_logic', _logic];          [_this, _logic] call BIS_fnc_attachToRelative;        };                ENH_fnc_ambientAnimations_play =        {          params ['_unit'];          private _anim = selectRandom (_unit getVariable ['ENH_ambientAnimations_anims', []]);          [_unit, _anim] remoteExec ['switchMove', 0];        };                ENH_fnc_ambientAnimations_exit =        {          params ['_unit'];          if !(_unit getVariable ['ENH_ambientAnimations_exit', true]) exitWith {false};          _unit setVariable ['ENH_ambientAnimations_exit', true];          detach _unit;          deleteVehicle (_unit getVariable ['ENH_ambientAnimations_logic', objNull]);          [_unit, ''] remoteExec ['switchMove', 0];                    _unit enableAI 'ANIM';                    _unit removeEventHandler ['Killed', _unit getVariable ['ENH_EHKilled',-1]];          _unit removeEventHandler ['Dammaged', _unit getVariable ['ENH_EHDammaged',-1]];          _unit removeEventHandler ['AnimDone', _unit getVariable ['ENH_EHAnimDone',-1]];        };                private _EHAnimDone = _this addEventHandler ['AnimDone',          {            params ['_unit'];            if (alive _unit) then            {              _unit call ENH_fnc_ambientAnimations_play;            }            else            {              _unit call ENH_fnc_ambientAnimations_exit;            };          }        ];        _this setVariable ['ENH_EHAnimDone', _EHAnimDone];                if (_canExit && !is3DEN) then        {          private _EHKilled = _this addEventHandler ['Killed',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHKilled', _EHKilled];          private _EHDammaged = _this addEventHandler ['Dammaged',          {            (_this select 0) call ENH_fnc_ambientAnimations_exit;          }];          _this setVariable ['ENH_EHDammaged', _EHDammaged];          _this spawn          {            scriptName 'ENH_Attribute_AmbientAnimations';            params ['_unit'];            waitUntil            {              sleep 1; (_unit getVariable ['ENH_ambientAnimations_exit', false]) || {behaviour _unit == 'COMBAT'}            };            _unit call ENH_fnc_ambientAnimations_exit;          };        };        _this call ENH_fnc_ambientAnimations_play;      };;
+	_this setUnitTrait ['Medic', false];
+	_this setUnitTrait ['Engineer', false];
+	_this setUnitTrait ['ExplosiveSpecialist', false];
+	_this setUnitTrait ['UAVHacker', false];
+	if !(0 == ([0, 1] select (_this getUnitTrait 'engineer')) || {0 == -1}) then {_this setVariable ['s', 0, true]};
+	_this setVariable ["ace_advanced_fatigue_performanceFactor", 1, true];
+	_this setVariable ['ACE_isEOD', false, true];
+	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
+	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
+};
+
+private _item362 = objNull;
+if (_layerRoot) then {
+	_item362 = createVehicle ["Land_CampingChair_V2_F",[1376.91,989.253,114.885],[],0,"CAN_COLLIDE"];
+	_this = _item362;
+	_objects pushback _this;
+	_objectIDs pushback 362;
+	_this setPosWorld [1376.91,989.253,16.3916];
+	_this setVectorDirAndUp [[0.00387468,-0.999992,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+};
+
+private _item363 = objNull;
+if (_layerRoot) then {
+	_item363 = createSimpleObject ["Land_CampingChair_V2_F",[1378.11,989.373,15.885]];
+	_this = _item363;
+	_objects pushback _this;
+	_objectIDs pushback 363;
+	_this setPosWorld [1378.11,989.373,16.3915];
+	_this setVectorDirAndUp [[0.00387468,-0.999992,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+};
+
+private _item364 = objNull;
+if (_layerRoot) then {
+	_item364 = createSimpleObject ["Land_TripodScreen_01_large_F",[1377.47,998.63,15.8851]];
+	_this = _item364;
+	_objects pushback _this;
+	_objectIDs pushback 364;
+	_this setPosWorld [1377.47,998.63,16.9283];
+	_this setVectorDirAndUp [[-0.106981,-0.994261,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+	_this setObjectTextureGlobal [0,"#(argb,8,8,3)color(0,0,0,0.0,co)"];
+};
+
+private _item365 = objNull;
+if (_layerRoot) then {
+	_item365 = createSimpleObject ["Land_PortableDesk_01_olive_F",[1376.24,999.087,15.8851]];
+	_this = _item365;
+	_objects pushback _this;
+	_objectIDs pushback 365;
+	_this setPosWorld [1376.24,999.087,16.329];
+	_this setVectorDirAndUp [[0.752158,-0.658983,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+	if(_this animationSourcePhase 'Lid_2_hide_source' > 0)then{_this animate ['Drawer_1_move_source',0,true]};
+	if(_this animationSourcePhase 'Lid_2_hide_source' > 0)then{_this animate ['Drawer_2_move_source',0,true]};
+	if(_this animationSourcePhase 'Lid_2_hide_source' > 0)then{_this animate ['Drawer_3_move_source',0,true]};
+	if(_this animationSourcePhase 'Lid_2_hide_source' > 0)then{_this animate ['Drawer_4_move_source',0,true]};
+	if(_this animationSourcePhase 'Lid_2_hide_source' > 0)then{_this animate ['Drawer_5_move_source',0,true]};
+	if(_this animationSourcePhase 'Lid_2_hide_source' > 0)then{_this animate ['Drawer_6_move_source',0,true]};
+	_this animate ['Lid_1_hide_source',1,true];
+	_this animate ['Lid_2_hide_source',1,true];
+	_this animate ['Wing_L_hide_source',0,true];
+	_this animate ['Wing_R_hide_source',0,true];
+};
+
+private _item366 = objNull;
+if (_layerRoot) then {
+	_item366 = createSimpleObject ["Land_DeskChair_01_olive_F",[1375.14,999.247,15.8851]];
+	_this = _item366;
+	_objects pushback _this;
+	_objectIDs pushback 366;
+	_this setPosWorld [1375.14,999.247,16.1059];
+	_this setVectorDirAndUp [[0.358426,-0.933558,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+};
+
+private _item367 = objNull;
+if (_layerRoot) then {
+	_item367 = createSimpleObject ["Land_PortableGenerator_01_F",[1378.42,999.02,15.8851]];
+	_this = _item367;
+	_objects pushback _this;
+	_objectIDs pushback 367;
+	_this setPosWorld [1378.42,999.02,16.2608];
+	_this setVectorDirAndUp [[-0.756583,0.653898,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+};
+
+private _item368 = objNull;
+if (_layerRoot) then {
+	_item368 = createSimpleObject ["Land_Laptop_03_black_F",[1375.69,998.5,16.772]];
+	_this = _item368;
+	_objects pushback _this;
+	_objectIDs pushback 368;
+	_this setPosWorld [1375.69,998.5,16.9394];
+	_this setVectorDirAndUp [[0.761414,-0.648266,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+	_this setObjectTextureGlobal [1,"images\xpscreen.paa"];
+};
+
+private _item385 = objNull;
+if (_layerRoot) then {
+	_item385 = createVehicle ["Land_DeckTractor_01_F",[1376.47,967.628,114.885],[],0,"CAN_COLLIDE"];
+	_this = _item385;
+	_objects pushback _this;
+	_objectIDs pushback 385;
+	_this setPosWorld [1376.47,967.628,16.554];
+	_this setVectorDirAndUp [[-0.999654,0.026317,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableSimulation false;
+};
+
+private _item410 = objNull;
+if (_layerRoot) then {
+	_item410 = createVehicle ["Box_NATO_AmmoVeh_F",[1382.36,946.913,114.885],[],0,"CAN_COLLIDE"];
+	_this = _item410;
+	_objects pushback _this;
+	_objectIDs pushback 410;
+	_this setPosWorld [1382.36,946.913,16.6748];
+	_this setVectorDirAndUp [[0.789791,-0.613376,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableDynamicSimulation true;
+	[_this,"[[[[],[]],[[],[]],[[],[]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
+	if (1200 != (if (isNumber (configOf _this >> "ace_rearm_defaultSupply")) then {getNumber (configOf _this >> "ace_rearm_defaultSupply")} else {-1})) then {[_this, 1200] call ace_rearm_fnc_makeSource};
+};
+
+private _item409 = objNull;
+if (_layerRoot) then {
+	_item409 = createVehicle ["CargoNet_01_barrels_F",[1381.61,957.786,114.885],[],0,"CAN_COLLIDE"];
+	_this = _item409;
+	_objects pushback _this;
+	_objectIDs pushback 409;
+	_this setPosWorld [1381.61,957.786,16.4139];
+	_this setVectorDirAndUp [[-0.968726,-0.248132,0],[0,0,1]];
+	0 remoteExec ['setFeatureType', _this];
+	_this enableDynamicSimulation true;
+	if (1000 != (if (isNumber (configOf _this >> "ace_refuel_fuelCargo")) then {getNumber (configOf _this >> "ace_refuel_fuelCargo")} else {-1})) then {[_this, 1000] call ace_refuel_fnc_makeSource};
+	if ([0.3,0.3,0.3] isNotEqualTo (if (isArray (configOf _this >> "ace_refuel_hooks")) then {getArray (configOf _this >> "ace_refuel_hooks") select 0} else {[0, 0, 0]})) then {_this setVariable ['s', [[0.3,0.3,0.3]], true]};
+	[_this, 6] call ace_cargo_fnc_setSize;;
+};
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Triggers
+private _triggers = [];
+private _triggerIDs = [];
+
+private _item122 = objNull;
+if (_layer349) then {
+	_item122 = createTrigger ["EmptyDetectorArea10x10",[1371.47,987.206,114.885],false];
+	_this = _item122;
+	_triggers pushback _this;
+	_triggerIDs pushback 122;
+	_item122 setPosATL [1371.47,987.206,114.885];
+	_this setTriggerArea [2,2,91.0474,true,5];
+	_this setTriggerActivation ["ANYPLAYER","PRESENT",true];
+	_this setTriggerStatements ["call{this}","call{{[objNull, _x] call ace_medical_treatment_fnc_fullHeal; [""You have been fully healed""] remoteExec [""hint"", _x]} forEach thisList; }",""];
+	aceHealer = _this;
+	_this setTriggerText "Ace Heal";
+	_this setTriggerTimeout [3,3,3,true];
+};
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Group attributes (applied only once group units exist)
+_this = _item395;
+if !(units _this isEqualTo []) then {
+	[_this,0] setWaypointPosition [position leader _this,0];
+	[_this, "November"] call CBA_fnc_setCallsign;
+	      //if (!is3DEN && (["","ColorWEST","November",true] # 0 != '') then      {        [_this, ["","ColorWEST","November",true]] spawn        {          scriptName 'ENH_Attribute_GroupMarker';          params ['_group', '["","ColorWEST","November",true]'];          ["","ColorWEST","November",true] params ['_type', '_color', '_text', '_showGroupSize'];          private _leader = leader _group;          private _marker = createMarker          [            format ['ENH_GroupMarker_["","ColorWEST","November",true]', str _group],            _leader          ];          _marker setMarkerType _type;          _marker setMarkerColor _color;          _marker setMarkerText (_text call BIS_fnc_localize);          while {true} do          {            sleep 1;            if (units _group isEqualTo []) exitWith {deleteMarker _marker};            if (_group getVariable ['ENH_GroupMarker_Update', true]) then            {              _marker setMarkerPos _leader;              if (_showGroupSize) then              {                _marker setMarkerText format ['["","ColorWEST","November",true] ()', groupId _group, count units _group];              };            };          };        };      };;
+};
+_this = _item413;
+if !(units _this isEqualTo []) then {
+	[_this,0] setWaypointPosition [position leader _this,0];
+	[_this, "HQ"] call CBA_fnc_setCallsign;
+	_this setBehaviour "CARELESS";
+	      //if (!is3DEN && (["","ColorWEST","HQ",true] # 0 != '') then      {        [_this, ["","ColorWEST","HQ",true]] spawn        {          scriptName 'ENH_Attribute_GroupMarker';          params ['_group', '["","ColorWEST","HQ",true]'];          ["","ColorWEST","HQ",true] params ['_type', '_color', '_text', '_showGroupSize'];          private _leader = leader _group;          private _marker = createMarker          [            format ['ENH_GroupMarker_["","ColorWEST","HQ",true]', str _group],            _leader          ];          _marker setMarkerType _type;          _marker setMarkerColor _color;          _marker setMarkerText (_text call BIS_fnc_localize);          while {true} do          {            sleep 1;            if (units _group isEqualTo []) exitWith {deleteMarker _marker};            if (_group getVariable ['ENH_GroupMarker_Update', true]) then            {              _marker setMarkerPos _leader;              if (_showGroupSize) then              {                _marker setMarkerText format ['["","ColorWEST","HQ",true] ()', groupId _group, count units _group];              };            };          };        };      };;
+};
+_this = _item406;
+if !(units _this isEqualTo []) then {
+	[_this,0] setWaypointPosition [position leader _this,0];
+	[_this, "Rangemaster"] call CBA_fnc_setCallsign;
+	_this setBehaviour "CARELESS";
+	      //if (!is3DEN && (["","ColorWEST","Rangemaster",true] # 0 != '') then      {        [_this, ["","ColorWEST","Rangemaster",true]] spawn        {          scriptName 'ENH_Attribute_GroupMarker';          params ['_group', '["","ColorWEST","Rangemaster",true]'];          ["","ColorWEST","Rangemaster",true] params ['_type', '_color', '_text', '_showGroupSize'];          private _leader = leader _group;          private _marker = createMarker          [            format ['ENH_GroupMarker_["","ColorWEST","Rangemaster",true]', str _group],            _leader          ];          _marker setMarkerType _type;          _marker setMarkerColor _color;          _marker setMarkerText (_text call BIS_fnc_localize);          while {true} do          {            sleep 1;            if (units _group isEqualTo []) exitWith {deleteMarker _marker};            if (_group getVariable ['ENH_GroupMarker_Update', true]) then            {              _marker setMarkerPos _leader;              if (_showGroupSize) then              {                _marker setMarkerText format ['["","ColorWEST","Rangemaster",true] ()', groupId _group, count units _group];              };            };          };        };      };;
+};
+_this = _item369;
+if !(units _this isEqualTo []) then {
+	[_this,0] setWaypointPosition [position leader _this,0];
+	[_this, "Crew"] call CBA_fnc_setCallsign;
+	_this setBehaviour "CARELESS";
+	     // if (!is3DEN && (["","ColorWEST","Crew",true] # 0 != '') then      {        [_this, ["","ColorWEST","Crew",true]] spawn        {          scriptName 'ENH_Attribute_GroupMarker';          params ['_group', '["","ColorWEST","Crew",true]'];          ["","ColorWEST","Crew",true] params ['_type', '_color', '_text', '_showGroupSize'];          private _leader = leader _group;          private _marker = createMarker          [            format ['ENH_GroupMarker_["","ColorWEST","Crew",true]', str _group],            _leader          ];          _marker setMarkerType _type;          _marker setMarkerColor _color;          _marker setMarkerText (_text call BIS_fnc_localize);          while {true} do          {            sleep 1;            if (units _group isEqualTo []) exitWith {deleteMarker _marker};            if (_group getVariable ['ENH_GroupMarker_Update', true]) then            {              _marker setMarkerPos _leader;              if (_showGroupSize) then              {                _marker setMarkerText format ['["","ColorWEST","Crew",true] ()', groupId _group, count units _group];              };            };          };        };      };;
+};
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Waypoints
+private _waypoints = [];
+private _waypointIDs = [];
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Logics
+private _logics = [];
+private _logicIDs = [];
+
+private _item123 = objNull;
+if (_layer349) then {
+	_item123 = (group (missionNamespace getvariable ["BIS_functions_mainscope",objnull])) createUnit ["Logic",[1373.05,1001.12,114.885],[],0,"CAN_COLLIDE"];
+	_this = _item123;
+	_logics pushback _this;
+	_logicIDs pushback 123;
+	_this setPosWorld [1373.05,1001.12,15.8851];
+	_this setVectorDirAndUp [[0.804026,0.594595,0],[0,0,1]];
+	spawnPos = _this;
+	_this setVehicleVarName "spawnPos";
+};
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Layers
+if (_layer405) then {missionNamespace setVariable ["usmc_w_Skeet Machine",[[_item404],[]]];};
+if (_layer127) then {missionNamespace setVariable ["usmc_w_Repair Station",[[_item408],[]]];};
+if (_layer349) then {missionNamespace setVariable ["usmc_w_SIA ZGM Essentials",[[_item120,_item122,_item123,_item408,_item400,_item401,_item402,_item403],[]]];};
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Crews
+if (!isNull _item397 && !isNull _item396) then {_item397 moveInDriver _item396;};
+if (!isNull _item398 && !isNull _item396) then {_item398 moveInTurret [_item396,[0]];};
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Vehicle cargo
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Connections
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Inits (executed only once all entities exist; isNil used to ensure non-scheduled environment)
+isNil {
+	if !(isnull _item400) then {
+		this = _item400;
+		call{arsenals pushBack this};
+	};
+	if !(isnull _item401) then {
+		this = _item401;
+		call{arsenals pushBack this};
+	};
+	if !(isnull _item402) then {
+		this = _item402;
+		call{arsenals pushBack this};
+	};
+	if !(isnull _item403) then {
+		this = _item403;
+		call{arsenals pushBack this};
+	};
+};
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Module activations (only once everything is spawned and connected)
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+[[_objects,_groups,_triggers,_waypoints,_logics,_markers],[_objectIDs,_groupIDs,_triggerIDs,_waypointIDs,_logicIDs,_markerIDs]]
