@@ -596,9 +596,9 @@ if (_layerRoot) then {
 	_this setVariable ['rhs_decalNumber_type', 0];[_this,[['Number', cDecals4CarsNumberPlaces, 0]]] call rhs_fnc_decalsInit;
 	if(-1 >= 0)then{[_this,[['Number', cDecals4CarsNumberPlaces, _this getVariable ['rhs_decalNumber_type','LicensePlate'], -1]]] call rhs_fnc_decalsInit};;
 	_this setVariable ['rhs_decalArmy_type', 0];;
-	if(parseNumber -1 >= 0)then{ [_this, [ [ 'Label', cDecalsCarsRightArmyPlaces,  _this getVariable ['rhs_decalArmy_type','Army'],call compile -1] ] ] call rhs_fnc_decalsInit};;
+	//if(parseNumber -1 >= 0)then{ [_this, [ [ 'Label', cDecalsCarsRightArmyPlaces,  _this getVariable ['rhs_decalArmy_type','Army'],call compile -1] ] ] call rhs_fnc_decalsInit};;
 	_this setVariable ['rhs_decalPlatoon_type', 0];;
-	if(parseNumber -1 >= 0)then{ [_this, [ [ 'Label', cDecalsCarsRightPlatoonPlaces,  _this getVariable ['rhs_decalPlatoon_type','Army'],call compile -1] ] ] call rhs_fnc_decalsInit};;
+	//if(parseNumber -1 >= 0)then{ [_this, [ [ 'Label', cDecalsCarsRightPlatoonPlaces,  _this getVariable ['rhs_decalPlatoon_type','Army'],call compile -1] ] ] call rhs_fnc_decalsInit};;
 	_this animate ['light_hide',0,true];
 	_this animate ['spare_hide',0,true];
 	_this animateDoor ['Door_LF',0,true];
