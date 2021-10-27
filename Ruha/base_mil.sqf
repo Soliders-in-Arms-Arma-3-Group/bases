@@ -24,22 +24,6 @@ private _markerIDs = [];
 private _groups = [];
 private _groupIDs = [];
 
-private _item285 = grpNull;
-if (_layerRoot) then {
-	_item285 = createGroup west;
-	_this = _item285;
-	_groups pushback _this;
-	_groupIDs pushback 285;
-};
-
-private _item290 = grpNull;
-if (_layerRoot) then {
-	_item290 = createGroup west;
-	_this = _item290;
-	_groups pushback _this;
-	_groupIDs pushback 290;
-};
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 // Objects
@@ -67,7 +51,7 @@ if (_layer229) then {
 	_objects pushback _this;
 	_objectIDs pushback 1;
 	_this setPosWorld [6653.49,1152.72,47.5624];
-	_this setVectorDirAndUp [[-0.999364,-0.035671,0],[0,0,1]];
+	_this setVectorDirAndUp [[-0.999364,-0.0356708,0],[0,0,1]];
 	_this enableSimulation false;
 	[_this,"[[[[],[]],[[],[]],[[],[]],[[],[]]],false]"] call bis_fnc_initAmmoBox;;
 	[_this, 6] call ace_cargo_fnc_setSize;;
@@ -87,12 +71,12 @@ if (_layer4 && _layer229) then {
 
 private _item8 = objNull;
 if (_layer7 && _layer229) then {
-	_item8 = createVehicle ["Land_RepairDepot_01_tan_F",[6605.92,1165.02,0],[],0,"CAN_COLLIDE"];
+	_item8 = createVehicle ["Land_RepairDepot_01_tan_F",[6605.92,1165.05,-0.000190735],[],0,"CAN_COLLIDE"];
 	_this = _item8;
 	_objects pushback _this;
 	_objectIDs pushback 8;
 	_this setPosWorld [6605.92,1165.05,49.0878];
-	_this setVectorDirAndUp [[-0.0198505,0.999803,0],[0,0,1]];
+	_this setVectorDirAndUp [[-0.0198502,0.999803,0],[0,0,1]];
 	repStation = _this;
 	_this setVehicleVarName "repStation";
 	_this enableDynamicSimulation true;
@@ -2826,7 +2810,7 @@ if (_layerRoot) then {
 	_objects pushback _this;
 	_objectIDs pushback 257;
 	_this setPosWorld [6601.51,1146.28,47.0816];
-	_this setVectorDirAndUp [[-0.999946,-0.0104036,0],[0,0,1]];
+	_this setVectorDirAndUp [[-0.999946,-0.0104034,0],[0,0,1]];
 	_this enableSimulation false;
 	_this allowdamage false;;
 };
@@ -3152,186 +3136,6 @@ if (_layerRoot) then {
 	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
 };
 
-private _item286 = objNull;
-if (_layerRoot) then {
-	_item286 = _item285 createUnit ["B_Soldier_TL_F",[6604.51,1169.01,0],[],0,"CAN_COLLIDE"];
-	_item285 selectLeader _item286;
-	_this = _item286;
-	_objects pushback _this;
-	_objectIDs pushback 286;
-	_this setPosWorld [6604.51,1169.06,46.6714];
-	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
-	_this setRank "SERGEANT";
-	_this allowdamage false;;
-	_this enablestamina false;;
-	_this setname "Jamie O'Connor";;
-	_this setface "GreekHead_A3_05";;
-	_this setspeaker "Male06ENG";;
-	_this setpitch 0.99;;
-	if !(0 == ([0, 1] select (_this getUnitTrait 'engineer')) || {0 == -1}) then {_this setVariable ['s', 0, true]};
-	_this setVariable ["ace_advanced_fatigue_performanceFactor", 1, true];
-	_this setVariable ['ACE_isEOD', false, true];
-	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
-	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
-};
-
-private _item287 = objNull;
-if (_layerRoot) then {
-	_item287 = _item285 createUnit ["B_soldier_AR_F",[6647,1156.62,0],[],0,"CAN_COLLIDE"];
-	_this = _item287;
-	_objects pushback _this;
-	_objectIDs pushback 287;
-	_this setPosWorld [6647,1156.67,46.6714];
-	_this setVectorDirAndUp [[-0.315239,0.949012,0],[0,0,1]];
-	_this setSkill 0.45;
-	_this setRank "CORPORAL";
-	_this allowdamage false;;
-	_this enablestamina false;;
-	_this setname "George Conrad";;
-	_this setface "GreekHead_A3_07";;
-	_this setspeaker "male02eng";;
-	_this setpitch 1.03216;;
-	if !(0 == ([0, 1] select (_this getUnitTrait 'engineer')) || {0 == -1}) then {_this setVariable ['s', 0, true]};
-	_this setVariable ["ace_advanced_fatigue_performanceFactor", 1, true];
-	_this setVariable ['ACE_isEOD', false, true];
-	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
-	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
-};
-
-private _item288 = objNull;
-if (_layerRoot) then {
-	_item288 = _item285 createUnit ["B_Soldier_GL_F",[6611.86,1148.81,0],[],0,"CAN_COLLIDE"];
-	_this = _item288;
-	_objects pushback _this;
-	_objectIDs pushback 288;
-	_this setPosWorld [6611.86,1148.86,46.6714];
-	_this setVectorDirAndUp [[0.998845,0.048052,0],[0,0,1]];
-	_this setSkill 0.4;
-	_this allowdamage false;;
-	_this enablestamina false;;
-	_this setname "Connor Spiegelman";;
-	_this setface "LivonianHead_4";;
-	_this setspeaker "male08eng";;
-	_this setpitch 1.02407;;
-	if !(0 == ([0, 1] select (_this getUnitTrait 'engineer')) || {0 == -1}) then {_this setVariable ['s', 0, true]};
-	_this setVariable ["ace_advanced_fatigue_performanceFactor", 1, true];
-	_this setVariable ['ACE_isEOD', false, true];
-	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
-	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
-};
-
-private _item289 = objNull;
-if (_layerRoot) then {
-	_item289 = _item285 createUnit ["B_soldier_LAT_F",[6607.33,1169.02,0],[],0,"CAN_COLLIDE"];
-	_this = _item289;
-	_objects pushback _this;
-	_objectIDs pushback 289;
-	_this setPosWorld [6607.33,1169.07,46.6714];
-	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
-	_this setSkill 0.4;
-	_this allowdamage false;;
-	_this enablestamina false;;
-	_this setname "Dwan Hall";;
-	_this setface "WhiteHead_20";;
-	_this setspeaker "Male01ENG";;
-	_this setpitch 0.99;;
-	if !(0 == ([0, 1] select (_this getUnitTrait 'engineer')) || {0 == -1}) then {_this setVariable ['s', 0, true]};
-	_this setVariable ["ace_advanced_fatigue_performanceFactor", 1, true];
-	_this setVariable ['ACE_isEOD', false, true];
-	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
-	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
-};
-
-private _item291 = objNull;
-if (_layerRoot) then {
-	_item291 = _item290 createUnit ["B_Soldier_TL_F",[6703.12,1117.12,0],[],0,"CAN_COLLIDE"];
-	_item290 selectLeader _item291;
-	_this = _item291;
-	_objects pushback _this;
-	_objectIDs pushback 291;
-	_this setPosWorld [6703.12,1117.17,46.6714];
-	_this setVectorDirAndUp [[-0.97579,-0.21871,0],[0,0,1]];
-	_this setRank "SERGEANT";
-	_this allowdamage false;;
-	_this enablestamina false;;
-	_this setname "Tyler Wood";;
-	_this setface "WhiteHead_15";;
-	_this setspeaker "male10eng";;
-	_this setpitch 0.979157;;
-	if !(0 == ([0, 1] select (_this getUnitTrait 'engineer')) || {0 == -1}) then {_this setVariable ['s', 0, true]};
-	_this setVariable ["ace_advanced_fatigue_performanceFactor", 1, true];
-	_this setVariable ['ACE_isEOD', false, true];
-	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
-	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
-};
-
-private _item292 = objNull;
-if (_layerRoot) then {
-	_item292 = _item290 createUnit ["B_soldier_AR_F",[6708.95,1093.16,0],[],0,"CAN_COLLIDE"];
-	_this = _item292;
-	_objects pushback _this;
-	_objectIDs pushback 292;
-	_this setPosWorld [6708.95,1093.21,46.6714];
-	_this setVectorDirAndUp [[0,1,0],[0,0,1]];
-	_this setSkill 0.45;
-	_this setRank "CORPORAL";
-	_this allowdamage false;;
-	_this enablestamina false;;
-	_this setname "Benjamin Patel";;
-	_this setface "WhiteHead_12";;
-	_this setspeaker "Male11ENG";;
-	_this setpitch 1.04;;
-	if !(0 == ([0, 1] select (_this getUnitTrait 'engineer')) || {0 == -1}) then {_this setVariable ['s', 0, true]};
-	_this setVariable ["ace_advanced_fatigue_performanceFactor", 1, true];
-	_this setVariable ['ACE_isEOD', false, true];
-	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
-	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
-};
-
-private _item293 = objNull;
-if (_layerRoot) then {
-	_item293 = _item290 createUnit ["B_Soldier_GL_F",[6701.49,1104.82,0],[],0,"CAN_COLLIDE"];
-	_this = _item293;
-	_objects pushback _this;
-	_objectIDs pushback 293;
-	_this setPosWorld [6701.49,1104.87,46.6714];
-	_this setVectorDirAndUp [[-0.99885,0.0479345,0],[0,0,1]];
-	_this setSkill 0.4;
-	_this allowdamage false;;
-	_this enablestamina false;;
-	_this setname "Ethan Young";;
-	_this setface "WhiteHead_28";;
-	_this setspeaker "male12eng";;
-	_this setpitch 0.987779;;
-	if !(0 == ([0, 1] select (_this getUnitTrait 'engineer')) || {0 == -1}) then {_this setVariable ['s', 0, true]};
-	_this setVariable ["ace_advanced_fatigue_performanceFactor", 1, true];
-	_this setVariable ['ACE_isEOD', false, true];
-	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
-	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
-};
-
-private _item294 = objNull;
-if (_layerRoot) then {
-	_item294 = _item290 createUnit ["B_soldier_LAT_F",[6719.47,1095.2,0],[],0,"CAN_COLLIDE"];
-	_this = _item294;
-	_objects pushback _this;
-	_objectIDs pushback 294;
-	_this setPosWorld [6719.47,1095.25,46.6714];
-	_this setVectorDirAndUp [[0.207665,-0.9782,0],[0,0,1]];
-	_this setSkill 0.4;
-	_this allowdamage false;;
-	_this enablestamina false;;
-	_this setname "Sean Harrison";;
-	_this setface "WhiteHead_02";;
-	_this setspeaker "Male02ENG";;
-	_this setpitch 1.04;;
-	if !(0 == ([0, 1] select (_this getUnitTrait 'engineer')) || {0 == -1}) then {_this setVariable ['s', 0, true]};
-	_this setVariable ["ace_advanced_fatigue_performanceFactor", 1, true];
-	_this setVariable ['ACE_isEOD', false, true];
-	if (0 >= 0.1) then {_this setVariable ["ace_medical_damageThreshold", 0, true]};
-	if (0 != -1 && {0 != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable ["ace_medical_medicClass", 0, true]};
-};
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 // Triggers
@@ -3395,16 +3199,6 @@ if (_layer9 && _layer229) then {
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 // Group attributes (applied only once group units exist)
-_this = _item285;
-if !(units _this isEqualTo []) then {
-	[_this,0] setWaypointPosition [position leader _this,0];
-	                            if (isNil 'CBA_fnc_setCallsign') then {                                _this setGroupID ["Alpha 1-1"];                            } else {                                [_this, "Alpha 1-1"] call CBA_fnc_setCallsign;                            };                        ;
-};
-_this = _item290;
-if !(units _this isEqualTo []) then {
-	[_this,0] setWaypointPosition [position leader _this,0];
-	                            if (isNil 'CBA_fnc_setCallsign') then {                                _this setGroupID ["Alpha 1-2"];                            } else {                                [_this, "Alpha 1-2"] call CBA_fnc_setCallsign;                            };                        ;
-};
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////
